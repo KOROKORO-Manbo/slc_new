@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: none;
+}
+
+ul, li {
+	list-style: none;
+}
+
+#gallery {
+	position:absolute;
+	overflow: hidden;
+	text-align: center;
+	width: 1000px;
+	height:888px;
+	margin-left: calc((100vw - 1000px)/2);
+}
+
+
+.content {							/* とりあえず1ページ分で周囲画像つきで収まる大きさにした */
+	position: absolute;
+	top: 0px;
+	left: calc()(1000 - 900)/2);
+	width: 900px;
+	height: 885px;
+	margin: 0 auto;
+	position: relative;
+	background-color: rgba(100, 200, 200, 0.2);
+}
+
+#gallery li img {
+	border-radius: 5px;
+	max-width: 100%;
+}
+
+#gallery li img:hover {
+	opacity: 0.5;
+}
+
+
+/* widthが1000pxであることを前提にキレイに.content内に並ぶ横幅にした */
+
+#gallery li {
+	float: left;
+	width: 178px;
+	margin: 2px 2px 0 0;
+}
+
+/*#gallery li:nth-child(4n) {
+	margin-right: 0;
+}*/
+
+
+
+
+
+/*	レスポンシブバージョンでは以下のようになっていがwidth=1000pxで決め打ちにする
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+header .button {
+	right: 20px;
+	border-radius: 0 0 5px 5px;
+}
+
+#intro {
+	margin: 30px 0 30px;
+}
+
+#gallery {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 4%;
+}
+
+#gallery li {
+	float: left;
+	width: 46%;
+	margin: 10px 4% 10px 0;
+}
+
+#gallery li:nth-child(2n) {
+	margin-right: 0;
+}
+
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+header .button {
+	right: 20px;
+	border-radius: 0 0 5px 5px;
+}
+
+#gallery {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 4%;
+}
+
+
+#gallery li {
+	float: left;
+	width: 30%;
+	margin: 0 2% 30px;
+}
+
+#gallery li:nth-child(3n) {
+	margin-right: 0;
+}
+
+#intro {
+	margin: 50px 0 50px;
+}
+
+}
+
+
+
+@media only screen and (min-width: 1025px) {
+
+header .button {
+	right: 0;
+	border-radius: 0 0 5px 5px;
+}
+
+header .button:hover {
+	color: #969696;
+}
+
+#intro {
+	margin: 50px 0 50px;
+}
+
+#gallery {
+	margin-bottom: 50px;
+}
+
+#gallery li {
+	float: left;
+	width: 8%;
+	margin: 5px 5px 0 0;
+}
+
+#gallery li:nth-child(4n) {
+	margin-right: 0;
+}
+
+
+}
+*/
