@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --display-modules true",
     "build_watch": "webpack --progress --watch",
     "build_release": "webpack -p",
     "start": "webpack-dev-server",
