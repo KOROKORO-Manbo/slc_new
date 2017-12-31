@@ -65,6 +65,7 @@ $(document).ready(function(){
                 // $('html,body').animate({
                 //   scrollTop: targetPoint
                 // }, 1000);
+                location.hash = "";
                 return false;              //
             })
     				.appendTo('body')
@@ -98,6 +99,7 @@ $(document).ready(function(){
     $('li.directMenuPiece').on('click', function () {
       var index = $('li.directMenuPiece').index(this) + 1;
       currentNum = index;
+      location.hash = "";                                                 // メニュークリックでハッシュあれば削除（'prettyPhoto'とか残ってくるので）
       $('#roulette').removeAttr('class').addClass("number-" + currentNum);
       var target = $('#page' + currentNum);
       target = target.length ? target : $('[id=' + target + ']');
