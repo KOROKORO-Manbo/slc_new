@@ -6,7 +6,7 @@
  ReMakeのポイント
 ーーーーーーーーー
 
-	（カレンダー：sliderProはWebPack化でバンドルでき、あとは写真モーダル表示：prettyPhotoとスクロール出現：scrollRevealのバンドルをココでしている。frModalは捨てた）
+	（カレンダー：sliderProはWebPack化でバンドルできた。写真モーダル表示：prettyPhotoもバンドル化済。スクロール時出現効果：JQのinViewは問題ありbundle.jsの最後尾に追加している。frModalは捨てた）
 	
 	prettyPhoto：
 		使用ライブラリの内、WebPack化出来たのはカレンダーの ./calendar/jquery.sliderPro.min.js だけだったので、単体でWebPack化が確認できたライブラリであるprettyPhotoを
