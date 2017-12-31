@@ -185,7 +185,7 @@ $(document).ready(function(){
         return false;
       });
       $('.cloud').click(function() {
-        window.location.href = 'http://slc-mie.com/main.htm';
+        window.location.href = 'http://slc-mie.com/mainORG.htm';
       });
       if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
           return;
