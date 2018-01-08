@@ -7,6 +7,14 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+３３．季節のアクセント付け時のバンドル後、手動で ./src/ から ./build/ にコピペする画像
+				.src/img/page1/timetableUra.png								パンダ
+				.src/img/page1/timetableOmote.png
+				.src/img/page1/gairaiTantou_omoteShadow.png		蜂
+				.src/img/page1/gairaiTntou_uraShadow.png
+				.src/img/page2/touinBoardFinal.png							ひよこ
+				.src/img/toTopIcon.png												赤ちゃん
+				
 ３２．PrettyPhoto関係の写真モーダルを表示すると（入院食や院内案内）、別セクションに移動してもURL内にハッシュタグが残ったままになり、
 		　コンソールでのエラーの原因にもなりかねないので、topに戻るボタンやダイレクトメニューの項目をクリックした時にクリアするコードを追加した
 				main.js #68、#102			location.hash = "";  
