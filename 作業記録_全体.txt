@@ -7,6 +7,11 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+助産師外来効果のライブラリ注意！！！
+ローカルサーバーでのindex.htmlの確認はbundle.jsがオンザフライで変更の度、コンパイルされて
+手動で付け加えてる jquery.inview.min.js のコピペが抜け落ちてしまって回転しながら表示される効果が出ない
+＝コマンドでバンドルしてローカルサーバー介さずにindex.htmlを見ると正常に動作する
+
 ３３．季節のアクセント付け時のバンドル後、手動で ./src/ から ./build/ にコピペする画像
 				.src/img/page1/timetableUra.png								パンダ
 				.src/img/page1/timetableOmote.png
