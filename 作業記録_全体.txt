@@ -8,6 +8,7 @@
 ページ構成の変更や追加は相変わらずここについかしていく
 
 ３４．季節変更時、対象一覧
+				赤ちゃん					//src/img/toTopIcon.png
 				うさぎ						//src/calendar/usagi.gif										style.css
 				くじら						//src//img/page1/kujira.gif									style.css
 				ぞう							//src/img/page1/touinJyouhouOmote.png			style.css

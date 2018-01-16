@@ -746,7 +746,7 @@ div.elevit span:before{
   left:300px;
   width: 150px;
   height: 139px;
-  background-image: url(../img/page1/koara.png);
+  background-image: url(../img/page1/koara.gif);
   background-repeat: no-repeat;
   /*background-size:contain;*/
   animation: descend .5s ease 0s 1 normal;
@@ -878,7 +878,7 @@ div.elevit span:before{
   height: 94px;
   top: 90px;
   left: 140px;
-  background-image: url(../img/page1/mogura.png);
+  background-image: url(../img/page1/mogura.gif);
 background-repeat: no-repeat;
 }
 .LINE_wrapper .board {
@@ -925,7 +925,7 @@ background-repeat: no-repeat;
   left:60px;
   width: 280px;
   height: 149px;
-  background-image: url(../img/page1/kujira.png);
+  background-image: url(../img/page1/kujira.gif);
   background-repeat: no-repeat;
 }
 .kujiraWaku {
@@ -983,7 +983,7 @@ background-repeat: no-repeat;
   height: 216px;
   top: 14px;
   left: 0px;
-  background-image: url(../img/page1/touinJyouhouOmote.png);
+  background-image: url(../img/page1/touinJyouhouOmote.gif);
 }
 
 .touinJoho_wrapper:hover .zouUra{
@@ -1842,7 +1842,7 @@ svg {
   	height: 163px;
   	top: 380px;
   	left: calc((312px - 131px)/2);
-  	background-image: url('');
+  	background-image: url('../calendar/usagi.png');
   	cursor: pointer;
   }
 /* ↑以上、カレンダー関連*/
