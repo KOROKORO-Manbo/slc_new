@@ -7,11 +7,27 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+３４．季節変更時、対象一覧
+				うさぎ						//src/calendar/usagi.gif										style.css
+				くじら						//src//img/page1/kujira.gif									style.css
+				ぞう							//src/img/page1/touinJyouhouOmote.png			style.css
+				ぱんだ						<img src="./img/page1/timetableOmote.gif" />	index.html
+				蜂								<img src="./img/page1/gairaiTantou_omoteShadow.gif" class="cover" />
+				もぐら						//src/img/page1/mogura.gif
+				コアラ						//src/img/page1/koara.png
+				BBS枠						//src/img/page1/BBS_Waku.png
+				切り株						//src/img/page1/kirikabu.png
+				外観（表）				//src/img/page1/SLCoutDefau500.png
+				外観（裏）				//src/img/page1/SLCoutDefauBack500.png
+				
+				まずは ./src/img/ で変更し完成後、ビルドして ./build/index.html で確認しながら必要画像を./build/ のほうに移す
+
 ３３．GIFアニメについて
 			作成はGIMPで行う（https://synclogue-navi.com/gimp-animation）
 			レイヤーを重ねて[フィルター]-[アニメーション]-[GIFアニメ最適化]で新規画像が作成され、各レイヤーは間隔のミリ秒と上書きか置き換えかの’combine’か’replace’が付されている。
 			どちらもマニュアルで書き換え可能で、レイヤーの数を増やすのではなくディレイ時間を操作する。WindowsのGIMPで全部やれば元画像のドロップシャドウもそのままでも綺麗にできる（かも）
 			画像の入れ替えは拡張子がpngからgifになるがDOM要素の背景として設定している場合は不具合になる可能性があるので「うさぎ」のようにDOM要素の子としてimgタグでしのいでもいい
+			GIMPでの作業は一番下にキャラクター画像で、あとは上のレイヤーにはキャラクターを含まない変更したい部分の画像だけを載せていく（例えばバレンタインの時のハートのように）
 			
 
 ３２．PrettyPhoto関係の写真モーダルを表示すると（入院食や院内案内）、別セクションに移動してもURL内にハッシュタグが残ったままになり、
