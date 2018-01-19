@@ -8,7 +8,7 @@ $(document).ready(function(){
     //  toTopアイコン表示関連 ↓↓↓↓↓↓↓↓
     var scrolltotop={
     	setting: {startline:888, scrollto: 0, scrollduration:1000, fadeduration:[500, 100]}, //startline：１ページ分の高さ以上にスクロールしたら表示する
-    	controlHTML: '<img src="./img/toTopIcon.png" style="width:113px; height:238px" />',
+    	controlHTML: '<img src="./img/toTopIcon.gif" style="width:113px; height:238px" />',
     	controlattrs: {offsetx:0, offsety:0}, //ウィンドウ右下からのオフセット
     	anchorkeyword: '#top', //Enter href value of HTML anchors on the page that should also act as "Scroll Up" links
 

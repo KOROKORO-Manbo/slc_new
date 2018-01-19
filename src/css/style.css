@@ -1842,7 +1842,7 @@ svg {
   	height: 163px;
   	top: 380px;
   	left: calc((312px - 131px)/2);
-  	background-image: url('../calendar/usagi.png');
+  	background-image: url('../calendar/usagi.gif');
   	cursor: pointer;
   }
 /* ↑以上、カレンダー関連*/
