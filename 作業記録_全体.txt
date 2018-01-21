@@ -7,6 +7,9 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+３５．./src/ の変更があったら必ずビルドして、jquery.inview.min.js のコピペして./build/index.htmlの動作確認して、
+		　gitのコミットしてからからチェックアウトすること
+
 ３４．季節変更時、対象一覧
 				赤ちゃん					//src/img/toTopIcon.png
 				うさぎ						//src/calendar/usagi.gif										style.css
@@ -21,7 +24,12 @@
 				外観（表）				//src/img/page1/SLCoutDefau500.png
 				外観（裏）				//src/img/page1/SLCoutDefauBack500.png
 				
-				まずは ./src/img/ で変更し完成後、ビルドして ./build/index.html で確認しながら必要画像を./build/ のほうに移す
+				・まずは ./src/img/ で変更し完成後、ビルドして ./build/index.html で確認しながら必要画像を./build/ のほうに移す
+				・index.htmlのimgタグに画像パスを埋め込んでしまってるキャラは、ビルド後に、画像ファイル名に変更がある場合は./build/index.htmlの修正もすること
+						img src="./img/page1/timetableOmote.png"	
+						img src="./img/page1/gairaiTantou_omoteShadow.png
+						img src="./calendar/usagi.png"										例えばpngをgifにしたとか
+						img/page3/jyosansiBGfinal.png
 
 ３３．GIFアニメについて
 			作成はGIMPで行う（https://synclogue-navi.com/gimp-animation）
