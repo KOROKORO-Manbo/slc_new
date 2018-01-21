@@ -974,7 +974,7 @@ background-repeat: no-repeat;
   height: 216px;
   top: 14px;
   left: 0px;
-  background-image: url(../img/page1/touinJyouhouUra.png);
+  background-image: url(../img/page1/touinJyouhouOmote.gif);
   animation: fadeOut .5s ease 0s 1 normal;
   opacity: 0;
 }
@@ -1046,7 +1046,7 @@ background-repeat: no-repeat;
   height: 970px;
   width:943px;
   margin-left: calc((100vw - 943px)/2);
-  background-image: url(../img/page2/touinBoardFinal.png);
+  background-image: url(../img/page2/touinBoardFinal.gif);
   background-repeat: no-repeat;
 }
 
