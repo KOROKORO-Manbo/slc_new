@@ -7,7 +7,9 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
-
+３７．noCloud化は夫々のブランチを分ける。サーバーには ./n/ と ./n/noC/ を設置し、スマホからリンクは ./n/noC/ の方にする
+			（Flash版も残さないといけないので）
+			
 ３６．page1のtopのマージン設定　＝　src/css/flip_stetch.css #473
 			また./css/index.cssの読み込み順で flip_stetch.css を最後にしないとマージン情報が上書きされてしまうので注意
 
