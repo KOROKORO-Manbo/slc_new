@@ -7,18 +7,26 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
-助産師外来効果のライブラリ注意！！！
-ローカルサーバーでのindex.htmlの確認はbundle.jsがオンザフライで変更の度、コンパイルされて
-手動で付け加えてる jquery.inview.min.js のコピペが抜け落ちてしまって回転しながら表示される効果が出ない
-＝コマンドでバンドルしてローカルサーバー介さずにindex.htmlを見ると正常に動作する
 
-３３．季節のアクセント付け時のバンドル後、手動で ./src/ から ./build/ にコピペする画像
-				.src/img/page1/timetableUra.png								パンダ
-				.src/img/page1/timetableOmote.png
-				.src/img/page1/gairaiTantou_omoteShadow.png		蜂
-				.src/img/page1/gairaiTntou_uraShadow.png
-				.src/img/page2/touinBoardFinal.png							ひよこ
-				.src/img/toTopIcon.png												赤ちゃん
+３６．page1のtopのマージン設定　＝　src/css/flip_stetch.css #473
+
+３５．./src/ の変更があったら必ずビルドして、jquery.inview.min.js のコピペして./build/index.htmlの動作確認して、
+		　gitのコミットしてからからチェックアウトすること
+
+３４．季節変更時、対象一覧
+				赤ちゃん					//src/img/toTopIcon.png
+				うさぎ						//src/calendar/usagi.gif										style.css
+				くじら						//src//img/page1/kujira.gif									style.css
+				ぞう							//src/img/page1/touinJyouhouOmote.png			style.css
+				ぱんだ						<img src="./img/page1/timetableOmote.gif" />	index.html
+				蜂								<img src="./img/page1/gairaiTantou_omoteShadow.gif" class="cover" />
+				もぐら						//src/img/page1/mogura.gif
+				コアラ						//src/img/page1/koara.png
+				BBS枠						//src/img/page1/BBS_Waku.png
+				切り株						//src/img/page1/kirikabu.png
+				外観（表）				//src/img/page1/SLCoutDefau500.png
+				外観（裏）				//src/img/page1/SLCoutDefauBack500.png
+
 				
 ３２．PrettyPhoto関係の写真モーダルを表示すると（入院食や院内案内）、別セクションに移動してもURL内にハッシュタグが残ったままになり、
 		　コンソールでのエラーの原因にもなりかねないので、topに戻るボタンやダイレクトメニューの項目をクリックした時にクリアするコードを追加した
