@@ -7,7 +7,9 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+
 ３６．page1のtopのマージン設定　＝　src/css/flip_stetch.css #473
+			また./css/index.cssの読み込み順で flip_stetch.css を最後にしないとマージン情報が上書きされてしまうので注意
 
 ３５．./src/ の変更があったら必ずビルドして、jquery.inview.min.js のコピペして./build/index.htmlの動作確認して、
 		　gitのコミットしてからからチェックアウトすること
@@ -25,25 +27,11 @@
 				切り株						//src/img/page1/kirikabu.png
 				外観（表）				//src/img/page1/SLCoutDefau500.png
 				外観（裏）				//src/img/page1/SLCoutDefauBack500.png
+
 				
-				・まずは ./src/img/ で変更し完成後、ビルドして ./build/index.html で確認しながら必要画像を./build/ のほうに移す
-				・index.htmlのimgタグに画像パスを埋め込んでしまってるキャラは、ビルド後に、画像ファイル名に変更がある場合は./build/index.htmlの修正もすること
-						img src="./img/page1/timetableOmote.png"	
-						img src="./img/page1/gairaiTantou_omoteShadow.png
-						img src="./calendar/usagi.png"										例えばpngをgifにしたとか
-						img/page3/jyosansiBGfinal.png
-
-３３．GIFアニメについて
-			作成はGIMPで行う（https://synclogue-navi.com/gimp-animation）
-			レイヤーを重ねて[フィルター]-[アニメーション]-[GIFアニメ最適化]で新規画像が作成され、各レイヤーは間隔のミリ秒と上書きか置き換えかの’combine’か’replace’が付されている。
-			どちらもマニュアルで書き換え可能で、レイヤーの数を増やすのではなくディレイ時間を操作する。WindowsのGIMPで全部やれば元画像のドロップシャドウもそのままでも綺麗にできる（かも）
-			画像の入れ替えは拡張子がpngからgifになるがDOM要素の背景として設定している場合は不具合になる可能性があるので「うさぎ」のようにDOM要素の子としてimgタグでしのいでもいい
-			GIMPでの作業は一番下にキャラクター画像で、あとは上のレイヤーにはキャラクターを含まない変更したい部分の画像だけを載せていく（例えばバレンタインの時のハートのように）
-			
-
 ３２．PrettyPhoto関係の写真モーダルを表示すると（入院食や院内案内）、別セクションに移動してもURL内にハッシュタグが残ったままになり、
 		　コンソールでのエラーの原因にもなりかねないので、topに戻るボタンやダイレクトメニューの項目をクリックした時にクリアするコードを追加した
-				main.js #68、#102			location.hash = "";
+				main.js #68、#102			location.hash = "";  
 
 ３１．作業時注意
 			△inviewライブラリをbundle.jsに追加する時、WebPack部の最終行に１つ改行を入れないとキレイに動作しない
@@ -81,8 +69,8 @@
 					４９７〜				scrollReveal関連
 					７５７					rev3.reveal();	revealさせるDOMを指定（助産師外来）・・・今はrev3という要素１個のみ		<div id="rev-3" class="content__image-wrap content__image-wrap--half">
 					７７４〜				frdialogmodal関連（入院食、院内写真の全画面表示用）
-
-			＜all.css配置マップ＞
+			
+			＜all.css配置マップ＞			
 					１〜２９				フォント、ｈｔｍｌ
 					３０〜					ルーレット
 												６６〜					ダイレクトメニュー
@@ -120,46 +108,46 @@
 					１８４４〜			院内紹介、入院食紹介のモーダル画面(fr-dialogmodal)
 					１８７０〜			flip
 					２４３０〜			slider-pro（カレンダー）
-
-
+											
+				
 ２９．リンクページボタン設置・・・topBtn('.LinkNavBnr')のマウスオーバーでリンクページ(.LinkNav)ポップアップ= JSによるdisplayの切替
 			CSS(all.ss#1804　または　style.css)
 					/* --------リンクポップアップ　LinkPopUp--------- */
-
+					
 					.LinkNav { display: none; position: absolute; top: 30px; right: -15px; border: 2px solid #ff6699; background: #fff; list-style: none; padding: 12px 0 15px 22px; width: 590px; -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15); box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15); z-index: 99; box-sizing: content-box; }
-
+					
 					.LinkNav::after, .LinkNav::before { content: " "; position: absolute; bottom: 100%; left: 522px; border: solid transparent; height: 0; width: 0; pointer-events: none; }
-
+					
 					.LinkNav::after { border-color: rgba(255, 255, 255, 0); border-bottom-color: rgb(167,195,60); border-width: 10px; margin-left: -10px; }
-
+					
 					/*
 					    ↑　本来、吹き出しの矢印部分の中の白地を::afterのborderでやっていて、borderを画像を使って草原で埋めたかったがきれいに三角形にならなかったので、
 					    　　草原の上に白地が残るより赤線だけになったほうがいいので削除した  border-image: url("bg.png");も使えるのだがきれいな三角形にならなかった
 					    		最終的に下線の色を緑にして（ border-bottom-color: rgb(167,195,60); ）三角の内側を塗った形にしている
 					*/
-
+					
 					.LinkNav::before { border-color: rgba(245, 43, 2, 0); border-bottom-color: #ff6699; border-width: 13px; margin-left: -13px; }
-
+					
 					.LinkNav li { float: left; width: 272px; margin-right: 22px; padding: 0; }
-
+					
 					/*.LinkNav li:not(:last-child) { border-bottom: 1px solid #e6e6e6;
 					}*/
 					.LinkNav li a { display: block; position: relative; padding: 12px 8px; color: #04c; text-decoration: none; }
-
+					
 					.LinkNav li a:after { display: block; content: ''; position: absolute; top: 50%; right: 66px; width: 10px; height: 10px; border-top: 2px solid #f9170a; border-right: 2px solid #f9170a; -webkit-transform: rotate(45deg) translate(0, -50%); -ms-transform: rotate(45deg) translate(0, -50%); transform: rotate(45deg) translate(0, -50%); }
-
+					
 					.LinkNav li a:hover { filter: alpha(opacity=70); opacity: 0.7; }
-
+					
 					.LinkNav_icon { display: inline-block; vertical-align: middle; margin: 0; width: 58px; height: 40px; text-align: right; }
-
+					
 					.LinkNav_txt { display: inline-block; vertical-align: middle; margin: 0; width: 194px; height: 40px; }
-
+					
 					.LinkNav__catch { font-size: 0.8rem; color: #636363; }
-
+					
 					.LinkNav__name { font-size: 0.9rem; font-weight: bold; }
-
+					
 					li img{ margin-top: 8px; margin-left: 10px;}
-
+					
 					#fukidashiMenu{
 					  background-image: url(../img/topObiBtns/link/linkbg.png);
 					}
@@ -169,28 +157,28 @@
 						$('.LinkNav').css("display","block");
 					}).mouseout(function(){
 						$('.LinkNav').css("display","");
-					});
-
+					});	
+			
 ２８．この時点で（201711/18）、カレンダーのカルーセルにjQueryMobileを使っていることが気持ち悪く、なしでもマウスでフリック操作できるｊQuerySlideProに変更した
 			不要になったJS：　./calendar/jquery.mobile-1.4.5.min.js、iscroll.js、carousel.js
 			新たに入れたJS：	./calendar/jquery.sliderPro.min.js、slider-pro.min.css、（jquery-1.11.3.min.js　これは全体の方のjQueryで代用しているので置いてるだけ）
 
 			△この時点でall.jsとall.cssの中身も不要なものを除き新たなものを入れた
 			△ ./src/ の方に元の外部ファイルタグがコメントアウトで残してあるのでall.jsやall.caaへの移植順はそれを参考にする
-
+			
 ２７．メール文字化け：CGIそのものをShift-JISで書いていてメインのページ自体はUTF-8を指定しているので送られてきた日本語の文字が化けた
 				→　CGIをUTF-8で保存し直してアップ＋念のためhttp://slc-mie.com/cgi-local/mailutf8/mail.cgiにして、元とは別のものにした（開発用、デプロイ用、mini）
-
+				
 ２６．mini化：やはり使うツールによってJSもCSSも不具合が出てしまうので下記サイトのものを使う
 				http://refresh-sf.com/									またHTMLのオプション指定は上から５つのチェック・ボックスを選択
 				http://pengpeng.chips.jp/compressor/			念のため自局にも置いておいた
-
+				
 ２５．各ページのpagesContainer要素外にページが出てしまっていたことをたまたまChromeで発見
 				→Page7のtable内のdivのとじタグの位置がずれていたため・・・何か変更したら確認していくこと！
-
+			
 			また院内紹介写真リストと入院食リストの位置が背景画面をはみ出していたので
 			両ページのul.contentの位置を修正した
-
+			
 ２４．ダイレクトメニューの高さが横長ノートなどで下が出てクリックできないので縦を縮めた
 			#directMenu ul li:not(:first-child){			/* 先頭は星と被ってはいけないのでそれ以外のliの上との幅を詰める*/
 			  margin-top: -10px;
@@ -209,7 +197,7 @@
 			・次回から表示しないボタン・・・「２１．」参照
 			・TOPメニュー＋ポップアップ・・・「animポップアップ掲示板：リンク集、サイトマップ」
 			・流れる雲・・・CSSアニメ .cloud 　＋　クリックイベントJS
-
+			
 ２２．JSの変更は開発用のmain.jsを触って再度、all.jsにする時ミスが有ってはいけないので、
 		　mini化前のall.jsのデプロイ用の「main.js」部分を触っていくこと・・・さわったら開発用のmain.jsも変更のこと
 
@@ -229,7 +217,7 @@
 		・初期モーダルのキリンの告知に、中央の星の案内も追加
 		・アロマセラピー削除
 		・SIDS対策ボタン位置変更
-
+		
 
 １７．2017/10/18にこのバージョンが再採用になったのでWebPack化しようとしたが、
 		　all.jsを使ったバンドルでさえjQuery本体のエラーが出て手間取りそうだったので
