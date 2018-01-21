@@ -470,8 +470,8 @@ a:focus, a:hover {
 	color: #0c0
 }
 body {
-	padding-top: 33px;
-	padding-bottom: 75px
+	padding-top: 123px;
+	/* padding-bottom: 75px */
 }
 @media (min-width: 768px) {
 	.license {
