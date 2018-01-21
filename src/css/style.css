@@ -25,6 +25,7 @@ body{
   padding: 0px;
   /*overflow-x: hidden;*/
   background-color: #4ac7ec;
+  background-image: url(../img/page2/pg2BG.png);
 }
 
 #rouletteContainer{
@@ -1333,9 +1334,9 @@ html, body {
 .stage {
   position: relative;
   overflow: hidden;
-  width: 700px;
+  width: 600px;
   height: 100%;
-  margin-top: -100px;
+  margin-top: -290px;
   background: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background: #1E384C;
