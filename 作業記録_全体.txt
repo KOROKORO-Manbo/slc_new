@@ -7,6 +7,8 @@
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
+３６．page1のtopのマージン設定　＝　src/css/flip_stetch.css #473
+
 ３５．./src/ の変更があったら必ずビルドして、jquery.inview.min.js のコピペして./build/index.htmlの動作確認して、
 		　gitのコミットしてからからチェックアウトすること
 
