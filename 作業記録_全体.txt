@@ -9,6 +9,7 @@
 
 
 ３６．page1のtopのマージン設定　＝　src/css/flip_stetch.css #473
+			また./css/index.cssの読み込み順で flip_stetch.css を最後にしないとマージン情報が上書きされてしまうので注意
 
 ３５．./src/ の変更があったら必ずビルドして、jquery.inview.min.js のコピペして./build/index.htmlの動作確認して、
 		　gitのコミットしてからからチェックアウトすること
