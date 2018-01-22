@@ -1034,7 +1034,24 @@ background-repeat: no-repeat;
   background-image: url(../img/page1/kirikabu.png);
   background-size: cover;
 }
-
+.kirikabu:before {
+  position: relative;
+  content: '';
+  display: inline-block;
+  top: -30px;
+  left: 20px;
+  width: 430px;
+  height: 230px;
+  background-image: url(../img/valentineOver.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  z-index: 99;
+  opacity:0;
+}
+.kirikabu:hover:before  {
+  opacity: 1;
+}
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
 #page2{
