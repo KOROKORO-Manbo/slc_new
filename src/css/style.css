@@ -1038,19 +1038,23 @@ background-repeat: no-repeat;
   position: relative;
   content: '';
   display: inline-block;
-  top: -30px;
-  left: 20px;
-  width: 430px;
+  top: -10px;
+  left: 0px;
+  width: 230px;
   height: 230px;
   background-image: url(../img/valentineOver.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size:cover;
   vertical-align: middle;
   z-index: 99;
   opacity:0;
 }
 .kirikabu:hover:before  {
   opacity: 1;
+}
+.kirikabu:hover  {
+  width:1px;
+  height:1px;
 }
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
