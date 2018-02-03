@@ -5,7 +5,7 @@ require('imports-loader?this=>window!./effect/sncjm-min.js')
 
 import '../css/index.css'
 import './jquery.js'
-import myInview from './jquery.inview.min.js'
+import myInview from './jquery.inview.min.export.js'
 import './main.js'
 import '../calendar/jquery.sliderPro.min.js'
 import './jquery.prettyPhoto.js'
