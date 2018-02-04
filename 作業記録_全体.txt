@@ -14,6 +14,7 @@
 			全体を ’ export default () => { ... } ’ で囲って、import myInview from './jquery.inview.min.export.js'として
 			index.js 内で myInview( ) と実行し機能を追加した   ^^^^^^^^
 			                     ^^^^^^^^^^^
+			 
 ３８．作業記録はmasterブランチだけにした
 
 ３７．プロジェクト全体におけるｊQueryについて
