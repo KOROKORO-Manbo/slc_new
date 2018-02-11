@@ -1033,29 +1033,34 @@ background-repeat: no-repeat;
   height: 164px;
 }
 .kirikabu{
-  margin-top: -10px;
+  margin: 0px;
   padding: 0px;
   width: 220px;
   height: 169px;
-  /* transform: rotateZ(-5deg); */
   background-image: url(../img/page1/kirikabu.png);
   background-size: cover;
 }
-.kirikabu::after{
-  display: none;
-  margin-top: -10px;
-  padding: 0px;
+.kirikabu:before {
+  position: relative;
+  content: '';
+  display: inline-block;
+  /* top: -10px; */
+  left: 0px;
   width: 220px;
   height: 169px;
-  /* transform: rotateZ(-5deg); */
   background-image: url(../img/page1/kirikabuOn.png);
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size:cover;
+  vertical-align: middle;
+  z-index: 99;
+  opacity:0;
 }
-.kirikabu:hover .kirikabu::after{
-  display: block;
+.kirikabu:hover:before  {
+  opacity: 1;
 }
-.kirikabu:hover{
-  display: none;
+.kirikabu:hover  {
+  width:1px;
+  height:1px;
 }
 
 
