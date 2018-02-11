@@ -1026,14 +1026,31 @@ background-repeat: no-repeat;
   height: 164px;
 }
 .kirikabu{
-  margin: 0px;
+  margin-top: -10px;
   padding: 0px;
-  width: 307px;
-  height: 164px;
-  transform: rotateZ(-5deg);
+  width: 220px;
+  height: 169px;
+  /* transform: rotateZ(-5deg); */
   background-image: url(../img/page1/kirikabu.png);
   background-size: cover;
 }
+.kirikabu::after{
+  display: none;
+  margin-top: -10px;
+  padding: 0px;
+  width: 220px;
+  height: 169px;
+  /* transform: rotateZ(-5deg); */
+  background-image: url(../img/page1/kirikabuOn.png);
+  background-size: cover;
+}
+.kirikabu:hover .kirikabu::after{
+  display: block;
+}
+.kirikabu:hover{
+  display: none;
+}
+
 
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
