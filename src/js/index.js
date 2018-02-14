@@ -16,7 +16,6 @@ myInview();
 //effect
 import './effect/modernizr.custom.56320.js'
 import fSNCJM from './effect/sncjm-min.js'
-fSNCJM()
-// console.log(_util)
+fSNCJM()    // sncjmの_utilを得るための実行（main.js内で使われている）  window._util = new SNCJM.util; 
 import './effect/jquery.easing.1.3.js'
 import './effect/main.js'
