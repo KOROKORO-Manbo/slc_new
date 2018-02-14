@@ -1896,7 +1896,12 @@ li img{ margin-top: 8px; margin-left: 10px;}
 }
 
 
+.insta {
+  background-image: url(../images/instaLogo.png);
+  width:440px;
+  height: 63px;
 
+}
 
 /* 院内案内、入院食案内写真モーダル：元はローダーで読み込んでたdialogmodal.cssファイルをココに強くでおいた */
 /* frModal系はprettyPhoto導入で要らなくなった*/
