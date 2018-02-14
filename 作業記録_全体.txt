@@ -7,13 +7,66 @@ rm
 ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
 ページ構成の変更や追加は相変わらずここについかしていく
 
-３９．jQueryライブラリのInViewの扱い
-			このライブラリは単にグローバルのjQueryをひろってきて利用している形式で、とくにグローバルにオブジェクト名などの
-			名前空間を晒し、メイン側からそれ経由で機能を利用するという形式ではなかったので、単にimportしても機能しなかった
-			そこで・・・
-			全体を ’ export default () => { ... } ’ で囲って、import myInview from './jquery.inview.min.export.js'として
-			index.js 内で myInview( ) と実行し機能を追加した   ^^^^^^^^
-			                     ^^^^^^^^^^^
+
+４１．topBtnsへの項目追加
+			・ボタンの高さは40pxで作成のこと（.topObi .flip-front、backで40pxに指定しているので）
+			・これらボタンおコンテナーは .topBtns で  width:600px; としているが状況に合わせて変更すること
+			・フリップダウンの動きはCSSクラスをJSで付与・削除しているので、追加時はそちらもおこなうこと（忘れてて解決に時間がかかったことがあった）
+
+４０．雨効果調整（rainySeasonブランチ）
+			雨エフェクトビュー要素の生成＆削除のプロセスの間隔が長く、画面に雨のない時間が長くなるので
+			以下のように、一度生成した雨効果セットの要素は削除せずに、各雨粒要素が画面下まで来たら元位置に戻す方法に変えた
+			（デッド判定をせずに、デッド該当で元位置に戻す）その時、X軸方向はランダムに変更して、パターンが同じにならないようにした
+
+			    t.prototype.update = function () {
+			      if (this._anm.bY > e.LUANA.main.ws.h + 100) {								// if (this._anm.dead) { return; }　元は、個別に雨粒を見て、デッドの場合、他の雨粒も全部デッドになるまでreturnしていた
+			        this._anm.spdY = 0;																			// デッド判定で縦位置とスピードをもとに戻し、
+			        this._anm.bY = 0;
+			        var maxRange = $(window).width();
+			        this._img.css({left: _util.random(-100, maxRange)});						// 横位置はランダムに変更する（対象は雨粒画像のラッパー要素のthis.img）
+			        return;
+			      }
+			      this._float.update();
+			      if (++this._anm.cnt >= this._anm.delay) {
+			        this._anm.spdY += .3;
+			        this._anm.bY += this._anm.spdY;
+			        this._elm.css(_util.getVendorCss("transform", _util.translate3d(0, this._anm.bY, 0, this._use3d)));
+			        // this._anm.bY > e.LUANA.main.ws.h + 10 && (this._anm.dead = !0)  // 雨粒ごとに画面高さ＋いくつでデッド判定するか
+			      }
+			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
+			    };
+
+３９．jQueryライブラリのバンドル後、不具合修正
+			→InView
+				このライブラリは単にグローバルのjQueryをひろってきて利用している形式で、とくにグローバルにオブジェクト名などの
+				名前空間を晒し、メイン側からそれ経由で機能を利用するという形式ではなかったので、単にimportしても機能しなかった
+				そこで・・・
+				全体を ’ export default () => { ... } ’ で囲って、import myInview from './jquery.inview.min.export.js'として
+				index.js 内で myInview( ) と実行し機能を追加した   ^^^^^^^^
+				                     ^^^^^^^^^^^
+			rainySeasonブランチのみ
+			→Modernizr
+						window.Modernizr = function (a, b, c) {
+								...
+						 }(window, window.document),														#203 元はthisとthis.documentだったのをwindowに変更
+
+			→SNCJM・・・名前空間をグローバルに晒した上で、その中の１つのクラス：SNCJM.util の定義をIIFEで行っている形式
+					   export default () => {																			#4 全体をexportで囲った
+						  window.SNCJM == undefined && (window.SNCJM = {});				#6 元は先頭のSNCJMに this. 、うしろのSNCJMには何も付いていなかったが、
+						  (function () {																					      グローバルに晒すために window. を追加（下記のインスタンスだけ晒せば済むなら不要だが）
+						    SNCJM.util = function () {
+						    	...
+						     }
+						   })( );
+						   window._util = new SNCJM.util;													#235 元はクラスインスタンス	を ’_util’ に入れてただけだったが、これもグローバルに晒すため  window. を追加
+						}
+						// end of export
+
+			→index.js
+						import './effect/modernizr.custom.56320.js'										export もしていないがimportするだけで中身はロードされる
+						import fSNCJM from './effect/sncjm-min.js'
+						fSNCJM( )																						exportした無名関数を実行し、中身のクラスインスタンス取出している
+
 ３８．作業記録はmasterブランチだけにした
 
 ３７．プロジェクト全体におけるｊQueryについて

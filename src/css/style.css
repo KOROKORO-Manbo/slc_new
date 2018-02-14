@@ -523,6 +523,13 @@ transition: opacity 0.4s;
   margin: 0;
   padding: 0;
 }
+
+.topObi_container6 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
 div.elevit span {                                /* elevit 吹き出し部分 */
     display: none;
 }
