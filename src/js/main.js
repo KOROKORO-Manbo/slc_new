@@ -430,13 +430,13 @@ $(document).ready(function(){
       }
     });
 
-    // $('.topObi_container6').hover(
-    //   function(){$(".topObi_container6 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container6 .flip-back").addClass("perspectiveDown");},
-    //   function(){
-    //     $(".topObi_container6 .flip-back").removeClass("perspectiveDown");
-    //     $(".topObi_container6 .flip-back").addClass("perspectiveDownReturn");
-    //   }
-    // )
+    $('.topObi_container6').hover(
+      function(){$(".topObi_container6 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container6 .flip-back").addClass("perspectiveDown");},
+      function(){
+        $(".topObi_container6 .flip-back").removeClass("perspectiveDown");
+        $(".topObi_container6 .flip-back").addClass("perspectiveDownReturn");
+      }
+    )
     $(".topObi_container6 .flip-back").on('webkitAnimationEnd', function(){
       if($(".topObi_container6 .flip-back").hasClass('perspectiveDownReturn')){
           return $(".topObi_container6 .flip-back").removeClass('perspectiveDownReturn');
