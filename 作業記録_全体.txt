@@ -65,7 +65,7 @@ rm
 			→index.js
 						import './effect/modernizr.custom.56320.js'										export もしていないがimportするだけで中身はロードされる
 						import fSNCJM from './effect/sncjm-min.js'
-						fSNCJM( )																						exportした無名関数を実行し、中身のクラスインスタンス取出している
+						fSNCJM( )																						exportした無名関数を実行し、中身のクラスインスタンス : window._util を取出している
 
 ３８．作業記録はmasterブランチだけにした
 
