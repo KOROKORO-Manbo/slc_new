@@ -49,6 +49,29 @@
 					上記のライブラリ群は、wepack 対策として内容をexportしていたりするので、./src/index.html の方で読み込んでもエラーになるので
 					デバッグなどの検証はコード変更後、ビルドして./build/の方で確認すること
 					
+		◯ 葉、雨効果のどちらかへの絞込・・・./js/effect/main.js ＃４９８
+						・・・
+																		// ↓ 元は以下の雨か葉の分岐になる所だがココでは葉のみにした
+			      this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf");  
+			      // this._type === 0 ? this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf") : this._effect = new e.LUANA_CLASS.rainView(this._elm, this._elmId + "_rain");
+			      this._effect.add();
+			      return this._effect.onComplete = this._completeEffect
+			    };
+			    t.prototype._completeEffect = function () {
+			      this._type = this._type === 0 ? 1 : 0;     // this._type =  0; ずっと葉っぱにするとき
+							・・・											// ただここで絞り込むと最初の一回のエフェクトは雨か葉かどちらががランダムに出るので上記の部分で固定化する
+
+
+		◯ 葉っぱの出現位置の調整（元は両サイド配置を中央配置にする）・・・./js/effect/main.js ＃５５０		
+						・・・
+			      s = e.LUANA.main.ws.w/2;			// 基準になる横位置を画面中央にする
+			      t = e.LUANA.main.ws.h;
+			      i = 70;												// 左右に散らす範囲を％指定する
+			      n = 0;
+			      while (n < this._num) {
+			        o = n % 2 === 0 ? s + i : s - i;		// 画面中央を基準に葉の偶数奇数で左右に散らす
+        
+        
 ３９．jQueryライブラリのバンドル後、不具合修正
 			→InView
 				このライブラリは単にグローバルのjQueryをひろってきて利用している形式で、とくにグローバルにオブジェクト名などの
