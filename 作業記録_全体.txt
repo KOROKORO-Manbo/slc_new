@@ -35,7 +35,20 @@
 			      }
 			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
 			    };
-    
+
+	  ◯雨、葉効果の追加について（SLCプロジェクトにおいての注意）
+	  		・LUANAから抜き出し、機能をシンプル化したものの元は右のページアイデア　：		file:///Users/UKONN/Desktop/ページアイデア/template/luana/index.html
+	  		・追加手順は以下の２つだけ
+	  				HTML			<div id="effectLayer"></div>
+	  				ライブラリ	
+									  <script type="text/javascript" src="./js/effect/modernizr.custom.56320.js"></script>
+									  <script type="text/javascript" src="./js/effect/jquery.easing.1.3.js"></script>
+									  <script type="text/javascript" src="./js/effect/sncjm-min.js"></script>
+									  <script type="text/javascript" src="./js/effect/main.js"></script>
+			・SLCプロジェクトにおいての注意						  
+					上記のライブラリ群は、wepack 対策として内容をexportしていたりするので、./src/index.html の方で読み込んでもエラーになるので
+					デバッグなどの検証はコード変更後、ビルドして./build/の方で確認すること
+					
 ３９．jQueryライブラリのバンドル後、不具合修正
 			→InView
 				このライブラリは単にグローバルのjQueryをひろってきて利用している形式で、とくにグローバルにオブジェクト名などの
