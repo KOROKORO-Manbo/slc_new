@@ -240,12 +240,12 @@
   e.LUANA_CLASS.contentsView = function () {
     function t() {
       var n = this;
-      this._completePanel = function () {
-        return t.prototype._completePanel.apply(n, arguments)
-      };
-      this._completeHeader = function () {
-        return t.prototype._completeHeader.apply(n, arguments)
-      };
+      // this._completePanel = function () {
+      //   return t.prototype._completePanel.apply(n, arguments)
+      // };
+      // this._completeHeader = function () {
+      //   return t.prototype._completeHeader.apply(n, arguments)
+      // };
       this.resize = function () {
         return t.prototype.resize.apply(n, arguments)
       };
@@ -317,7 +317,7 @@
       // this._info.add();
 
       t = new e.LUANA_CLASS.effectView($("body"), "effect");    // 本来this._header.onCompleteハンドラ内で実行されるものだが
-      return t.add()                                            // headerは追加しないで効果だけを発言するようにここに持ってきた
+      return t.add()                                            // headerは追加しないで効果だけを発現するようにここに持ってきた
 
       e.LUANA.main.addResize(this.resize, !0);
       return $("body").css("overflow-x", "visible")
@@ -469,7 +469,7 @@
       this._elmId = n;
       this._elm;
       this._type = 0;
-      this._delay = 10;   //15e3
+      this._delay = 1500;   //15e3
       this._timer;
       this._effect;
       this._init()
@@ -495,12 +495,13 @@
         this._effect.del();
         this._effect = null
       }
-      this._type === 0 ? this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf") : this._effect = new e.LUANA_CLASS.rainView(this._elm, this._elmId + "_rain");
+      this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf");  // ココは以下の雨か葉の分岐になるがココでは葉のみにした
+      // this._type === 0 ? this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf") : this._effect = new e.LUANA_CLASS.rainView(this._elm, this._elmId + "_rain");
       this._effect.add();
       return this._effect.onComplete = this._completeEffect
     };
     t.prototype._completeEffect = function () {
-      this._type = this._type === 0 ? 1 : 0;     // this._type =  0; ずっと葉っぱにするとき
+      this._type = this._type === 0 ? 1 : 0;     // this._type =  0; ずっと葉っぱにするとき・・・ただここで絞り込むと最初の一回のエフェクトは雨か葉かどちらががランダムに出るので上記の部分で固定化する
       if (this._timer != null) {
         clearTimeout(this._timer);
         this._timer = null
@@ -509,7 +510,7 @@
         this._effect.del();
         this._effect = null
       }
-      return this._timer = setTimeout(this._startEffect, this._delay)
+      return this._timer = setTimeout(this._startEffect, _util.random(100, 8000))   // ← 本来ここは「this._delay 」だったがエフェクトの間隔をランダムにするようにした
     };
     t.prototype.update = function () {};
     t.prototype.resize = function () {};
@@ -525,7 +526,7 @@
       this._parent = e;
       this._elmId = n;
       this._elm;
-      this._num = 10;
+      this._num = 15;
       this._isUpdate = !0;
       this._list = [];
       this.onComplete;
@@ -546,12 +547,12 @@
         top: 0,
         left: 0
       });
-      s = e.LUANA.main.ws.w;
+      s = e.LUANA.main.ws.w/2;
       t = e.LUANA.main.ws.h;
       i = 50;
       n = 0;
       while (n < this._num) {
-        o = n % 2 === 0 ? i : s - i;
+        o = n % 2 === 0 ? s + i : s - i;
         o += _util.range(200);
         r = new e.LUANA_CLASS.leafParts(this._elm, n);
         r.add(o, t + 300);
@@ -630,10 +631,10 @@
         top: n,
         left: t
       });
-      this._anm.x = _util.range(100);
+      this._anm.x = _util.range(300);              // 配置の横範囲　　３００％の意味になると思われる
       this._anm.y = _util.range(100);
       this._anm.r = _util.range(100);
-      this._anm.s = _util.random(60, 100) / 100;
+      this._anm.s = _util.random(60, 70) / 100;    // 拡大縮小に使われる数値
       this._anm.cnt = 0;
       this._anm.delay = _util.random(0, 20);
       this._anm.dead = !1;
@@ -654,7 +655,7 @@
         range: _util.random(20, 100),
         speed: _util.range(30) / 10
       }]);
-      r = "./images/effect/leaf" + String(_util.random(0, 3)) + ".png";
+      r = "./images/effect/leaf" + String(_util.random(0, 5)) + ".png";         // 葉の画像ファイル数
       this._elm.append(_util.tag("img", [{
         name: "src",
         val: r
@@ -673,7 +674,7 @@
       if (this._anm.dead) return;
       this._float.update();
       if (++this._anm.cnt >= this._anm.delay) {
-        this._anm.spdY += .35;
+        this._anm.spdY += .3;
         this._anm.bY -= this._anm.spdY;
         this._anm.bX += this._anm.spdX;
         this._elm.css(_util.getVendorCss("transform", _util.translate3d(this._anm.bX, this._anm.bY, 0, this._use3d)));
