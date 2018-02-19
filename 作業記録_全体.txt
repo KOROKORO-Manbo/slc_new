@@ -31,7 +31,7 @@
 			        this._anm.spdY += .3;
 			        this._anm.bY += this._anm.spdY;
 			        this._elm.css(_util.getVendorCss("transform", _util.translate3d(0, this._anm.bY, 0, this._use3d)));
-			        // this._anm.bY > e.LUANA.main.ws.h + 10 && (this._anm.dead = !0)  // 雨粒ごとに画面高さ＋いくつでデッド判定するか
+			        // this._anm.bY > e.LUANA.main.ws.h + 10 && (this._anm.dead = !0)  // 雨粒ごとに画面高さ＋いくつでデッド判定するか（ココは判定しなくしたのでコメントアウト）
 			      }
 			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
 			    };
