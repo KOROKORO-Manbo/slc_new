@@ -73,14 +73,34 @@
         
         
 ３９．jQueryライブラリのバンドル後、不具合修正
-			→InView
+			→ jquery.inview.js
 				このライブラリは単にグローバルのjQueryをひろってきて利用している形式で、とくにグローバルにオブジェクト名などの
 				名前空間を晒し、メイン側からそれ経由で機能を利用するという形式ではなかったので、単にimportしても機能しなかった
 				そこで・・・
 				全体を ’ export default () => { ... } ’ で囲って、import myInview from './jquery.inview.min.export.js'として
 				index.js 内で myInview( ) と実行し機能を追加した   ^^^^^^^^
 				                     ^^^^^^^^^^^
-			rainySeasonブランチのみ
+			→その他、JQ用ライブラリによくあるパターン・・・そこにある（はずの）jQueryを取ってきて機能追加するというパターン
+				例）jquery.prettynumber.js： 仕様解説＝https://tympanus.net/codrops/2010/01/03/prettynumber-a-jquery-plugin-for-formatting-numbers/
+																<div id="number1">1234567123672</div>　→　$("#number2").prettynumber({delimiter : ','});　→　 12,345,622,237,123,672
+							(function($) {
+								$.fn.prettynumber = function(options) {
+									var opts = $.extend({}, $.fn.prettynumber.defaults, options);
+									return this.each(function() {
+										$this = $(this);
+										var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+										var str = $this.html();
+										$this.html($this.html().toString().replace(new RegExp("(^\\d{"+($this.html().toString().length%3||-1)+"})(?=\\d{3})"),"$1"+o.delimiter).replace(/(\d{3})(?=\d)/g,"$1"+o.delimiter));
+									});
+								};
+								$.fn.prettynumber.defaults = {
+									delimiter       : '.'	
+								};
+							})(jQuery);										← 即時関数の引数にjQueryを渡して中でjQueryのprototypeにメンバを追加している
+							
+							
+			以下はrainySeasonブランチのみ
+			ーーーーーーーーーーーーーーー
 			→Modernizr
 						window.Modernizr = function (a, b, c) {
 								...
