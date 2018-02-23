@@ -510,7 +510,7 @@
         this._effect.del();
         this._effect = null
       }
-      return this._timer = setTimeout(this._startEffect, _util.random(100, 8000))   // ← 本来ここは「this._delay 」だったがエフェクトの間隔をランダムにするようにした
+      return this._timer = setTimeout(this._startEffect, _util.random(1000, 15000))   // ← 本来ここは「this._delay 」だったがエフェクトの間隔をランダムにするようにした
     };
     t.prototype.update = function () {};
     t.prototype.resize = function () {};
