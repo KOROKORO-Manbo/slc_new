@@ -1,14 +1,14 @@
 
-作業記録の順はこれが最初で、次にWebPackフォルダ以下のもので、その次にWebPackReMake版のものを順に読んでいくと時系列的に合う
-実際、完成順は、
-			project JQMobile版⇒　project_slidePro&非WebPack_all.jsバンドル版⇒　project_webpack⇒　project_webpackReMake　
-となっている
+いろいろフォルダはあるが、実際、完成順は、project JQMobile版⇒　project_slidePro&非WebPack_all.jsバンドル版⇒　project_webpack⇒　project_webpackReMake　となっている
+全体を通してのページ構成の変更や追加はここについかしていく。
 
-ただ、WebPack版、WebPackReMake版ともにそのパック化時の問題点、注意点のことだけなので
-ページ構成の変更や追加は相変わらずここについかしていく
+（注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
+　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
+
+
 
 ４２．太陽に雨雲をセットした手順
-			HTML
+			HTML（こういうのを./build/ の方に追加し忘れないように）
 				太陽のコンテナである div.sunSet の中に雨パーティクル要素と雲画像要素を含んだコンテナ .rainyCloudContainer を置く
 				（あくまで雨降パーティクル要素のDOMセットは太陽のコンテナ内で子として置いた）
 			CSS
