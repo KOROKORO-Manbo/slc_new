@@ -620,7 +620,7 @@ div.elevit span:before{
 }
 /* 太陽 */
 #page1 .sunSet{
-    margin-top: -110px;
+    margin-top: -170px;
     position: absolute;
     width: 164px;
     height: 163px;
@@ -1928,3 +1928,77 @@ li img{ margin-top: 8px; margin-left: 10px;}
 .fr-dialogmodal--is-ready[aria-hidden="false"] {
 	visibility: visible;
 }*/
+
+
+/* 太陽にかける雨雲とそのパーティクルのアニメーション*/
+.rainyCloudContainer {
+  position: absolute;
+  /* margin-left: calc((100vw - 250px)/2); */
+  top: 110px;
+  left: -30px;
+  /* border: 0.1rem solid pink; */
+  width: 250px;
+  height: 300px;
+  text-align: center;
+}
+.particletext {
+  width: 250px;
+  height: 250px;
+  padding-top: 25px;
+  padding-left: 7px;
+  color: #544;
+  text-align: center;
+  font-size: 48px;
+  position: relative;
+}
+.rainyCloud{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-image: url("../images/rainyCloud.png");
+  background-size: cover;
+}
+.particletext.bubbles > .particle {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(33, 150, 243, 0.5);
+  -webkit-animation: bubbles 1.4s ease-in infinite;
+          animation: bubbles 1.4s ease-in infinite;
+  border-radius: 100%;
+}
+
+@-webkit-keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 2000%);
+            transform: translate(0, 2000%);
+  }
+}
+
+@keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 2000%);
+            transform: translate(0, 2000%);
+  }
+}
+
+/* ↑ココまで　太陽にかける雨雲とそのパーティクルのアニメーション*/

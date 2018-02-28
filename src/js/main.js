@@ -507,4 +507,23 @@ $(document).ready(function(){
     	});
     });
 
+
+    function initparticles() {                                          // 雨降りパーティクル要素の動的追加
+       bubbles();
+    }
+    function bubbles() {
+       $.each($(".particletext.bubbles"), function(){
+          var bubblecount = ($(this).width()/50)*10;  // 雨の数
+          for(var i = 0; i <= bubblecount; i++) {
+             var size =　($.rnd(40,80)/10);           // 雨発生位置（縦）　　　　　　　　　　（横）
+             $(this).append('<span class="particle" style="top:' + $.rnd(30,40) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+          }
+       });
+    }
+    jQuery.rnd = function(m,n) {
+          m = parseInt(m);
+          n = parseInt(n);
+          return Math.floor( Math.random() * (n - m + 1) ) + m;
+    }
+    initparticles();
 }); /* end of $(document).ready() */
