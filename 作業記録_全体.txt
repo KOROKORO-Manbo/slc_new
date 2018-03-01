@@ -6,6 +6,13 @@
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
 
+４３．波文字を切り株の代わりに配置（rainySeasonブランチ）
+			HTML				div.waveContainerをindex.htmlのdiv.bbs_wrapper配下のaタグ内に置く
+			CSS					最後部に .waveContainer の定義を置く
+			画像ファイル	fukidasi.pngを./images/配下に設置
+			HTML				./build/index.htmlに以下のmini状態の波文字要素セットを div.kirikabu に変えて設置する
+										<div class="waveContainer"><svg viewbox="25 10 55 40"><defs><linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1"><stop offset="20%" stop-color="#53aef1"/><stop offset="100%" stop-color="#123752"/></linearGradient><pattern id="wave" x="0" y="-8.0" width="190" height="19.2" patternUnits="userSpaceOnUse"><path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"><animateTransform  attributeName="transform" begin="0s" dur="1.5s" type="translate" from="0,0" to="40,0" repeatCount="indefinite" /></path></pattern></defs><text text-anchor="middle" x="50" y="29" font-size="18" fill="url(#wave)"  fill-opacity="0.8">掲示板</text><text text-anchor="middle" x="50" y="29" font-size="18" fill="url(#gradient)" fill-opacity="0.1">掲示板</text></svg></div>
+			位置調整			クジラを右上に、パンダとうさぎを右に、像を左にずらす
 
 ４２．太陽に雨雲をセットした手順
 			HTML（こういうのを./build/ の方に追加し忘れないように）
