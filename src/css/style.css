@@ -778,7 +778,7 @@ div.elevit span:before{
 .flipContainer{
   position: absolute;
   margin-top: 400px;
-  margin-left: 740px;
+  margin-left: 760px;
   cursor: default;
 }
 .flip{
@@ -922,8 +922,8 @@ background-repeat: no-repeat;
 /* 外来混雑状況 */
 .kujiraContainer{
   position: absolute;
-  top: 20px;
-  left: 290px;
+  top: -40px;
+  left: 220px;
   width: 376px;
   height: 480px;
 }
@@ -969,7 +969,7 @@ background-repeat: no-repeat;
 /* 当院情報 */
 .touinJoho_wrapper {
   position: absolute;
-  left:110px;
+  left:80px;
   top:520px;
   width: 274px;
   height: 216px;
@@ -1834,7 +1834,7 @@ svg {
   #CalWrapper{
   	position: absolute;			/*カレンダー部分はopacityゼロなだけで存在するので、この上側はHoverものは無反応になるのでこの位置（Clickものは反応する）*/
   	top: -40px;
-  	left: 100px;
+  	left: 50px;
     /*right:160px;*/
   	width: 300px;
   	height: 505px;
@@ -2002,3 +2002,38 @@ li img{ margin-top: 8px; margin-left: 10px;}
 }
 
 /* ↑ココまで　太陽にかける雨雲とそのパーティクルのアニメーション*/
+
+
+.waveContainer {
+  margin-left: -50px;
+  margin-top: -100px;
+  position: relative;
+/*   background-color: rgb(191, 250, 48); */
+  background-image: url('../images/fukidasi.png');
+  background-position: left top;
+  background-size: cover;
+  height: 305px;
+  width: 440px;
+}
+svg{
+  font-weight:bold;
+  max-width:300px;
+  height:auto;
+  padding-left: 55px;
+  padding-top: 110px;
+}
+text {
+  position: absolute;
+  top:100px;
+}
+
+.waveContainer:hover {
+  margin-left: -50px;
+  margin-top: -100px;
+  position: relative;
+/*   background-color: rgb(191, 250, 48); */
+  background-image: url('../images/fukidasiHover.png');
+  background-position: left top;
+  background-size: cover;
+  height: 305px;
+  width: 440px;}

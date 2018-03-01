@@ -70,7 +70,40 @@
           </div>
 
           <div class="bbs_wrapper">                                                                    <!-- BBS -->
-            <a href="http://slc-mie.com/cgi-local/imode/pc_ezimode.cgi" target="_blank"><div class="kirikabu"></div></a>
+            <a href="http://slc-mie.com/cgi-local/imode/pc_ezimode.cgi" target="_blank">
+              <!-- <div class="kirikabu"></div> -->
+              <div class="waveContainer">
+                <svg viewbox="25 10 55 40">
+                  <defs>
+                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="20%" stop-color="#53aef1"/>
+                      <stop offset="100%" stop-color="#123752"/>    <!---->
+                    </linearGradient>
+
+                  <!--
+                    textタグのfont-sizeを大きくしたりした時に、文字の上からグラデの終端色がかぶさってきてしまう時の対処　
+                    y のマイナスを大きく開始を上に上げつつheightを大きくして足元が切れないように調整する
+                  -->
+                    <pattern id="wave" x="0" y="-8.0" width="190" height="19.2" patternUnits="userSpaceOnUse">
+                      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                            mask="url(#mask)"
+                            fill="url(#gradient)">
+                        <animateTransform
+                            attributeName="transform"
+                            begin="0s"
+                            dur="1.5s"
+                            type="translate"
+                            from="0,0"
+                            to="40,0"
+                            repeatCount="indefinite" />
+                      </path>
+                    </pattern>
+                  </defs>
+                  <text text-anchor="middle" x="50" y="29" font-size="18" fill="url(#wave)"  fill-opacity="0.8">掲示板</text><!--yの値：SLC文字の縦位置-->
+                  <text text-anchor="middle" x="50" y="29" font-size="18" fill="url(#gradient)" fill-opacity="0.1">掲示板</text>
+                </svg>
+              </div>
+            </a>
           </div>
 
           <div class="view view-fourth">                                                              <!-- 外来担当医 -->
