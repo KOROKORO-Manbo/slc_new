@@ -361,9 +361,10 @@ $(document).ready(function(){
         window.localStorage.setItem("todo-first20170319", true);
       }
     });
-    $('.closeBTN').click(function(e){
-      $('.modal-window').hide();
-    });
+    // $('.closeBTN').click(function(e){
+    //   letitsnow2();
+    //   $('.modal-window').hide();
+    // });
 
     $('.topObi_container1').hover(                                 // topObi内リンクボタンアニメ用
       function(){$(".topObi_container1 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container1 .flip-back").addClass("perspectiveDown");},
