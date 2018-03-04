@@ -10,5 +10,10 @@ import '../calendar/jquery.sliderPro.min.js'
 import './jquery.prettyPhoto.js'
 import './jquery.pretty_main.js'
 
-
 myInview()
+
+import './xmas_effect/rectangleEmitter.js'
+import './xmas_effect/snow.js'
+import myClassie from './xmas_effect/classie.js'
+// import './xmas_effect/main.js'
+myClassie()

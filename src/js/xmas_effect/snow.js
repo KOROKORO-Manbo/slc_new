@@ -1,4 +1,4 @@
-var snow = {
+window.snow = {
 	/**
 	 * float  The current x position
 	 */
@@ -103,7 +103,7 @@ var snow = {
 	}
 };
 
-var snow_slow = {
+window.snow_slow = {
 	/**
 	 * float  The current x position
 	 */

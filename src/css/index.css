@@ -2,3 +2,8 @@
 @import url(./pretty_index.css);
 @import url(./style.css);
 @import url(./flip_stetch.css);
+
+
+@import url(./xmas/normalize.css);
+@import url(./xmas/demo.css);
+/* @import url(./xmas/component.css); */

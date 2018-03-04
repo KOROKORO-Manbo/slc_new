@@ -1,4 +1,4 @@
-var rectangleEmitter = {
+window.rectangleEmitter = {
 	/**
 	 * The canvas object
 	 */
