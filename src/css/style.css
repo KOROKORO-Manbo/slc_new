@@ -1057,9 +1057,11 @@ background-repeat: no-repeat;
   height: 355px;
   background: url('../images/sakura_base.png');
 }
-.kirikabu .keijiban{
+.kirikabu .sakura .keijiban{
   position: relative;
   content: url('../images/keijiban.png');
+  width:310px;
+  height:74px;
   top: 100px;
   left:10px;
   animation: rotate 2s infinite;
