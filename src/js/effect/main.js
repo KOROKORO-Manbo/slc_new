@@ -162,6 +162,7 @@
       var t, n, r, i, s, o;
       $("body").css("overflow-x", "hidden");
       this._elm = $("#effectLayer");
+      // console.log(this._elm );
       this._elm.css({
         position: "absolute",
         top: 60,
