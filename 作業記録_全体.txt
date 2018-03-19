@@ -125,7 +125,8 @@
 									delimiter       : '.'	
 								};
 							})(jQuery);										← 即時関数の引数にjQueryを渡して中でjQueryのprototypeにメンバを追加している
-							
+																						（WebPackなどでバンドルした時、ライブラリがモジュール単位に閉じ込められるので
+																							’ jQuery’ が定義されてて、その名の解決ができているか・・・npmインストのjQueryが見えるようにしてあるとかなど）
 							
 			以下はrainySeasonブランチのみ
 			ーーーーーーーーーーーーーーー
@@ -150,6 +151,12 @@
 						import './effect/modernizr.custom.56320.js'										export もしていないがimportするだけで中身はロードされる
 						import fSNCJM from './effect/sncjm-min.js'					
 						fSNCJM( )																						exportした無名関数を実行し、中身のクラスインスタンス : window._util を取出している
+				
+				グローバルに晒すのではなくモジュールと
+				それを使うモジュール間で解決させるパターン・・・グローバルに晒すのではなく、import/exportで2者間のみで受け渡しする形式
+				ーーーーーーーーーーーーーーーーーーーーー
+					以下の記録を参照！
+					//WebPack/WebPack基本/【０重要：WebPackライブラリとスコープ】/ビルド後ライブラリ参照エラー回避例/ビルド後ライブラリ参照エラー回避例.txt
 		 
 ３８．作業記録はmasterブランチだけにした
 
