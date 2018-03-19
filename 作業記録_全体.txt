@@ -35,11 +35,11 @@
 			・これらボタンおコンテナーは .topBtns で  width:600px; としているが状況に合わせて変更すること
 			・フリップダウンの動きはCSSクラスをJSで付与・削除しているので、追加時はそちらもおこなうこと（忘れてて解決に時間がかかったことがあった）
 			
-４０．ページ全体雨効果調整（rainySeasonブランチ）
+４０．雨効果調整（rainySeasonブランチ）
 			雨エフェクトビュー要素の生成＆削除のプロセスの間隔が長く、画面に雨のない時間が長くなるので
 			以下のように、一度生成した雨効果セットの要素は削除せずに、各雨粒要素が画面下まで来たら元位置に戻す方法に変えた
 			（デッド判定をせずに、デッド該当で元位置に戻す）その時、X軸方向はランダムに変更して、パターンが同じにならないようにした
-			
+
 			    t.prototype.update = function () {
 			      if (this._anm.bY > e.LUANA.main.ws.h + 100) {								// if (this._anm.dead) { return; }　元は、個別に雨粒を見て、デッドの場合、他の雨粒も全部デッドになるまでreturnしていた
 			        this._anm.spdY = 0;																			// デッド判定で縦位置とスピードをもとに戻し、
@@ -47,17 +47,17 @@
 			        var maxRange = $(window).width();
 			        this._img.css({left: _util.random(-100, maxRange)});						// 横位置はランダムに変更する（対象は雨粒画像のラッパー要素のthis.img）
 			        return;
-			      }
+			      }																											// ここまでが追加した文で、あとは以下のコメントアウトの部分（デッド判定しないようにした）
 			      this._float.update();
 			      if (++this._anm.cnt >= this._anm.delay) {
 			        this._anm.spdY += .3;
 			        this._anm.bY += this._anm.spdY;
 			        this._elm.css(_util.getVendorCss("transform", _util.translate3d(0, this._anm.bY, 0, this._use3d)));
-			        // this._anm.bY > e.LUANA.main.ws.h + 10 && (this._anm.dead = !0)  // 雨粒ごとに画面高さ＋いくつでデッド判定するか（ココは判定しなくしたのでコメントアウト）
+			        // this._anm.bY > e.LUANA.main.ws.h + 10 && (this._anm.dead = !0)  // 雨粒ごとに画面高さ＋いくつでデッド判定するか
 			      }
 			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
 			    };
-
+			    
 	  ◯雨、葉効果の追加について（SLCプロジェクトにおいての注意）
 	  		・LUANAから抜き出し、機能をシンプル化したものの元は右のページアイデア　：		file:///Users/UKONN/Desktop/ページアイデア/template/luana/index.html
 	  		・追加手順は以下の２つだけ
