@@ -35,8 +35,23 @@
 			・これらボタンおコンテナーは .topBtns で  width:600px; としているが状況に合わせて変更すること
 			・フリップダウンの動きはCSSクラスをJSで付与・削除しているので、追加時はそちらもおこなうこと（忘れてて解決に時間がかかったことがあった）
 			
-４０．雨効果調整（rainySeasonブランチ）　全体的な内容把握は「//Desktop/ページアイデア/template/luanaluanaポイント.txt」参照
-			雨エフェクトビュー要素の生成＆削除のプロセスの間隔が長く、画面に雨のない時間が長くなるので
+４０．雨効果調整（rainySeasonブランチ）　全体の基本的内容把握＝＞「//Desktop/ページアイデア/template/luanaluanaポイント.txt」参照
+			（ポイント点＝効果を載せるDOMがどう生成されているか、効果を雨か葉にしぼる、効果発現の間隔を調整する）
+			    
+	  ◯雨、葉効果の追加について（SLCプロジェクトにおいての注意）
+	  		・LUANAから抜き出し、機能をシンプル化したものの元は右のページアイデア　：		file:///Users/UKONN/Desktop/ページアイデア/template/luana/index.html
+	  		・追加手順は以下の１つだけ
+	  				HTML			スクリプト内で動的に生成されるので何も要らない　当初右のような要素が必要と勘違いしていた ⇒ <div id="effectLayer"></div>
+	  				ライブラリ	
+									  <script type="text/javascript" src="./js/effect/modernizr.custom.56320.js"></script>
+									  <script type="text/javascript" src="./js/effect/jquery.easing.1.3.js"></script>
+									  <script type="text/javascript" src="./js/effect/sncjm-min.js"></script>
+									  <script type="text/javascript" src="./js/effect/main.js"></script>
+			・このSLCプロジェクトにおいての注意						  
+					上記のライブラリ群は、wepack 対策として内容をexportしていたりするので、./src/index.html の方で読み込んでもエラーになるので
+					デバッグなどの検証はコード変更後、ビルドして./build/の方で確認すること
+					
+		◯雨エフェクトビュー要素管理クラス内の生成＆削除のプロセスの間隔が長く、画面に雨のない時間が長くなるので
 			以下のように、一度生成した雨効果セットの要素は削除せずに、各雨粒要素が画面下まで来たら元位置に戻す方法に変えた
 			（デッド判定をせずに、デッド該当で元位置に戻す）その時、X軸方向はランダムに変更して、パターンが同じにならないようにした
 			main.js#403
@@ -47,7 +62,7 @@
 			        var maxRange = $(window).width();
 			        this._img.css({left: _util.random(-100, maxRange)});						// 横位置はランダムに変更する（対象は雨粒画像のラッパー要素のthis.img）
 			        return;
-			      }																											// ここまでが追加した文で、あとは以下のコメントアウトの部分（デッド判定しないようにした）
+			      }																											// ↑ ここまでが追加した文で、あとの変更は以下のコメントアウトの部分（デッド判定しないようにした）
 			      this._float.update();
 			      if (++this._anm.cnt >= this._anm.delay) {
 			        this._anm.spdY += .3;
@@ -57,19 +72,7 @@
 			      }
 			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
 			    };
-			    
-	  ◯雨、葉効果の追加について（SLCプロジェクトにおいての注意）
-	  		・LUANAから抜き出し、機能をシンプル化したものの元は右のページアイデア　：		file:///Users/UKONN/Desktop/ページアイデア/template/luana/index.html
-	  		・追加手順は以下の２つだけ
-	  				HTML			<div id="effectLayer"></div>
-	  				ライブラリ	
-									  <script type="text/javascript" src="./js/effect/modernizr.custom.56320.js"></script>
-									  <script type="text/javascript" src="./js/effect/jquery.easing.1.3.js"></script>
-									  <script type="text/javascript" src="./js/effect/sncjm-min.js"></script>
-									  <script type="text/javascript" src="./js/effect/main.js"></script>
-			・SLCプロジェクトにおいての注意						  
-					上記のライブラリ群は、wepack 対策として内容をexportしていたりするので、./src/index.html の方で読み込んでもエラーになるので
-					デバッグなどの検証はコード変更後、ビルドして./build/の方で確認すること
+
 					
 		◯ 葉、雨効果のどちらかへの絞込・・・./js/effect/main.js ＃４９８
 						・・・
