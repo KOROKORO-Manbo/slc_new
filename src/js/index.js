@@ -12,3 +12,10 @@ import './jquery.pretty_main.js'
 
 
 myInview()
+
+//effect
+import './effect/jquery.easing.1.3.js'
+import './effect/modernizr.custom.56320.js'
+import fSNCJM from './effect/sncjm-min.js'
+fSNCJM()    // sncjmの_utilを得るための実行（main.js内で使われている）  window._util = new SNCJM.util;
+import './effect/main.js'
