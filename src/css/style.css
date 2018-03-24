@@ -1033,15 +1033,34 @@ background-repeat: no-repeat;
   height: 164px;
 }
 .kirikabu{
-  margin: 0px;
+  margin-top: -100px;
   padding: 0px;
-  width: 307px;
+  /* width: 307px;
   height: 164px;
   transform: rotateZ(-5deg);
   background-image: url(../img/page1/kirikabu.png);
-  background-size: cover;
+  background-size: cover; */
 }
-
+.icyLetter {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-image: url('../images/effect/koori400.png');
+}
+.icyLetter:after {
+  content: url();
+  margin: 10px;
+  position: relative;
+  top: 8px;
+}
+.icyLetter #effectContainer {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  width:330px;
+  height:330px;
+  overflow: hidden;
+}
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
 #page2{
