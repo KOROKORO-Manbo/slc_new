@@ -1937,3 +1937,84 @@ li img{ margin-top: 8px; margin-left: 10px;}
 .fr-dialogmodal--is-ready[aria-hidden="false"] {
 	visibility: visible;
 }*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+.BBStext {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  position: absolute;
+  top: 90px;
+  left: -10px;
+  width: 190px;
+  height: 146px;
+  /* left: 50%;
+  margin-left: -225px;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: 100px; */
+  transform: rotate(-30deg);
+  /* background-color: rgba(255, 200, 0, 0.5); */
+  background-image: url(../images/effect/BBSkanban.png);
+  background-repeat: no-repeat;
+}
+
+.BBStext p {
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.BBStext .word {
+  position: absolute;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: -75px;
+  opacity: 0;
+}
+
+.BBStext .letter {
+  position: relative;
+  display: inline-block;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+
+.BBStext .letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.BBStext .letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.BBStext .letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.BBStext .wisteria {
+  color: #8e44ad;
+}
+
+.BBStext .belize {
+  color: #2980b9;
+}
+
+.BBStext .pomegranate {
+  color: #c0392b;
+}
+
+.BBStext .green {
+  color: #16a085;
+  margin-left: 0px;
+}
+
+.BBStext .midnight {
+  color: #ff1493;
+  margin-left: 0px;
+}
