@@ -1,0 +1,507 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://gimp.blog.shinobi.jp/Entry/14/ -->
+<HTML lang=ja><HEAD><TITLE>氷った雰囲気の文字 ≫ テキスト | GIMP思い込みチュートリアル（GIMPの使い方）</TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META content=text/css http-equiv=Content-Style-Type>
+<META content=text/javascript http-equiv=Content-Script-Type>
+<META name=keywords 
+content=gimp,使い方,日本語,windows,ダウンロード,portable,プラグイン,チュートリアル,マニュアル,フリーソフト><LINK 
+rel=stylesheet type=text/css href="氷った文字.files/css.css"><LINK title=RSS 
+rel=alternate type=application/rss+xml 
+href="http://gimp.blog.shinobi.jp/RSS/"><LINK title=ATOM rel=alternate 
+type=application/atom+xml href="http://gimp.blog.shinobi.jp/ATOM/">
+<SCRIPT type=text/javascript src="氷った文字.files/jquery-1.4.2.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/function090312.js"></SCRIPT>
+
+<META content=GIMP思い込みチュートリアル（GIMPの使い方） property="og:title">
+<META content=website property="og:type">
+<META content=http://gimp.blog.shinobi.jp/ property="og:url">
+<META content="" property="og:image">
+<META content=GIMP思い込みチュートリアル property="og:site_name">
+<META content=100002160003403 property="fb:admins">
+<META name=GENERATOR content="MSHTML 9.00.8112.16443"></HEAD>
+<BODY><A 
+style="BORDER-BOTTOM: 0px; POSITION: absolute; BORDER-LEFT: 0px; BORDER-TOP: 0px; RIGHT: 5px; BORDER-RIGHT: 0px; TOP: 5px" 
+href="http://www.ninja.co.jp/blog/" target=_blank><IMG border=0 alt=忍者ブログ 
+src="氷った文字.files/blogheader_logo.png"></A><!--Facebook-->
+<DIV id=fb-root></DIV>
+<SCRIPT>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</SCRIPT>
+<!--Facebook--><A name=ThisPageTop></A>
+<DIV id=EntryPageBlogTitle><A href="http://gimp.blog.shinobi.jp/"><IMG 
+alt=GIMP思い込みチュートリアルGIMPの使い方 src="氷った文字.files/title01.png"></A> </DIV>
+<P 
+class=BlogDescription>画像編集ソフト<STRONG>GIMP</STRONG>の使い方（チュートリアル）を中心に、GIMPに関する事を書いています。<BR>思い込みで書いている部分もあると思いますので、コメントでのご指摘、随時募集中です。</P>
+<DIV id=TopAdGoogle>
+<SCRIPT type=text/javascript><!--
+			google_ad_client = "pub-9342888814501371";
+			/* 728x15GIMP_BGC333333 */
+			google_ad_slot = "3559130586";
+			google_ad_width = 728;
+			google_ad_height = 15;
+			//-->
+			</SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/show_ads.js">
+			</SCRIPT>
+</DIV><!--/id="TopAdGoogle"-->
+<DIV class=TopBlogNavi><B>ブログ内検索</B> 
+<FORM id=cse-search-box action=http://www.google.co.jp/cse>
+<DIV><INPUT name=cx value=partner-pub-9342888814501371:fbce8lqcces type=hidden> 
+<INPUT name=ie value=UTF-8 type=hidden> <INPUT name=q size=60> <INPUT name=sa value=検索 type=submit> </DIV></FORM>
+<SCRIPT type=text/javascript src="氷った文字.files/brand.js"></SCRIPT>
+</DIV>
+<DIV class=TopBlogNavi><B>カテゴリー</B> 
+<FORM><SELECT onchange="location.href = value;"> <OPTION 
+  selected>クリックして選択</OPTION> <OPTION class=CatTitle>チュートリアル</OPTION> <OPTION 
+  class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/3/>ロゴ・ボタン・アイコン</OPTION> <OPTION 
+  class=CatElement value=http://gimp.blog.shinobi.jp/Category/8/>テキスト</OPTION> 
+  <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/6/>画像描画</OPTION> <OPTION 
+  class=CatElement value=http://gimp.blog.shinobi.jp/Category/2/>写真加工</OPTION> 
+  <OPTION class=CatTitle>GIMP関連</OPTION> <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/7/>GIMPの基本</OPTION> <OPTION 
+  class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/13/>GIMPリリース情報</OPTION> <OPTION 
+  class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/4/>GIMP関連事項</OPTION> <OPTION 
+  class=CatTitle>追加機能</OPTION> <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/12/>ブラシ</OPTION> <OPTION 
+  class=CatElement value=http://gimp.blog.shinobi.jp/Category/14/>スクリプト</OPTION> 
+  <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/15/>パターン</OPTION> <OPTION 
+  class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/16/>グラデーション</OPTION> <OPTION 
+  class=CatTitle>その他</OPTION> <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/9/>他の画像編集ソフト</OPTION> <OPTION 
+  class=CatElement value=http://gimp.blog.shinobi.jp/Category/1/>管理人日記</OPTION> 
+  <OPTION class=CatElement 
+  value=http://gimp.blog.shinobi.jp/Category/10/>忍者ブログテンプレート</OPTION></SELECT> 
+</FORM></DIV>
+<DIV class=TopBlogNavi><B>月別記事一覧</B> 
+<FORM><SELECT onchange="location.href = value;"> <OPTION 
+  selected>クリックして選択</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/201111/1.html>2011年&nbsp;11月 
+  (1)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/201006/1.html>2010年&nbsp;06月 
+  (1)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/201005/1.html>2010年&nbsp;05月 
+  (4)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/201004/1.html>2010年&nbsp;04月 
+  (7)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/201001/1.html>2010年&nbsp;01月 
+  (6)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200912/1.html>2009年&nbsp;12月 
+  (2)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200909/1.html>2009年&nbsp;09月 
+  (1)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200908/1.html>2009年&nbsp;08月 
+  (2)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200906/1.html>2009年&nbsp;06月 
+  (1)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200905/1.html>2009年&nbsp;05月 
+  (3)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200904/1.html>2009年&nbsp;04月 
+  (5)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200903/1.html>2009年&nbsp;03月 
+  (9)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200902/1.html>2009年&nbsp;02月 
+  (10)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200901/1.html>2009年&nbsp;01月 
+  (10)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200812/1.html>2008年&nbsp;12月 
+  (12)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200811/1.html>2008年&nbsp;11月 
+  (11)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200810/1.html>2008年&nbsp;10月 
+  (27)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200809/1.html>2008年&nbsp;09月 
+  (3)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200808/1.html>2008年&nbsp;08月 
+  (2)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200806/1.html>2008年&nbsp;06月 
+  (17)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200805/1.html>2008年&nbsp;05月 
+  (15)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200804/1.html>2008年&nbsp;04月 
+  (15)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200803/1.html>2008年&nbsp;03月 
+  (23)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200802/1.html>2008年&nbsp;02月 
+  (10)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200801/1.html>2008年&nbsp;01月 
+  (9)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200712/1.html>2007年&nbsp;12月 
+  (8)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200711/1.html>2007年&nbsp;11月 
+  (10)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200710/1.html>2007年&nbsp;10月 
+  (9)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200709/1.html>2007年&nbsp;09月 
+  (4)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200708/1.html>2007年&nbsp;08月 
+  (2)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200707/1.html>2007年&nbsp;07月 
+  (2)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200706/1.html>2007年&nbsp;06月 
+  (18)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200705/1.html>2007年&nbsp;05月 
+  (3)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200704/1.html>2007年&nbsp;04月 
+  (17)</OPTION> <OPTION 
+  value=http://gimp.blog.shinobi.jp/Date/200703/1.html>2007年&nbsp;03月 
+  (4)</OPTION></SELECT> </FORM></DIV><NOSCRIPT></NOSCRIPT>
+<DIV class=TopBlogNavi_iine><A class=twitter-share-button 
+href="https://twitter.com/share" data-lang="ja" data-count="horizontal">ツイート</A>
+<SCRIPT type=text/javascript src="氷った文字.files/widgets.js"></SCRIPT>
+ </DIV>
+<DIV class=TopBlogNavi_iine>
+<DIV class=fb-like data-show-faces="true" data-width="130" 
+data-layout="button_count" data-send="false"></DIV></DIV>
+<UL id=PageNavi>
+  <LI class=Here>現在のページ位置 
+  <LI class=Here>： 
+  <LI><A href="http://gimp.blog.shinobi.jp/">ホーム</A> 
+  <LI>≫ 
+  <LI>カテゴリー「<A href="http://gimp.blog.shinobi.jp/Category/8/">テキスト</A>」 
+  <LI>≫ 
+  <LI class=Here>現在のページ </LI></UL><!--/class="PageNavi"-->
+<DIV id=EntryBlock><!--
+					<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+					  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+					  xmlns:dc="http://purl.org/dc/elements/1.1/">
+					<rdf:Description
+					  rdf:about="http://gimp.blog.shinobi.jp/Entry/14/"
+					  trackback:ping="http://gimp.blog.shinobi.jp/Trackback/14/"
+					  dc:title="氷った雰囲気の文字"
+					  dc:subject="テキスト"
+					  dc:date="2007-04-18T00:20:33+09:00"
+					  dc:description="今回は以下のページで紹介されているGIMP（ギンプ）のチュートリアルを日本語にしただけです。
+Reflection 3 - WinGIMP
+
+完成したのを比べると、「なんか違う&hellip;」って感じですが「フォントや画像のサイズに合わせて、途中のパラメーターをチョコチョコいじくった方が良いのかなぁ&hellip;」なんて思っていたりします。
+
+まぁ、詳しくは以下の通りです。"
+					  dc:identifier="http://gimp.blog.shinobi.jp/Entry/14/" />
+					</rdf:RDF>
+					-->
+<DIV class=EntryTitleBlock>
+<H1><A href="http://gimp.blog.shinobi.jp/Entry/14/">氷った雰囲気の文字</A> </H1>
+<UL class=EntryWriteDate>
+  <LI><A href="http://gimp.blog.shinobi.jp/Date/200704/">2007年04月</A>18日 
+  <LI>カテゴリー：<A href="http://gimp.blog.shinobi.jp/Category/8/">テキスト</A> 
+</LI></UL></DIV>
+<DIV class=EntryTextBox>
+<DIV><A href="http://file.gimp.blog.shinobi.jp/IceText1.jpg" target=_blank><IMG 
+style="MARGIN-BOTTOM: 10px; MARGIN-LEFT: 10px" border=0 alt=070417IceText16.jpg 
+align=right 
+src="氷った文字.files/1176819741.jpg"></A>今回は以下のページで紹介されているGIMP（ギンプ）のチュートリアルを日本語にしただけです。<BR><A 
+href="http://www.wingimp.org/tutorial/reflection3/reflection.html" 
+target=_blank><STRONG>Reflection 3 - 
+WinGIMP</STRONG></A><BR><BR>完成したのを比べると、「なんか違う…」って感じですが「フォントや画像のサイズに合わせて、途中のパラメーターをチョコチョコいじくった方が良いのかなぁ…」なんて思っていたりします。<BR><BR>まぁ、詳しくは以下の通りです。</DIV></DIV>
+<DIV class=EntryPsTextBox>
+<DIV>大きさ700×200ピクセル（元のページでは900×350ピクセルで作成しています）、背景は透明にします。<BR>適当な文字を書き、このレイヤーの名前を「テキスト」とします。<BR>さらに、「レイヤー」→「レイヤーを画像サイズに合わせる」で、テキストの領域を画像サイズに合わせておきます。（画像はクリックで拡大します）<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText01.jpg" target=_blank><IMG 
+border=0 alt=070417IceText01.jpg align=middle 
+src="氷った文字.files/1176819667.jpg"></A><BR><BR>「テキスト」を複製し、複製したレイヤー名を「ぼかし」とします。ここで「ぼかし」の背景を白にします（背景が白の新規レイヤーを作成し、「ぼかし」レイヤーと結合するなどしてください）。<BR>ここまでの作業で、各レイヤーはこのような状況になっているはず。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText02.jpg" target=_blank><IMG 
+border=0 alt=070417IceText02.jpg align=middle 
+src="氷った文字.files/1176819668.jpg"></A><BR><BR>「ぼかし」レイヤーを選択して、「フィルタ」→「ぼかし」→「ガウシアンぼかし」で以下のようにガウシアンぼかしをかけます。（画像はクリックで拡大します）<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText03.jpg" target=_blank><IMG 
+border=0 alt=070417IceText03.jpg align=middle 
+src="氷った文字.files/1176819669.jpg"></A><BR><BR>次に、新規レイヤーを作成し、灰色（#989898）で塗りつぶします。このレイヤーの名前は「バンプマップ」とします。<BR>「フィルタ」→「マップ」→「バンプマップ」で以下のように選択し「OK」をクリック。（画像はクリックで拡大します）<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText04.jpg" target=_blank><IMG 
+border=0 alt=070417IceText04.jpg align=middle 
+src="氷った文字.files/1176819670.jpg"></A><BR><BR>グラデーションで「Three bars sin」を選択し、<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText05.jpg" target=_blank><IMG 
+border=0 alt=070417IceText05.jpg align=middle 
+src="氷った文字.files/1176819671.jpg"></A><BR><BR>「フィルタ」→「色」→「マップ」→「グラデーションマップ」をクリック。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText06.jpg" target=_blank><IMG 
+border=0 alt=070417IceText06.jpg align=middle 
+src="氷った文字.files/1176819694.jpg"></A><BR><BR>次に、新たにレイヤーを作り、「ホライゾン」とします。グラデーションで「Horaizon 
+2」を選択し、<BR><A href="http://file.gimp.blog.shinobi.jp/070417IceText07.jpg" 
+target=_blank><IMG border=0 alt=070417IceText07.jpg align=middle 
+src="氷った文字.files/1176819695.jpg"></A><BR><BR>「ホライゾン」の上から下まで、<IMG border=0 
+alt=gradetion.jpg align=absMiddle 
+src="氷った文字.files/1175396855.jpg">を使ってグラデーションをかけます。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText08.jpg" target=_blank><IMG 
+border=0 alt=070417IceText08.jpg align=middle 
+src="氷った文字.files/1176819696.jpg"></A><BR><BR>「フィルタ」→「マップ」→「ずらし」を選択。以下のように値を設定し「OK」クリック。（画像はクリックで拡大します）<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText09.jpg" target=_blank><IMG 
+border=0 alt=070417IceText09.jpg align=middle 
+src="氷った文字.files/1176819697.jpg"></A><BR><BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText10.jpg" target=_blank><IMG 
+border=0 alt=070417IceText10.jpg align=middle 
+src="氷った文字.files/1176819698.jpg"></A><BR><BR>この時点で、レイヤーの関係は以下のようになっているはず。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText11.jpg" target=_blank><IMG 
+border=0 alt=070417IceText11.jpg align=middle 
+src="氷った文字.files/1176819720.jpg"></A><BR><BR>「テキスト」レイヤーで右クリックし「選択領域をアルファチャンネル」をクリック（文字部分が選択されます）。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText12.jpg" target=_blank><IMG 
+border=0 alt=070417IceText12.jpg align=middle 
+src="氷った文字.files/1176819721.jpg"></A><BR><BR>そして、「選択」→「選択領域の拡大」で、選択領域を5ピクセル拡大します。次に、「Ctrl」と「i」キーを同時に押して、領域を反転させます。<BR><BR>「バンプマップ」レイヤーで、「Ctrl」と「ｋ」キーを同時に押して選択領域を消去します。同様の作業を「ホライゾン」レイヤーで行います。（画像はクリックで拡大します）<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText14.jpg" target=_blank><IMG 
+border=0 alt=070417IceText14.jpg align=middle 
+src="氷った文字.files/1176819723.jpg"></A><BR><BR>「バンプマップ」レイヤーを一番上に設置し、モードを「オーバーレイ」に設定（「ぼかし」「テキスト」レイヤーは削除しても構いません）。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/070417IceText15.jpg" target=_blank><IMG 
+border=0 alt=070417IceText15.jpg align=middle 
+src="氷った文字.files/1176819724.jpg"></A><BR><BR>背景は白でも良いですが、個人的には黒の方が良いかなと思い、こんな感じで完成。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/IceText1.jpg" target=_blank><IMG border=0 
+alt=IceText1.jpg align=middle 
+src="氷った文字.files/1176819742.jpg"></A><BR><BR>ホライゾンレイヤーで、消去の作業をせず、以下のようにもできるようですが、字がハッキリしない感じがします。<BR><A 
+href="http://file.gimp.blog.shinobi.jp/IceText2.jpg" target=_blank><IMG border=0 
+alt=IceText2.jpg align=middle 
+src="氷った文字.files/1176819743.jpg"></A><BR><BR><BR>最初にも書きましたが、元のページと比べると、文字の縁取り部分が効果的になっていない気がします。もうちょっと、ガウシアンぼかしやバンプマップのパラメーターを変えたほうが良いのかなと思います。<BR><BR>また、他のフォントでもやってみたんですが、向きによって文字の太さが変わるフォント（明朝体など）では、あまり適していないかも。勝手な思い込みかもしれませんが…。</DIV>
+<DIV style="TEXT-ALIGN: right; WIDTH: 300px; PADDING-TOP: 1em" 
+class=NinjaEntryCommercial>
+<STYLE type=text/css>.NinjaEntryCommercial IMG {
+	DISPLAY: none
+}
+</STYLE>
+
+<SCRIPT type=text/javascript 
+src="氷った文字.files/7ea09d9b943063be60f3be334a70f5fe.js"><sc></SCRIPT>
+PR</DIV></DIV>
+<TABLE class=PageLinkBlock>
+  <TBODY>
+  <TR>
+    <TH>1つ新しい記事</TH>
+    <TH>:</TH>
+    <TD><A href="http://gimp.blog.shinobi.jp/Entry/15/">銃で撃った跡の穴</A></TD></TR>
+  <TR>
+    <TH>1つ古い記事</TH>
+    <TH>:</TH>
+    <TD><A 
+  href="http://gimp.blog.shinobi.jp/Entry/13/">GIMPのチュートリアルサイト</A></TD></TR></TBODY></TABLE>
+<DIV class=fb-comments data-width="750" data-num-posts="4" 
+data-href="http://gimp.blog.shinobi.jp/Entry/14/"></DIV>
+<P class=ThisPageTop><A 
+href="http://gimp.blog.shinobi.jp/Entry/14/#ThisPageTop">▲ このページの1番上へ 
+▲</A></P><A name=comment></A>
+<DIV id=GoogleAdEntry>
+<DIV class=GoogleAdEntryLeft>
+<SCRIPT type=text/javascript><!--
+								google_ad_client = "pub-9342888814501371";
+								/* 336x280, GIMP Entry */
+								google_ad_slot = "3725912878";
+								google_ad_width = 336;
+								google_ad_height = 280;
+								//-->
+								</SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/show_ads.js">
+								</SCRIPT>
+</DIV>
+<SCRIPT type=text/javascript><!--
+							google_ad_client = "pub-9342888814501371";
+							/* 336x280GIMP_EntryBottomRight */
+							google_ad_slot = "2418473728";
+							google_ad_width = 336;
+							google_ad_height = 280;
+							//-->
+							</SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/show_ads.js">
+							</SCRIPT>
+</DIV>
+<P class=CmTbBlockTitle>コメント一覧</P>
+<P class=CommentNum>コメント数：2</P><A name=comment1></A>
+<DIV class=CommentBlock>
+<P class=CommentTitle>No1．水で描いたようなテキストは？</P>
+<DIV class=CommentImgBox>
+<DIV class=CommentTextBox><SPAN class=comment_text_color>初めまして 
+<BR><BR>素晴らしい内容の記事をいくつもありがとうございます。 <BR>大変参考になります。 
+<BR><BR>ところで、まるで水で描いたようなテキストを作りたいと <BR>思っているのですが、中々うまくいきません。 
+<BR><BR>http://feed.designlinkdatabase.net/feed/outsite_104560.aspx 
+<BR>上記の５番目に載ってる液体のテキストエフェクトのような <BR>感じのを作りたいのです。 
+<BR><BR>リンク先にフォトショの英文説明がありますが、よく <BR>わかりません。。。 
+<BR><BR>GIMPでも作れそうには思うのですが、どうでしょう？</SPAN> </DIV></DIV>
+<DIV class=CommentFooterBlock>
+<P class=CommentWriteDay>2009年&nbsp;12月&nbsp;28日</P>
+<P class=CommentWriter>くに</P></DIV></DIV><!--/class="CommentBlock"-->
+<DIV class=CommentResBlock>
+<P class=CommentResTitle>Re:水で描いたようなテキストは？</P>
+<DIV class=CommentResImgBox>
+<DIV class=CommentResTextBox>返事が遅くなって申し訳ありません。 <BR><BR>ご指摘のチュートリアル 
+<BR><BR><STRONG>Photoshop Collage Tutorial multiple images in Photoshop</STRONG> 
+<BR><A href="http://www.photoshopcafe.com/tutorials/liquid-type/liquid-type.htm" 
+target=_blank>http://www.photoshopcafe.com/tutorials/liquid-type/liquid-type.htm</A> 
+<BR><BR><BR>ですが、STEP10を上手くできれば、GIMPでも可能だと思います。 
+<BR>具体的には、思いつきませんが、何か出来るようでしたら、新しい記事にして見たいと思います。 <BR><BR>コメントありがとうございました。 
+</DIV></DIV>
+<DIV class=CommentResFooterBlock>
+<P class=CommentResWriteDay>2010年&nbsp;01月&nbsp;01日</P>
+<P class=CommentResWriter>管理人</P></DIV></DIV><!--/class="CommentResBlock"--><A 
+name=comment2></A>
+<DIV class=CommentBlock>
+<P class=CommentTitle>No2．ありがとうございます(^＾)</P>
+<DIV class=CommentImgBox>
+<DIV class=CommentTextBox><SPAN 
+class=comment_text_color>だんだんはやく出来るようになりました。</SPAN> </DIV></DIV>
+<DIV class=CommentFooterBlock>
+<P class=CommentWriteDay>2010年&nbsp;03月&nbsp;01日</P>
+<P class=CommentWriter>The GIMP</P></DIV></DIV><!--/class="CommentBlock"-->
+<P class=CmTbBlockTitle>この記事にコメントする</P>
+<P class=CommentHeader>申し訳ありませんが、現在コメントは受け付けておりません。 </P>
+<P class=ThisPageTop><A 
+href="http://gimp.blog.shinobi.jp/Entry/14/#ThisPageTop">▲ このページの1番上へ 
+▲</A></P><A name=trackback></A>
+<P class=CmTbBlockTitle>この記事へのトラックバック</P>
+<P class=TrackBackHeader>この記事と関係ないトラックバックは削除させていただきます。</P>
+<P class=TrackBackURL>トラックバックURL：<INPUT onclick=this.select(0,this.value.length) 
+name=tbURL size=60></P></DIV><!--/id="EntryBlock"-->
+<DIV id=FooterRecentEntryBlock>
+<DIV class=GoogleAdBottomSide>
+<SCRIPT type=text/javascript><!--
+					google_ad_client = "pub-9342888814501371";
+					/* 160x600, GIMP_SideBottom */
+					google_ad_slot = "5547470250";
+					google_ad_width = 160;
+					google_ad_height = 600;
+					//-->
+					</SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/show_ads.js">
+					</SCRIPT>
+</DIV>
+<DL class=RecentEntry>
+  <DT>最近の記事 
+  <DD>
+  <UL>
+    <LI>2011年11月08日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/286/">近況報告的なこと</A> 
+    <LI>2010年06月19日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/284/">GIMP関連記事リンク集（10年6月19日版）</A> 
+    <LI>2010年05月29日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/283/">GIMP関連記事リンク集（10年5月29日版）</A> 
+    <LI>2010年05月15日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/282/">GIMP関連記事リンク集（10年5月15日版）</A> 
+    <LI>2010年05月08日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/281/">GIMP関連記事リンク集（10年5月8日版）</A> 
+    <LI>2010年05月01日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/280/">GIMP関連記事リンク集（10年5月1日版）</A> 
+    <LI>2010年04月24日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/279/">GIMP関連記事リンク集（10年4月24日版）</A> 
+    <LI>2010年04月23日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/278/">gimp-painter-導入方法（Windowsバイナリ版）</A> 
+
+    <LI>2010年04月17日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/277/">GIMPで凹凸感のあるシンプルなボタンを作る方法</A> 
+    <LI>2010年04月17日：<A 
+    href="http://gimp.blog.shinobi.jp/Entry/276/">GIMP関連記事リンク集（10年4月16日版）</A> 
+    </LI></UL>
+  <DT>最近のチュートリアル 
+  <DD>
+  <UL class=RecentCategory>
+    <LI class=RecentCategoryTitle>カテゴリーから探す 
+    <LI><A href="http://gimp.blog.shinobi.jp/Category/3/">ロゴ・ボタン・アイコン</A> 
+    <LI><A href="http://gimp.blog.shinobi.jp/Category/8/">テキスト</A> 
+    <LI><A href="http://gimp.blog.shinobi.jp/Category/6/">画像描画</A> 
+    <LI><A href="http://gimp.blog.shinobi.jp/Category/2/">写真加工</A> </LI></UL>
+  <DIV><A href="http://gimp.blog.shinobi.jp/Entry/277/"><IMG 
+  alt=GIMPで凹凸感のあるシンプルなボタンを作る方法 src="氷った文字.files/1271510551.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/274/"><IMG 
+  alt=GIMPで氷のテキストを作成する方法 src="氷った文字.files/1270800504.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/264/"><IMG 
+  alt=【GIMP】下から飛び出す感じの虹色のテキスト src="氷った文字.files/1251878204.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/251/"><IMG 
+  alt=GIMPで虫メガネを描く方法 src="氷った文字.files/1237844237.jpg" width=100 height=100></A> 
+  <A href="http://gimp.blog.shinobi.jp/Entry/221/"><IMG 
+  alt=GIMPでカラフルなモザイクのテキストを作成する方法 src="氷った文字.files/1230039827.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/219/"><IMG 
+  alt=GIMPを使ってインフォメーション・アイコンを作る方法 src="氷った文字.files/1229511843.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/217/"><IMG 
+  alt=GIMPで回転する地球のgifアニメーションを作成する方法 src="氷った文字.files/1229386459.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/214/"><IMG 
+  alt=GIMPでサイコロ（角丸な直方体）を描く方法 src="氷った文字.files/1228787750.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/210/"><IMG 
+  alt=GIMPで雪だるまのクリスマスカードを作る方法 src="氷った文字.files/1227855838.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/204/"><IMG 
+  alt=GIMPを使って消しゴムを描く方法 src="氷った文字.files/1225952335.jpg" width=100 
+  height=100></A> <A href="http://gimp.blog.shinobi.jp/Entry/201/"><IMG 
+  alt=GIMPを使って鉛筆を描く方法 src="氷った文字.files/1225612527.jpg" width=100 height=100></A> 
+  <A href="http://gimp.blog.shinobi.jp/Entry/199/"><IMG alt=リング式メモ帳の描き方 
+  src="氷った文字.files/1225459394.jpg" width=100 height=100></A> </DIV>
+  <P class="clear center">画像をクリックするとチュートリアルのページを開きます</P></DD></DL>
+<DIV class=clear><!--　--></DIV></DIV><!--/ id="FooterRecentEntryBlock"-->
+<DIV id=BottomSearch>
+<FORM id=cse-search-box action=http://www.google.co.jp/cse target=_blank>
+<DIV><INPUT name=cx value=partner-pub-9342888814501371:fbce8lqcces type=hidden> 
+<INPUT name=ie value=UTF-8 type=hidden> <INPUT name=q size=60> <INPUT name=sa value=検索 type=submit> </DIV></FORM>
+<SCRIPT type=text/javascript src="氷った文字.files/brand(1).js"></SCRIPT>
+<!--
+			<form action="/Search/" method="POST">
+				<input type="text" name="search" class="box" size="60" />
+				<input type="submit" value="ブログ内検索" class="btn" />
+			</form>
+--><BR 
+style="MARGIN-TOP: 15px">
+<SCRIPT type=text/javascript><!--
+			google_ad_client = "pub-9342888814501371";
+			/* 728x15,GIMP_Bottom */
+			google_ad_slot = "6911621925";
+			google_ad_width = 728;
+			google_ad_height = 15;
+			//-->
+			</SCRIPT>
+
+<SCRIPT type=text/javascript src="氷った文字.files/show_ads.js">
+			</SCRIPT>
+</DIV>
+<UL class=PageBottomLink>
+  <LI><A href="http://gimp.blog.shinobi.jp/">ホーム</A> 
+  <LI>｜ 
+  <LI><A href="http://gimp.blog.shinobi.jp/#TopCategory">カテゴリー</A> 
+  <LI>｜ 
+  <LI><A href="http://gimp.blog.shinobi.jp/#TopArchive">月別記事一覧</A> 
+  <LI>｜ 
+  <LI><A href="http://gimp.blog.shinobi.jp/#TopCmTb">コメント・トラックバック</A> 
+  <LI>｜ 
+  <LI><A href="http://gimp.blog.shinobi.jp/Entry/249/">ブログについて</A> <!--
+			<li>｜</li>
+			<li><a href="http://gimp.blog.shinobi.jp/Entry/31/">連絡先</a></li>
+--></LI></UL>
+<UL class=PageBottomLink>
+  <LI><B>Supported by</B>　 
+  <LI><A href="http://www.ninja.co.jp/blog/">ブログ</A> 
+  <LI>｜ 
+  <LI>[PR]<A 
+  href="http://sf.super-search.jp/keyword/転職サイト/type/blogfooter">転職サイト</A>&nbsp;<A 
+  href="http://sf.super-search.jp/keyword/就職/type/blogfooter">就職</A> 
+  <LI>｜ 
+  <LI><A href="http://hpmemo.jugem.jp/" target=_blank>雑記とMEMO </A>
+  <LI>｜ 
+  <LI><A href="http://zxhp.exblog.jp/" target=_blank>エキサイトなつぶやき</A> </LI></UL>
+<DIV class=NinjaSiteMaster><!-- NSM -->
+<SCRIPT type=text/javascript>
+			var lpoJsProt = (document.location.protocol == "https:") ? "https://" : "http://";
+			document.write("<sc"+"ript type=\"text\/javascript\" src=\""+lpoJsProt+"nsm.shinobi.jp/initial/?contractid=192\"><\/sc"+"ript>");
+			</SCRIPT>
+<!-- /NSM --></DIV>
+<UL id=TopIcon>
+  <LI class=RSS><A title=RSSを取得 
+  href="http://feeds.feedburner.jp/GimpOmoikomiTutorial" 
+  target=_blank><!-- --></A></LI>
+  <LI class=Twitter><A title=管理人のTwitterページへ 
+  href="http://twitter.com/#!/YamamotoGihoh" target=_blank><!-- --></A></LI>
+  <LI class=mixi><A title=管理人のmixiページへ 
+  href="http://mixi.jp/show_friend.pl?id=14979922" target=_blank><!-- --></A><!--			<li class="pixiv"><a href="http://www.pixiv.net/member.php?id=1305935" title="管理人のpixivページへ" target="_blank"></a></li>--></LI></UL><!--UserHeat-->
+<SCRIPT type=text/javascript charset=utf-8 src="氷った文字.files/index.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>try { var lb = new Vesicomyid.Bivalves("102300"); lb.init(); } catch(err) {} </SCRIPT>
+<!--Google Analytics-->
+<SCRIPT type=text/javascript src="氷った文字.files/urchin.js">
+		</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+		_uacct = "UA-602772-2";
+		urchinTracker();
+		</SCRIPT>
+</BODY></HTML>

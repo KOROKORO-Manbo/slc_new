@@ -1,0 +1,585 @@
+HTML {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LEGEND {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+ADDRESS {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OBJECT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+CITE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TABLE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; BORDER-SPACING: 0; PADDING-RIGHT: 0px; BORDER-COLLAPSE: collapse; PADDING-TOP: 0px
+}
+CAPTION {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TH {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+ADDRESS {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+CAPTION {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+CITE {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+CODE {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+DFN {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+TH {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+VAR {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+* {
+	FONT-FAMILY: "‚l‚r ‚oƒSƒVƒbƒN",Osaka,sans-serif
+}
+A:link {
+	
+}
+A:visited {
+	COLOR: #cc3399
+}
+A:hover {
+	BACKGROUND-COLOR: #aaaaaa; COLOR: #333333
+}
+A:active {
+	
+}
+.left {
+	TEXT-ALIGN: left
+}
+.center {
+	TEXT-ALIGN: center
+}
+.right {
+	TEXT-ALIGN: right
+}
+.clear {
+	CLEAR: both
+}
+BODY {
+	FONT-SIZE: 100%
+}
+H1 {
+	TEXT-ALIGN: left; MARGIN: 40px 10px 0px
+}
+#EntryPageBlogTitle {
+	TEXT-ALIGN: left; MARGIN: 40px 10px 0px
+}
+H1 A:hover {
+	BACKGROUND-COLOR: transparent
+}
+#EntryPageBlogTitle A:hover {
+	BACKGROUND-COLOR: transparent
+}
+P.BlogDescription {
+	LINE-HEIGHT: 1.5; MARGIN: 0px 0px 10px 20px; FONT-SIZE: 84%
+}
+#TopAdGoogle {
+	BORDER-BOTTOM: #999999 1px solid; TEXT-ALIGN: center; PADDING-BOTTOM: 8px; BACKGROUND-COLOR: #f0f0f0; PADDING-LEFT: 8px; WIDTH: 100%; PADDING-RIGHT: 8px; BORDER-TOP: #999999 1px solid; PADDING-TOP: 8px
+}
+.TopBlogNavi {
+	MARGIN: 40px 0px 40px 30px; FLOAT: left
+}
+.TopBlogNavi_iine {
+	MARGIN: 60px 0px 40px 15px; FLOAT: left
+}
+DIV.TopBlogNavi OPTION.CatTitle {
+	PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #333333; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #f0f0f0; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+DIV.TopBlogNavi OPTION.CatElement {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; PADDING-TOP: 2px
+}
+UL#PageNavi {
+	TEXT-ALIGN: right; MARGIN: 0px 40px; CLEAR: both; FONT-SIZE: 85%
+}
+UL#PageNavi LI {
+	PADDING-LEFT: 3px; DISPLAY: inline
+}
+UL#PageNavi LI.Here {
+	PADDING-LEFT: 3px; DISPLAY: inline; FONT-WEIGHT: bold
+}
+DL#HomeContents {
+	MARGIN: 10px 25px 15px
+}
+#HomeContents DT {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #333333 6px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/EntryTitle081120.jpg) repeat-x left top; CLEAR: both; FONT-SIZE: 98%; BORDER-TOP: #cccccc 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 10px
+}
+#HomeContents DD {
+	MARGIN: 20px; FONT-SIZE: 88%
+}
+#HomeContents UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 40px 0px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+#HomeContents UL LI {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 4px
+}
+#HomeContents UL LI.LiTitle {
+	FONT-WEIGHT: bold
+}
+.HomeRSSImg {
+	MARGIN: 30px; FLOAT: right
+}
+DD.Release P {
+	TEXT-ALIGN: left; LINE-HEIGHT: 1.8; MARGIN: 20px 0px
+}
+.EntryCatPageLink {
+	MARGIN: 30px 0px 10px 100px; FONT-SIZE: 130%
+}
+DD.HCTutorialImg {
+	TEXT-ALIGN: center
+}
+DD.HCTutorialImg IMG {
+	MARGIN: 2px
+}
+DD.HCTutorialImg A:hover {
+	BACKGROUND-COLOR: transparent
+}
+DD.HCBasis UL {
+	HEIGHT: 210px
+}
+DD.HCCategory {
+	MARGIN: 0px 20px
+}
+DD.HCCategory UL {
+	HEIGHT: 180px
+}
+FORM.HCArchive {
+	MARGIN: 10px 30px
+}
+DD.HCCmTb UL {
+	HEIGHT: 350px
+}
+DD.HCCmTb UL.HCCmTb LI {
+	PADDING-LEFT: 15px
+}
+DD.Release {
+	TEXT-ALIGN: center
+}
+.Release TABLE {
+	BORDER-BOTTOM: #666666 2px solid; BORDER-LEFT: #666666 2px solid; MARGIN: auto; BORDER-COLLAPSE: collapse; BORDER-TOP: #666666 2px solid; BORDER-RIGHT: #666666 2px solid
+}
+.Release TR.BorderTop {
+	BORDER-TOP: #999999 2px solid
+}
+.Release TH {
+	BACKGROUND-COLOR: #f0f0f0; COLOR: #333333; FONT-WEIGHT: bold
+}
+.Release TH {
+	BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center; PADDING-BOTTOM: 7px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 7px
+}
+.Release TD {
+	BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center; PADDING-BOTTOM: 7px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 7px
+}
+DD.GimpLink UL {
+	HEIGHT: 270px
+}
+DD.HCAmazonLink {
+	TEXT-ALIGN: center
+}
+#HCPLink {
+	MARGIN: 10px
+}
+#HCPLink TH {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+#HCPLink TD {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; PADDING-TOP: 3px
+}
+#HCPLink IMG {
+	PADDING-LEFT: 10px
+}
+#HCPLink TD.HCPLinkImg A:hover {
+	BACKGROUND-COLOR: transparent
+}
+#EntryBlock {
+	TEXT-ALIGN: left; MARGIN: 10px 20px; CLEAR: both
+}
+.EntryTitleBlock {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #333333 6px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/EntryTitle081120.jpg) repeat-x left top; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 3px
+}
+.EntryTitleBlock H1 {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; FONT-SIZE: 120%; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.EntryTitleBlock H2 {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; FONT-SIZE: 120%; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.EntryTitleBlock H1 A {
+	BACKGROUND-IMAGE: none; TEXT-INDENT: 0px; WIDTH: auto; DISPLAY: inline; HEIGHT: auto
+}
+.EntryTitleBlock H1 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.EntryTitleBlock H2 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.EntryTitleBlock H1 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.EntryTitleBlock H2 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.EntryTitleBlock H1 A:hover {
+	BACKGROUND-IMAGE: none; BACKGROUND-COLOR: transparent; COLOR: #999999
+}
+.EntryTitleBlock H2 A:hover {
+	BACKGROUND-IMAGE: none; BACKGROUND-COLOR: transparent; COLOR: #999999
+}
+UL.EntryWriteDate {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 3px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; FONT-SIZE: 85%; PADDING-TOP: 5px
+}
+UL.EntryWriteDate LI {
+	PADDING-RIGHT: 10px; DISPLAY: inline
+}
+.EntryTextBox {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 1.8; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 95%; PADDING-TOP: 15px
+}
+.EntryPsTextBox {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 1.8; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 95%; PADDING-TOP: 15px
+}
+.EntryPsTextBox {
+	MARGIN-TOP: 30px
+}
+.EntryPsTextBox H2 {
+	BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #f0f0f0; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; FONT-SIZE: 105%; BORDER-TOP: #cccccc 1px solid; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.EntryPsTextBox H3 {
+	FONT-WEIGHT: bold
+}
+.TopMiniImg {
+	MARGIN-BOTTOM: 10px; FLOAT: right; MARGIN-LEFT: 10px
+}
+.MiniIcon {
+	VERTICAL-ALIGN: middle
+}
+UL.process {
+	LIST-STYLE-TYPE: disc; MARGIN: 10px 40px
+}
+UL.process LI {
+	PADDING-BOTTOM: 7px
+}
+.Kakomi {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 10px
+}
+INS.Kakomi {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; DISPLAY: block; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; TEXT-DECORATION: none; PADDING-TOP: 10px
+}
+.ValueBox {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ddddff; MARGIN: 0px 25px; PADDING-LEFT: 20px; PADDING-RIGHT: 40px; PADDING-TOP: 10px
+}
+DIV.ValueBox TH {
+	PADDING-RIGHT: 10px; FONT-WEIGHT: bold
+}
+.Hekomi {
+	MARGIN: 0px 25px; FONT-WEIGHT: bold
+}
+#OpenCloseList DT {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 40px; PADDING-RIGHT: 0px; HEIGHT: 40px; COLOR: #0000ff; CURSOR: pointer; TEXT-DECORATION: underline; PADDING-TOP: 13px
+}
+DT.Open {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Click_Open.gif) no-repeat 0px center
+}
+DT.Close {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Click_Close.gif) no-repeat 0px center
+}
+#OpenCloseList DD {
+	MARGIN: 10px 20px 20px; DISPLAY: none
+}
+TABLE#Shortcut {
+	MARGIN: 20px 30px 50px
+}
+TABLE#Shortcut TD {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 70px; PADDING-TOP: 2px
+}
+TABLE.Value {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ddddff; MARGIN: 0px 25px; PADDING-LEFT: 20px; PADDING-RIGHT: 40px; PADDING-TOP: 10px
+}
+TABLE.Value TH {
+	FONT-WEIGHT: bold
+}
+TABLE.Value TD {
+	
+}
+TABLE.ThBold TH {
+	PADDING-RIGHT: 5px; FONT-WEIGHT: bold
+}
+.EntryPsText {
+	MARGIN: 30px; FONT-SIZE: 90%
+}
+.NinjaClap {
+	MARGIN: 30px 30px 20px
+}
+TABLE.PageLinkBlock {
+	TEXT-ALIGN: left; MARGIN: 25px 20px 25px 40px
+}
+TABLE.PageLinkBlock TH {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 3px; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+TABLE.PageLinkBlock TD {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+.ThisPageTop {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-SIZE: 85%; PADDING-TOP: 15px
+}
+#GoogleAdEntry {
+	MARGIN: 0px 20px 30px
+}
+.GoogleAdEntryLeft {
+	FLOAT: left; MARGIN-RIGHT: 20px
+}
+UL.EntryFooter {
+	TEXT-ALIGN: right; MARGIN: 30px; FONT-SIZE: 90%
+}
+UL.EntryFooter LI {
+	PADDING-RIGHT: 5px; DISPLAY: inline
+}
+.CmTbBlockTitle {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #333333 6px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/EntryTitle081120.jpg) repeat-x left top; BORDER-TOP: #cccccc 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 10px
+}
+.CommentNum {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; FONT-SIZE: 95%; FONT-WEIGHT: bold; PADDING-TOP: 15px
+}
+.CommentBlock {
+	MARGIN: 50px 0px 10px 10px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_TL081120.jpg) no-repeat left top
+}
+.CommentTitle {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_TR081120.jpg) no-repeat right top; FONT-SIZE: 95%; FONT-WEIGHT: bold; PADDING-TOP: 30px
+}
+.CommentImgBox {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_L081120.jpg) repeat-y left top
+}
+.CommentTextBox {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 1.5; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_R081120.jpg) repeat-y right top; FONT-SIZE: 95%; PADDING-TOP: 15px
+}
+.CommentFooterBlock {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_BL081120.jpg) no-repeat left top
+}
+P.CommentWriteDay {
+	PADDING-RIGHT: 50px; FLOAT: right; FONT-SIZE: 85%
+}
+P.CommentWriter {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 150px; PADDING-RIGHT: 0px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/Cm_BR081120.jpg) no-repeat right top; FONT-SIZE: 90%; PADDING-TOP: 65px
+}
+.CommentResBlock {
+	MARGIN: 0px 0px 50px 10px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_TL081120.jpg) no-repeat left top
+}
+.CommentResTitle {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_TR081120.jpg) no-repeat right top; FONT-SIZE: 95%; FONT-WEIGHT: bold; PADDING-TOP: 30px
+}
+.CommentResImgBox {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_L081120.jpg) repeat-y left top
+}
+.CommentResTextBox {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 1.5; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_R081120.jpg) repeat-y right top; FONT-SIZE: 95%; PADDING-TOP: 15px
+}
+.CommentResFooterBlock {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_BL081120.jpg) no-repeat left top
+}
+P.CommentResWriteDay {
+	PADDING-RIGHT: 50px; FLOAT: right; FONT-SIZE: 85%
+}
+P.CommentResWriter {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 150px; PADDING-RIGHT: 0px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CmR_BR081120.jpg) no-repeat right top; FONT-SIZE: 90%; PADDING-TOP: 65px
+}
+P.CommentHeader {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 1.5; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; FONT-SIZE: 95%; PADDING-TOP: 15px
+}
+UL.CommentCaution {
+	LINE-HEIGHT: 1.4; LIST-STYLE-TYPE: disc; MARGIN: 0px 20px 25px 60px; FONT-SIZE: 90%
+}
+.CommentForm {
+	PADDING-BOTTOM: 0px; MARGIN: 20px 0px 0px 20px; PADDING-LEFT: 50px; PADDING-RIGHT: 0px; BACKGROUND: url(http://file.gimp.blog.shinobi.jp/CommentFormBGImg.jpg) no-repeat left top; PADDING-TOP: 20px
+}
+.CommentForm UL LI {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 5px
+}
+.CommentForm UL LI.ComFormWriter {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 100px; PADDING-RIGHT: 0px; PADDING-TOP: 45px
+}
+.CommentForm TEXTAREA {
+	WIDTH: 610px; HEIGHT: 170px
+}
+.CommentFormSubmit {
+	TEXT-ALIGN: center; MARGIN: 30px
+}
+.TrackbackHeader {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 20px
+}
+.TrackBackURL {
+	MARGIN: 10px 30px; FONT-WEIGHT: bold
+}
+.TrackbackLink {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; PADDING-TOP: 30px
+}
+OL.PageLinkBlockNotEntry {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; PADDING-TOP: 15px
+}
+OL.PageLinkBlockNotEntry LI {
+	PADDING-RIGHT: 5px; DISPLAY: inline
+}
+#FooterRecentEntryBlock {
+	MARGIN: 40px 30px; BORDER-TOP: #999999 1px dashed; PADDING-TOP: 30px
+}
+.GoogleAdBottomSide {
+	TEXT-ALIGN: left; WIDTH: 180px; FLOAT: left
+}
+DL.RecentEntry {
+	BORDER-BOTTOM: #cccccc 2px solid; BORDER-LEFT: #cccccc 2px solid; MARGIN-LEFT: 200px; BORDER-TOP: #cccccc 2px solid; BORDER-RIGHT: #cccccc 2px solid
+}
+DL.RecentEntry DT {
+	PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #333333; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #cccccc; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+DL.RecentEntry DD {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; FONT-SIZE: 90%; PADDING-TOP: 10px
+}
+DL.RecentEntry DD UL LI {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+DL.RecentEntry DD UL.RecentCategory {
+	MARGIN: 15px; WIDTH: 170px; FLOAT: left
+}
+.RecentCategoryTitle {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+#BottomSearch {
+	BORDER-BOTTOM: #cccccc 2px solid; TEXT-ALIGN: center; PADDING-BOTTOM: 30px; BACKGROUND-COLOR: #f0f0f0; MARGIN-TOP: 50px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; CLEAR: both; BORDER-TOP: #cccccc 2px solid; PADDING-TOP: 50px
+}
+UL.PageBottomLink {
+	TEXT-ALIGN: center; MARGIN: 40px auto 0px; FONT-SIZE: 85%
+}
+UL.PageBottomLink LI {
+	PADDING-RIGHT: 5px; DISPLAY: inline
+}
+DIV.NinjaSiteMaster {
+	TEXT-ALIGN: center; MARGIN: 40px auto 100px
+}
+#TopIcon {
+	POSITION: absolute; WIDTH: 388px; HEIGHT: 112px; RIGHT: 15px; TOP: 0px
+}
+#TopIcon .RSS {
+	LIST-STYLE-TYPE: none; WIDTH: 97px; FLOAT: left; HEIGHT: 112px
+}
+#TopIcon .Twitter {
+	LIST-STYLE-TYPE: none; WIDTH: 97px; FLOAT: left; HEIGHT: 112px
+}
+#TopIcon .mixi {
+	LIST-STYLE-TYPE: none; WIDTH: 97px; FLOAT: left; HEIGHT: 112px
+}
+#TopIcon .pixiv {
+	LIST-STYLE-TYPE: none; WIDTH: 97px; FLOAT: left; HEIGHT: 112px
+}
+#TopIcon .RSS {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat 0px -112px
+}
+#TopIcon .Twitter {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -96px -112px
+}
+#TopIcon .mixi {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -193px -112px
+}
+#TopIcon .pixiv {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -290px -112px
+}
+#TopIcon .RSS A {
+	WIDTH: 100%; DISPLAY: block; HEIGHT: 100%
+}
+#TopIcon .Twitter A {
+	WIDTH: 100%; DISPLAY: block; HEIGHT: 100%
+}
+#TopIcon .mixi A {
+	WIDTH: 100%; DISPLAY: block; HEIGHT: 100%
+}
+#TopIcon .pixiv A {
+	WIDTH: 100%; DISPLAY: block; HEIGHT: 100%
+}
+#TopIcon .RSS A:hover {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat 0px 0px
+}
+#TopIcon .Twitter A:hover {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -96px 0px
+}
+#TopIcon .mixi A:hover {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -193px 0px
+}
+#TopIcon .pixiv A:hover {
+	BACKGROUND: url(http://file.gimp.blog.shinobi.jp/100508TopRightIcon.png) no-repeat -290px 0px
+}
