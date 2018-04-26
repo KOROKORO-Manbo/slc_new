@@ -1007,7 +1007,7 @@ background-repeat: no-repeat;
     100% {opacity: 0;}
 }
 
-.cloud {
+/* .cloud {
   position: absolute;
   top: 80px;
   left: -500px;
@@ -1022,7 +1022,7 @@ background-repeat: no-repeat;
 @keyframes cloudFlow {
   0% {      transform:translateX(-1500px);   }
   100% {      transform:translateX(2500px);    }
-}
+} */
 
 /* 掲示板 */
 .bbs_wrapper{
