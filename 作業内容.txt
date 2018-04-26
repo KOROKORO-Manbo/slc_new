@@ -1,0 +1,49 @@
+
+[全体サイズについて]
+以下のようなHTMLとなっているが最大のサイズを占めているのはicyLetterで４００✕４００で
+今後、中央に置くエフェクト関連の最大サイズはこのサイズ前後くらいまでが限界と言える
+<div class="bbs_wrapper">
+	<a href="http://slc-mie.com/cgi-local/imode/pc_ezimode.cgi" target="_blank">		<!-- BBSへのリンク -->
+		<div class="kirikabu">												
+			<div class="icyLetter">		<!-- .kirikabu配下の画像配置要素（背景が氷文字でサイズを４００✕４００にしている） -->
+				<div id="effectContainer">
+					<div id="effect" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999;">
+					<div id="effect_rain" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%;">
+						<div id="effectRain0" style="position: absolute; top: -83px; left: -1px; transform: translate3d(0px, 1387.5px, 0px);"><img src="./images/effect/rain0.png" id="effectRain0_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(4.22354deg) translate3d(0px, 0px, 0px) scaleX(0.38) scaleY(0.38);"></div><div id="effectRain1" style="position: absolute; top: -371px; left: -66.4286px;"><img src="./images/effect/rain0.png" id="effectRain1_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(0.428442deg) translate3d(0px, 0px, 0px) scaleX(0.46) scaleY(0.46);"></div><div id="effectRain2" style="position: absolute; top: -422px; left: 147.143px;"><img src="./images/effect/rain0.png" id="effectRain2_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(-0.977638deg) translate3d(0px, 0px, 0px) scaleX(0.5) scaleY(0.5);"></div><div id="effectRain3" style="position: absolute; top: -439px; left: 160.714px;"><img src="./images/effect/rain2.png" id="effectRain3_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(-6.74909deg) translate3d(0px, 0px, 0px) scaleX(0.46) scaleY(0.46);"></div><div id="effectRain4" style="position: absolute; top: -348px; left: -85.7143px;"><img src="./images/effect/rain2.png" id="effectRain4_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(-9.00009deg) translate3d(0px, 0px, 0px) scaleX(0.42) scaleY(0.42);"></div><div id="effectRain5" style="position: absolute; top: -426px; left: 312.857px; transform: translate3d(0px, 976.5px, 0px);"><img src="./images/effect/rain1.png" id="effectRain5_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(12.3959deg) translate3d(0px, 0px, 0px) scaleX(0.41) scaleY(0.41);"></div><div id="effectRain6" style="position: absolute; top: -558px; left: 75.4286px; transform: translate3d(0px, 612.5px, 0px);"><img src="./images/effect/rain1.png" id="effectRain6_img" style="position: absolute; top: 0px; left: 0px; transform: rotate(2.2856deg) translate3d(0px, 0px, 0px) scaleX(0.47) scaleY(0.47);"></div></div></div></div></div><div class="BBStext"><p>掲示板</p><p class="letter"><span class="word wisteria" style="opacity: 1;"><span class="letter out">質</span><span class="letter out">問</span></span><span class="word belize" style="opacity: 1;"><span class="letter in">相</span><span class="letter in">談</span></span><span class="word pomegranate" style="opacity: 1;"><span class="letter out">確</span><span class="letter out">認</span></span><span class="word green" style="opacity: 1;"><span class="letter out">お</span><span class="letter out">願</span><span class="letter out">い</span></span><span class="word midnight" style="opacity: 1;"><span class="letter out">何</span><span class="letter out">で</span><span class="letter out">も</span></span></p></div></div></a> </div>
+
+
+[氷文字]
+
+・srcのindex.htmlでの動作用と本番用（バンドル）のため./js/以下に ./js/effect/ と ./js/effect_for_src/ を作り効果用JSファイル群を設置
+・/icyLetter/index.htmlの効果用DOM（div.container）部分をクラス名をicyLetterにして元のdiv.kirikabu配下においた
+・元のstyle.css内のdiv.kirikabuCSS定義を削除
+・/icyLetter/index.htmlのstyle内を組み込み側のstyle.cssの.kirikabu{...}の次に置いた（名前もicyLetterで）
+・氷文字（koori400.png）と水滴画像を./images/effect/の下にコピペ
+・./src/index.html でのJSファイル群（ ./js/effect_for_src/ ）のscriptタグを設置＆動作確認
+	[ここからバンドる向け作業]
+・ ./js/effect/ 以下のJSファイルをバンドルに向け修正
+			jquery.easing.1.3.js					そのまま
+			main.js										水滴用画像（rain#.png）のパスを変更しただけで他はそのまま
+															バンドル時、エラーの原因になるので先頭部分の console.log(_util) を削除
+			modernizr.custom.56320.js		window.Modernizr = function (a, b, c) {	...
+			sncjm-min.js								export default () => {	...
+			index.js
+															import './effect/modernizr.custom.56320.js'
+															import fSNCJM from './effect/sncjm-min.js'
+															fSNCJM()    // sncjmの_utilを得るための実行（main.js内で使われている）  window._util = new SNCJM.util;
+															import './effect/jquery.easing.1.3.js'
+															import './effect/main.js'
+・./build/index.html に効果用DOM（氷文字）を置く		<div class="icyLetter"><div id="effectContainer"></div></div>
+・./build/images/effect/以下に関連画像ファイルをセット：氷文字（koori400.png）はCSSで読み込んでてバンドルされるので不要
+		↓
+	ビルド
+
+
+[立て看板]
+・まずBBSkanbaフォルダを参考に、./src/のindex.htmlに立て看板を組み入れた（DOM、CSS、JS）→ 動作確認
+・./build/index.htmlのkirikabu配下の氷文字の次に看板用DOM配置
+・styleはすでに./src/css/style.cssにいれてあり、DOMも./build/index.htmlにおいた
+・あと看板内の文字をローテーションさせるJSだが、これを./src/js/effect/main.jsに置くと
+　JS側からDOMが見えない部分が出てきてしまうので./src/js/main.js の最後尾にコピペした
+		↓
+		ビルド
