@@ -5,13 +5,23 @@
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
+４７．noCブランチの作成手順
+		基本的に各ブランチの noC バージョンは通常バージョンを仕上げた後、
+		そのブランチから noC を新規作成し以下のように流れる雲を消す作業とする
+
+		./src/
+			HTML		#page1 の div.cloud を削除（./buildの方のindex.htmlからも削除）
+			CSS			style.css #1010 .cloud と @keyframe 定義削除
+			JS			main.js #187 蜘蛛のクリックイベントハンドラ削除
+				その後ビルドする
+
 ４６．summer 氷文字の追加作業内容はsummerブランチの「作業内容.txt」参照
 
 ４５．さくらの中の「けいじばん」回転画像がFireFoxで見えない件
 			もともと.kirikabu以下の.sakura下の.keijiban要素のcontentにurlでしていして実際にbase64に変換されFireFoxの開発画面でもロードされているのを確認できたが
 			実際の画面には桜の木しか見えず、中で回転しているはずの「けいじばん」の画像が無かったのでしかたなしにdiv.keijibanの中にimgタグを設置して見えるようにした
 			回転アニメーション自体は要素を回転させてたので目的通りの動きになった
-			
+
 ４４．xmas効果モーダルと降雪効果の作業採用は ./xmasBase/構成と作業.txt を参照
 
 ４３．波文字を切り株の代わりに配置（rainySeasonブランチ）
@@ -31,29 +41,29 @@
 				・CSS最後部に雨雲用CSSセット
 			JS
 				・main.jsの最後部に雨降りパーティクル要素の動的追加コードをセットする
-		
+
 ４１．topBtnsへの項目追加   64f5195
 			・ボタンの高さは40pxで作成のこと（.topObi .flip-front、backで40pxに指定しているので）
 			・これらボタンおコンテナーは .topBtns で  width:600px; としているが状況に合わせて変更すること
 			・フリップダウンの動きはCSSクラスをJSで付与・削除しているので、追加時はそちらもおこなうこと（忘れてて解決に時間がかかったことがあった）
-			
+
 ４０．雨効果調整（rainySeasonブランチ）　全体の基本的内容把握＝＞「//Desktop/ページアイデア/template/luana/luanaポイント.txt」参照		← 全画面効果        元はサンプルHPのluanaから全画面効果の部分を抜き出したのがページアイデアのこれで、さらに特定DOMに効果を絞ったのが次のかき氷のもの
 																													 「//ページアイデア/codrops/Tutorials/kakiGoori/ポイント.txt」参照			← 特定DOM内効果
 			（ポイント点＝効果を載せるDOMがどう生成されているか、効果を雨か葉にしぼる、効果発現の間隔を調整する）
-			    
+
 	  ◯雨、葉効果の追加について（SLCプロジェクトにおいての注意）
 	  		・LUANAから抜き出し、機能をシンプル化したものの元は右のページアイデア　：		file:///Users/UKONN/Desktop/ページアイデア/template/luana/index.html
 	  		・追加手順は以下の１つだけ
 	  				HTML			スクリプト内で動的に生成されるので何も要らない　当初右のような要素が必要と勘違いしていた ⇒ <div id="effectLayer"></div>
-	  				ライブラリ	
+	  				ライブラリ
 									  <script type="text/javascript" src="./js/effect/modernizr.custom.56320.js"></script>
 									  <script type="text/javascript" src="./js/effect/jquery.easing.1.3.js"></script>
 									  <script type="text/javascript" src="./js/effect/sncjm-min.js"></script>
 									  <script type="text/javascript" src="./js/effect/main.js"></script>
-			・このSLCプロジェクトにおいての注意						  
+			・このSLCプロジェクトにおいての注意
 					上記のライブラリ群は、wepack 対策として内容をexportしていたりするので、./src/index.html の方で読み込んでもエラーになるので
 					デバッグなどの検証はコード変更後、ビルドして./build/の方で確認すること
-					
+
 		◯雨エフェクトビュー要素管理クラス内の生成＆削除のプロセスの間隔が長く、画面に雨のない時間が長くなるので
 			以下のように、一度生成した雨効果セットの要素は削除せずに、各雨粒要素が画面下まで来たら元位置に戻す方法に変えた
 			（デッド判定をせずに、デッド該当で元位置に戻す）その時、X軸方向はランダムに変更して、パターンが同じにならないようにした
@@ -76,11 +86,11 @@
 			      return this._img.css(_util.getVendorCss("transform", _util.rotate(this._anm.r) + " " + _util.translate3d(this._anm.x, this._anm.y) + _util.scaleX(this._anm.s) + " " + _util.scaleY(this._anm.s)))
 			    };
 
-					
+
 		◯ 葉、雨効果のどちらかへの絞込・・・./js/effect/main.js ＃４９８
 						・・・
 																		// ↓ 元は以下の雨か葉の分岐になる所だがココでは葉のみにした
-			      this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf");  
+			      this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf");
 			      // this._type === 0 ? this._effect = new e.LUANA_CLASS.leafView(this._elm, this._elmId + "_leaf") : this._effect = new e.LUANA_CLASS.rainView(this._elm, this._elmId + "_rain");
 			      this._effect.add();
 			      return this._effect.onComplete = this._completeEffect
@@ -90,7 +100,7 @@
 							・・・											// ただここで絞り込むと最初の一回のエフェクトは雨か葉かどちらががランダムに出るので上記の部分で固定化する
 
 
-		◯ 花びら（葉効果）の出現位置の調整（元は両サイド配置を中央配置にする）・・・./js/effect/main.js ＃５５０		
+		◯ 花びら（葉効果）の出現位置の調整（元は両サイド配置を中央配置にする）・・・./js/effect/main.js ＃５５０
 						・・・
 			      s = e.LUANA.main.ws.w/2;			// 基準になる横位置を画面中央にする
 			      t = e.LUANA.main.ws.h;
@@ -98,13 +108,13 @@
 			      n = 0;
 			      while (n < this._num) {
 			        o = n % 2 === 0 ? s + i : s - i;		// 画面中央を基準に葉の偶数奇数で左右に散らす
-        
+
         ◯花びら画像の読み込みについて（葉効果）： ./src/js/effect/main.js
 				以下のようにコード内で変数を使って画像ファイルを読み込んでいるのでWebPack内に画像データはバンドルされず、
 				デプロイ時にも./images/effect/ フォルダに花びらの画像ファイルをおいてやる必要がある
-				
+
 				#658　r = "./images/effect/leaf" + String(_util.random(0, 5)) + ".png";         // 葉の画像ファイル数
-				
+
 
 ３９．jQueryライブラリのバンドル後、不具合修正
 			→ jquery.inview.js
@@ -128,19 +138,19 @@
 									});
 								};
 								$.fn.prettynumber.defaults = {
-									delimiter       : '.'	
+									delimiter       : '.'
 								};
 							})(jQuery);										← 即時関数の引数にjQueryを渡して中でjQueryのprototypeにメンバを追加している
 																						（WebPackなどでバンドルした時、ライブラリがモジュール単位に閉じ込められるので
 																							’ jQuery’ が定義されてて、その名の解決ができているか・・・npmインストのjQueryが見えるようにしてあるとかなど）
-							
+
 			以下はrainySeasonブランチのみ
 			ーーーーーーーーーーーーーーー
 			→Modernizr
 						window.Modernizr = function (a, b, c) {
 								...
 						 }(window, window.document),														#203 元はthisとthis.documentだったのをwindowに変更
-			
+
 			→SNCJM・・・名前空間をグローバルに晒した上で、その中の１つのクラス：SNCJM.util の定義をIIFEで行っている形式
 					   export default () => {																			#4 全体をexportで囲った
 						  window.SNCJM == undefined && (window.SNCJM = {});				#6 元は先頭のSNCJMに this. 、うしろのSNCJMには何も付いていなかったが、
@@ -150,20 +160,20 @@
 						     }
 						   })( );
 						   window._util = new SNCJM.util;													#235 元はクラスインスタンス	を ’_util’ に入れてただけだったが、これもグローバルに晒すため  window. を追加
-						}		
+						}
 						// end of export
-						
+
 			→index.js
 						import './effect/modernizr.custom.56320.js'										export もしていないがimportするだけで中身はロードされる
-						import fSNCJM from './effect/sncjm-min.js'					
+						import fSNCJM from './effect/sncjm-min.js'
 						fSNCJM( )																						exportした無名関数を実行し、中身のクラスインスタンス : window._util を取出している
-				
+
 				グローバルに晒すのではなくモジュールと
 				それを使うモジュール間で解決させるパターン・・・グローバルに晒すのではなく、import/exportで2者間のみで受け渡しする形式
 				ーーーーーーーーーーーーーーーーーーーーー
 					以下の記録を参照！
 					//WebPack/WebPack基本/【０重要：WebPackライブラリとスコープ】/ビルド後ライブラリ参照エラー回避例/ビルド後ライブラリ参照エラー回避例.txt
-		 
+
 ３８．作業記録はmasterブランチだけにした
 
 ３７．プロジェクト全体におけるｊQueryについて
