@@ -1,0 +1,12 @@
+
+CSS
+	style.cssの .kirikabu の背景画像や位置などの設定をコメントアウト→この配下に効果用のHTMLを設置するので
+
+HTML
+	div.kirikabu 配下に制作材料のindex.htmlの効果全体のコンテナをcontainerからkabochaContainerに名前を変えて設置
+
+CSS
+	style.cssの .kirikabu の定義の後ろに効果用のCSS定義を設置
+	#1045〜#1229
+	
+後は画像関係を./src/images/kobocha/ 配下において./build/index.htmlにDOM追加しビルドした
