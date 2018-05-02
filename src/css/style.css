@@ -1230,6 +1230,25 @@ background-repeat: no-repeat;
 }
 
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900|Montez);
+.sparkley {
+  position:absolute;
+  top: 140px;
+  left: 205px;
+  width:220px;
+  font-family: Lato;
+  font-weight: 200;
+  font-size: 1.2em;
+  text-align: center;
+  color: white;
+  border: none;
+  font-weight: normal;
+  transition: all 0.25s ease;
+  transform: rotateZ(-40deg);
+}
+.sparkley:hover {
+  color: rgba(255, 255, 255, 1);
+}
 
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 

@@ -1,4 +1,5 @@
 
+＜かぼちゃの追加＞
 CSS
 	style.cssの .kirikabu の背景画像や位置などの設定をコメントアウト→この配下に効果用のHTMLを設置するので
 
@@ -8,5 +9,21 @@ HTML
 CSS
 	style.cssの .kirikabu の定義の後ろに効果用のCSS定義を設置
 	#1045〜#1229
-	
+
 後は画像関係を./src/images/kobocha/ 配下において./build/index.htmlにDOM追加しビルドした
+
+
+＜パーティクルの追加＞
+HTML
+	.page1 の背景画像は../img/page1/P1bg.png で空と草原の縦長画像で、
+	その上に配置された .page1_wrapper の背景画像は山と空のメインの背景の../img/page1/p1BGfinal.png
+	ハロウィン文字のパーティクルの要素はこの .page1_wrapper の上であればいいわけで（＝その子要素ならいい）
+	適当に置いてabsoluteで位置調整する方向で設置
+	⇒ page1の終端の「</div><!--  /page1_wrapper  -->」の直前に設置
+
+css
+	フォントと.sparkleyの設定だけを./src/style.css に置いてabsoluteで位置調整をした
+JavaScript
+	対象DOMにパーティクル表示クラスのヒモ付する部分だけ$(document).ready()の最後＝main.jsの最後に置き
+	関連関数群はその外に置いた。
+	またマウスオーバーでのトリガーでなく常時パーティクル表示になるよう変更した 

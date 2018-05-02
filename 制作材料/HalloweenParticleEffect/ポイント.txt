@@ -1,0 +1,19 @@
+
+元サンプル：//ページアイデア/CSS_textEffect_anim_tech_etc/anim/sample22/
+
+・キラキラ効果はJSで実現しており、メインクラスは main.js#88 から定義の Sparkleクラス
+																															   ^^^^^^^^^^^^^
+・補助機能としてJQのprototypeに sparkleh 関数を追加し （main.js#55）、
+　JQのDOM経由で呼ばれたら、そのDOMの大きさなどの情報を引数に
+　Sparkleクラスインスタンスを生成する機能を持っている（この中でマウスオーバー／アウトイベントハンドラ設定している）
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+・main.js の先頭のJQ即時関数内で、HTML内の各DOM経由で上のJQ拡張関数を呼んで
+	キラキラ効果の Sparkleクラスインスタンスを生成している
+
+		$(".sparkley:first").sparkleh();
+		$(".sparkley:last").sparkleh({	...
+		$("h1").sparkleh({		...
+		$("p").sparkleh({	...
+		$("#image").imagesLoaded( function() {  $(".img").sparkleh({		...
+		<h1>
