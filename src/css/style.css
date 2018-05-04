@@ -1,9 +1,9 @@
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
   src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
 }
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: bold;
   src: local("YuGothic-bold"),local("Yu Gothic");
@@ -922,8 +922,8 @@ background-repeat: no-repeat;
 /* 外来混雑状況 */
 .kujiraContainer{
   position: absolute;
-  top: 20px;
-  left: 290px;
+  top: 5px;
+  left: 180px;
   width: 376px;
   height: 480px;
 }
@@ -1044,6 +1044,8 @@ background-repeat: no-repeat;
 
 .kabochaContainer{
   position: relative;
+  margin-top: -140px;
+  margin-left: -10px;
   width: 400px;
   height: 432px;
 }
@@ -2057,7 +2059,7 @@ svg {
   	width: 131px;
   	height: 163px;
   	top: 380px;
-  	left: calc((312px - 131px)/2);
+  	left: calc((312px - 320px)/2);
   	background-image: url('../calendar/usagi.png');
   	cursor: pointer;
   }
