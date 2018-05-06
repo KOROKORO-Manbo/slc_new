@@ -213,6 +213,27 @@
 			△inviewライブラリをbundle.jsに追加する時、WebPack部の最終行に１つ改行を入れないとキレイに動作しない
 			△リリースモードでの圧縮でbundle.jsを作るとEdgeでお問合せの波がなくなってしまうのでデバッグモード＆ソースマップなしでデプロイすること
 			参考：main.jsの先頭の ’var disneyInterval;’ は初期画像先読みのプリローダーライブラリのためのもので必要
+			
+			[ inview ]	助産師外来ページのスクロール時効果に使っている（初期はRevealというライブラリだったが不具合があったのでこっちに換えた）
+			
+				./src/main.js#499
+				--------------------------
+				    $(function() {                                                    /* Page3 助産師外来 jyosannsi */
+				    	$('.list-mv03').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+				    		if(isInView){
+				    			$(this).stop().addClass('mv03');
+				    		}
+				    		else{
+				    			$(this).stop().removeClass('mv03');
+				    		}
+				    	});
+				    });
+				    
+				./src/index.js
+				-----------------
+					import myInview from './jquery.inview.min.export.js'
+							...
+					myInview()
 
 ３０．elvit（妊婦サプリ）のボタンをtopBtnsに追加した（hover効果はツールチップにした）
 
