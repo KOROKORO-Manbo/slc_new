@@ -625,6 +625,7 @@ div.elevit span:before{
     width: 164px;
     height: 163px;
     right: 160px;
+    opacity: 0;
   }
 #page1 .sun {
   width: 164px;
