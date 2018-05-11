@@ -1008,22 +1008,7 @@ background-repeat: no-repeat;
     100% {opacity: 0;}
 }
 
-.cloud {
-  position: absolute;
-  top: 80px;
-  left: -500px;
-  width: 330px;
-  height: 152px;
-  background-image: url(../img/page1/cloud.png);
-  background-repeat: no-repeat;
-  animation: cloudFlow 30s linear infinite;
-  cursor: pointer;
-}
 
-@keyframes cloudFlow {
-  0% {      transform:translateX(-1500px);   }
-  100% {      transform:translateX(2500px);    }
-}
 
 /* 掲示板 */
 .bbs_wrapper{
