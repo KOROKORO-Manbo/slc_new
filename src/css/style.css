@@ -1,9 +1,9 @@
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
   src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
 }
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: bold;
   src: local("YuGothic-bold"),local("Yu Gothic");
@@ -1493,6 +1493,7 @@ svg {
 .doctorWrap table.doctor th,
 .doctorWrap table.doctor td {
     padding: 10px;
+    color: rgb(101, 27, 136);
 }
 .doctorWrap table.doctor th.c1, .doctorWrap table.doctor th.c3 {
     box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
@@ -1503,7 +1504,7 @@ svg {
     width: 125px;
     height: 50px;
     position: relative;
-    color: #fff;
+    color: rgb(128, 207, 243);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     font-size: 24px;
 }

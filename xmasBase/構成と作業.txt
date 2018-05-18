@@ -1,8 +1,25 @@
 
 	注意：xmasブランチの./src/js/以下のJS群はすでにビルド後動作に仕上げており、ライブラリなど相当WebPack用に変更してしまってるので、
 				逆に ./src/index.html では動作しなくなっているので、こっちで動かしたい時はgitのコミットを 1c436ae にresetすること
+	
+			  またクリスマス効果はモーダルのプレゼント箱のものと本ページにおける降雪効果に別れ、
+			   DOMとしては両方ともcanvasを使っており、以下のような配置になっている
+			   
+				  	＜モーダルのプレゼント箱の方＞														＜降雪効果の方＞
+				  		body																									body
+				  			|---section#modal-p01 .modal-window 												|---div.pagesContainer
+					  				|--- div.xmas_container																		|---div#page1
+					  						|---canvas#snowfall	←←	←															|		...
+			  								|---div#merrywrap .merrywrap														|---div#page12
+			  										|---div.giftbox	... (続く)														|---canvas#snowfall2	←←	←	
+							 
+								  なお、両方で使っている背景の降雪効果は同じライブラリを使っており
+								  パーティクル定義のsnow.jsと、それを描画管理するクラスがrectangleEmitter.jsで
+								  落下スピードを返るために２種類のパーティクルをsnow.jsに定義している（snowとsnow_slow）
+				  
 
-【作業内容】			
+【作業内容：作業順は上から】	
+・./bild/index.html内の修正「<h1 style="opacity: 0;">Page1</h1>」		（位置関係のズレを回避するためdisplay:noneでなく、このようにした）
 ・かなり単純な構成で、降雪だけならライブラリとJSのコード１０行ほど
 ・雪用キャンバス <canvas id="snowfall"></canvas> を div.containerの外に出して正常動作するか確認→OK	（中でも外でも単独で使えるということ）
 ・SVGに代わりにラスター画像でもOKか確認→OK
@@ -38,11 +55,11 @@
 	HTMLへの変更は、ルーレットメニュー説明用モーダルの中身を降雪効果用のものにしたことと
 　メインの画面の降雪効果用にキャンバスを追加した２点（./build/index.htmlに設置し忘れないように）
 ・ここから＜WebPackでのバンドル＞に向けて作業した
-	→ JS			./src/ja/index.js に ./src/index.html で読み込んでる <!--以下xmas効果用--> の読み込みライブラリをそのままの順でimportした
+	→ JS			./src/js/index.js に ./src/index.html で読み込んでる効果用JSファイル群の <!--以下xmas効果用--> の読み込みライブラリをそのままの順でimportした
 	→ CSS		./css/index.css に ./xmas/normalize.css と ./xmas/demo.css を@importした。component.css はすでにメインの方の ./css/style.css にコピペしている
 						（CSSも表示DOMに関することの多いメインのものは、できるだけ、プロジェクト自体のメインのCSSファルにまとめたほうがうまくいきそうだ：肥大化するが）
-	→HTML		./build/index.html にmini化した」xmas効果用DOM（元ルーレットメニュー説明のモーダル）を所定の場所にコピペ。
-						メインの画面での降雪効果用キャンバス canvas#snowfall2 を所定の位置にコピペ
+	→HTML		./build/index.html にmini化したxmas効果用DOM（元はルーレットメニュー説明用のモーダル）を上記の場所にコピペ。
+						メインの画面での降雪効果用キャンバス canvas#snowfall2 を上記の位置にコピペ
 ・ビルド後のエラー回避作業
 	やはりCommonJS非対応ライブラリは単純にimportしただけでは使えずグローバルの環境から見えなくなってしまうものも多かったので以下の変更を食え会えた
 	１）./xmas/main.js の即時関数内の中身をメインのmain.jsの $(document).ready(...) 内にコピペ
@@ -52,9 +69,9 @@
     
     
     
-【構成】
-HTML
-		div.container
+【プレゼント箱効果 詳細】
+	HTML
+		div.xmas_container
 				|---canvas#snowfall
 				|---div#merrywrap .merrywrap
 						|---div.giftbox
