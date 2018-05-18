@@ -41,7 +41,7 @@ $(document).ready(function(){
     			this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0])
     			this.state.isvisible=true
     		}
-    		else if (this.state.shouldvisible==false && this.state.isvisible){
+              else if (this.state.shouldvisible==false && this.state.isvisible){
     			this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1])
     			this.state.isvisible=false
     		}
