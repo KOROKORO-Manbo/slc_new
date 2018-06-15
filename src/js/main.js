@@ -460,7 +460,7 @@ $(document).ready(function(){
         $(".box").addClass("perspectiveUpReturn");
       }
     )
-    $('div#access').live('pageshow',function(){                                     // GoogleMap
+    $(document).on('pageshow','div#access',function(){                            // GoogleMap
       var myLatlng = new google.maps.LatLng(34.867661,136.519077);
       var myOptions = {
         zoom: 16,

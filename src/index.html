@@ -18,9 +18,9 @@
   	<link rel="stylesheet" href="./css/prettyPhoto.css">
   	<link rel="stylesheet" href="./css/pretty_font.css">
     <!-- <link rel="stylesheet" type="text/css" href="./css/all.css"> -->
-
+     
   </head>
-  <body>
+  <body id="drawer" class="site-slidebar drawer-responsive">
 
     <div class="pagesContainer">
       <div id="page1" class="page">
@@ -575,12 +575,43 @@
     <div class="inner"></div>
   </div>
 
+  <!-- drawer要素 -->
+  <div class="slidebar slidebar-right" data-width="300">
+    <div class="slidebar-toggle">Slidebar Right</div>
+    <div class="slidebar-body" style="width: 0;">
+      <div class="slidebar-resize"></div>
+        <div class="slidebar-body-inner">
+          <h3>Slidebar Right</h3>
+          　<a href="http://slc-mie.com">リンクボタン</a>
+        </div>
+    </div>
+  </div>
+
+
+        <!-- drawer関係 -->
+        <link rel="stylesheet" href="./css/drawer.min.css">
+        <link rel="stylesheet" href="./css/cooker.css">
+        <!-- <script src="./js/drawer/jq21.js"></script> -->
+        <script src="./js/drawer/jqEase.js"></script>
+        <script src="./js/drawer/drawer.min.js"></script>
+        <script src="./js/drawer/cooker.js"></script>
+    <script>                                  // WebPackで導入するなら、main.jsとかで、cooker.jsとdrawer.jsのimportした上で、この部分をmain.jsに置く
+      $(function (){
+        $('.slidebar-right').slidebar({       // cooker.js内で、$.fn.slidebar = function(method)...
+          position: 'right',                  // として、JQオブジェクトに初期化用オブジェクトや
+        });                                   // 各機能メソッドを引数にとる関数sliderを設定している
+        $('#drawer').drawer();                // bodyタグ自体にドロワーインスタンス生成用IDを付与すること
+      });
+    </script>
   <!-- <script src="./js/fr_dialog.js" charset="utf-8"></script> main.js 内に入れ込んだのでココでは不要⇒バンドルしても問題ない-->
 
   <!-- ↓↓↓↓↓↓↓↓  ./src/ では外部ファイルとして置いているが、./build/ではmain.jsの最後尾の一番外においている -->
   <!-- <script src="./js/scrollReveal.js" charset="utf-8"></script> -->
   <script src="./js/main.js" charset="utf-8"></script>
   <script src="./js/jquery.prettyPhoto.js"></script>
-	<script src="./js/jquery.pretty_main.js"></script>
+  <script src="./js/jquery.pretty_main.js"></script>
+
+
+
   </body>
 </html>
