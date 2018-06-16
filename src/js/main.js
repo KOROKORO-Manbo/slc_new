@@ -507,4 +507,10 @@ $(document).ready(function(){
     	});
     });
 
+    $(function (){                          // drawer
+      $('.slidebar-right').slidebar({       // cooker.js内で、$.fn.slidebar = function(method)...
+        position: 'right',                  // として、JQオブジェクトに初期化用オブジェクトや
+      });                                   // 各機能メソッドを引数にとる関数sliderを設定している
+      $('#drawer').drawer();                // bodyタグ自体にドロワーインスタンス生成用IDを付与すること
+    });
 }); /* end of $(document).ready() */
