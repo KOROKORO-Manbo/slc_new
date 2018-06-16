@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>slidebar &middot; cooker</title>  
+
+  <link rel="stylesheet" href="./css/vendor/drawer.min.css">
+  <link rel="stylesheet" href="./css/cooker.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="./js/vendor/drawer.min.js"></script>
+  <script src="./js/cooker.js"></script>
+
+</head>
+<body id="drawer" class="site-slidebar drawer-responsive">
+
+  <div class="slidebar slidebar-right" data-width="300">
+    <div class="slidebar-toggle">Slidebar Right</div>
+    <div class="slidebar-body" style="width: 0;">
+      <div class="slidebar-resize"></div>
+        <div class="slidebar-body-inner">
+          <h3>Slidebar Right</h3>
+        </div>
+    </div>
+  </div>
+  <div class="slidebar slidebar-bottom" data-height="300">
+    <div class="slidebar-toggle">Slidebar Bottom</div>
+    <div class="slidebar-body" style="height: 0;">
+      <div class="slidebar-resize"></div>
+        <div class="slidebar-body-inner">
+          <h3>Slidebar Bottom</h3>
+        </div>
+    </div>
+  </div>
+
+
+  <script>                                  // WebPackで導入するなら、main.jsとかで、cooker.jsとdrawer.jsのimportした上で、この部分をmain.jsに置く
+    $(function (){
+      $('.slidebar-right').slidebar({       // cooker.js内で、$.fn.slidebar = function(method)...
+        position: 'right',                  // として、JQオブジェクトに初期化用オブジェクトや
+      });                                   // 各機能メソッドを引数にとる関数sliderを設定している
+      $('.slidebar-bottom').slidebar({
+        position: 'bottom',
+      });
+      $('#drawer').drawer();                // bodyタグ自体にドロワーインスタンス生成用IDを付与すること
+    });
+  </script>
+</body>
+</html>

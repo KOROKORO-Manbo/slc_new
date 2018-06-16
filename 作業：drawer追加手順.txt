@@ -33,6 +33,23 @@ HTML
 		    </script>
 	
 	drawer.min.js内でエラーが発生している部分を、実行に影響ない部分なので、修正
-		（放置するとロード時のカウントが止まるから）
+		（放置するとロード時のカウントが止まるから：またこのファイルの読み込み＆関数実行drawer()はなくても機能的には動作したが・・・）
 		
 		var f; 			// もとは右の様になってた		var f = 1e3 * a("." + d.overlayClass).css("transition-duration").replace(/s/g, "");	
+		
+バインド準備
+	./src/js/drawer/以下のVendor関係を１つのdrawerIndex.jsでimportしてまとめて、それをindex.jsで読み込み
+	./src/index.htmlのscriptタグ内の部分は./src/js/main.jsに追加した。
+	またCSSについては2ファイルだけなので./src/css/index.cssに@import( )した
+	またHTMLは./src/index.htmlのdrawer関連要素を短縮して./build/index.htmlに移植した
+	
+フォント	既存フォルダ./src/fonts/にdrawer関係のCSSから呼ばれているフォントファイル群を追加
+	 '../fonts/qcon-beta-.eot' in cooker.css 6:106177-106211
+	 '../fonts/qcon-beta-.svg' in cooker.css 6:106397-106431
+	 '../fonts/qcon-beta.eot' in 'cooker.css 6:106121-106154
+	 '../fonts/qcon-beta.ttf' in cooker.css 6:106328-106361
+	 '../fonts/qcon-beta.woff' in cooker.css 6:106262-106296
+
+
+
+	
