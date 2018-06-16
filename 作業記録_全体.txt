@@ -6,6 +6,8 @@
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
 ４８．$.live( ) is not defined 問題について		2018/06/15		https://qiita.com/seltzer/items/e60c4400e258f4f0d0bd
+		   ^^^^^^^^^^^^^^^^^^^^
+		   
 	　（jQuery 1.9以降で「has no method 'live'」と出たら、 $(document).onを使う）
 		動的に生成された要素にイベントを割り当てられる「.live」メソッドは、
 		jQuery 1.9からなくなったようです。	代わりに使うのが「$(document).on」というメソッド。
@@ -16,10 +18,10 @@
 					↓
 				$(document).on('pageshow','div#access',function(){   　←この変更をしたのは drawerブランチの./src/js/main.js のみ
 		
-		この部分だけが .live( ) を使っていたので、修正したら、./src/で使うjQueryのバージョンを2.xx以降にしても問題なくなった
-		しかし、とりあえずjQueryのバージョンはそのままで、各ブランチのmain.jsはそのままで、
-		ドロワーが必要になって drawer ブランチの変更をcherry-pickしたら書き換えられるので
-		そのときまでは drawer内だけにしておく
+		この部分だけが .live( ) を使っていたので、修正したら、./src/で使うjQueryのバージョンを2.xx以降にしても問題なくなった.
+		なのでjQueryのファイルをimportしなくても、npmの最新のjQueryをさらした形でもmain.jsに問題が起こらず行けると思われるが・・・
+		しかし、とりあえずjQueryのバージョンはそのままで、各ブランチのmain.jsはそのままで（.live( )を使ったままで）
+		ドロワーが必要になって drawer ブランチの変更を既存ブランチにcherry-pickしたら書き換えられるので、そのときまでは drawer内だけにしておく
 		
 ４７．noCブランチの作成手順
 		基本的に各ブランチの noC バージョンは通常バージョンを仕上げた後、
