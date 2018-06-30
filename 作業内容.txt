@@ -40,10 +40,17 @@
 
 
 [立て看板]
-・まずBBSkanbaフォルダを参考に、./src/のindex.htmlに立て看板を組み入れた（DOM、CSS、JS）→ 動作確認
+・まず/制作素材/BBSkanba/フォルダを参考に、./src/のindex.htmlに立て看板を組み入れた（DOM、CSS、JS）→ 動作確認
 ・./build/index.htmlのkirikabu配下の氷文字の次に看板用DOM配置
 ・styleはすでに./src/css/style.cssにいれてあり、DOMも./build/index.htmlにおいた
+・看板内の回転文字位置は./src/css/style.css内の .BBStext .letter  { ... } の中での以下で調整する
+	FireFoxとChromeで縦位置の解釈が若干違う（メインをどっちにするか・・・）
+		margin-top: 10px;											/* 「掲示板」の文字との間隔 */
+		transform: translate3d(0px,0px,25px);
 ・あと看板内の文字をローテーションさせるJSだが、これを./src/js/effect/main.jsに置くと
 　JS側からDOMが見えない部分が出てきてしまうので./src/js/main.js の最後尾にコピペした
 		↓
 		ビルド
+	
+	./src/index.htmlの方で確認したら看板の回転文字の位置がおかしいがbuildして.build/の方で見るといい位置になる
+	また微調整についてはFireFoxで完全に合わせてChromeは従属とした

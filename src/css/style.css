@@ -1,9 +1,9 @@
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
   src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
 }
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: bold;
   src: local("YuGothic-bold"),local("Yu Gothic");
@@ -1979,7 +1979,8 @@ li img{ margin-top: 8px; margin-left: 10px;}
   position: relative;
   display: inline-block;
   float: left;
-  transform: translateZ(25px);
+  margin-top: 10px;
+  transform: translate3d(0px,0px,25px);
   transform-origin: 50% 50% 25px;
 }
 

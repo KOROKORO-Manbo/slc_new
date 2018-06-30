@@ -38,7 +38,8 @@ body {
   display: inline-block;
   position: relative;
   float: left;
-  transform: translateZ(25px);
+  margin-top: 10px;
+  transform: translate3d(0px,0px,25px);
   transform-origin: 50% 50% 25px;
 }
 
