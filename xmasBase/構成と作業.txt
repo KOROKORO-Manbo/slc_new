@@ -6,7 +6,8 @@
 			   DOMとしては両方ともcanvasを使っており、以下のような配置になっている
 			   
 				  	＜モーダルのプレゼント箱の方＞														＜降雪効果の方＞
-				  		body																									body
+				  		body					
+				  			|---div.pagesContainer																		body
 				  			|---section#modal-p01 .modal-window 												|---div.pagesContainer
 					  				|--- div.xmas_container																		|---div#page1
 					  						|---canvas#snowfall	←←	←															|		...
