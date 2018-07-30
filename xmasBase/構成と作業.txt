@@ -1,0 +1,235 @@
+
+	注意：xmasブランチの./src/js/以下のJS群はすでにビルド後動作に仕上げており、ライブラリなど相当WebPack用に変更してしまってるので、
+				逆に ./src/index.html では動作しなくなっているので、こっちで動かしたい時はgitのコミットを 1c436ae にresetすること
+	
+			  またクリスマス効果はモーダルのプレゼント箱のものと本ページにおける降雪効果に別れ、
+			   DOMとしては両方ともcanvasを使っており、以下のような配置になっている
+			   
+				  	＜モーダルのプレゼント箱の方＞														＜降雪効果の方＞
+				  		body					
+				  			|---div.pagesContainer																		body
+				  			|---section#modal-p01 .modal-window 												|---div.pagesContainer
+					  				|--- div.xmas_container																		|---div#page1
+					  						|---canvas#snowfall	←←	←															|		...
+			  								|---div#merrywrap .merrywrap														|---div#page12
+			  										|---div.giftbox	... (続く)														|---canvas#snowfall2	←←	←	
+							 
+								  なお、両方で使っている背景の降雪効果は同じライブラリを使っており
+								  パーティクル定義のsnow.jsと、それを描画管理するクラスがrectangleEmitter.jsで
+								  落下スピードを返るために２種類のパーティクルをsnow.jsに定義している（snowとsnow_slow）
+				  
+
+【作業内容：作業順は上から】	
+・./bild/index.html内の修正「<h1 style="opacity: 0;">Page1</h1>」		（位置関係のズレを回避するためdisplay:noneでなく、このようにした）
+・かなり単純な構成で、降雪だけならライブラリとJSのコード１０行ほど
+・雪用キャンバス <canvas id="snowfall"></canvas> を div.containerの外に出して正常動作するか確認→OK	（中でも外でも単独で使えるということ）
+・SVGに代わりにラスター画像でもOKか確認→OK
+・Boxから飛び出すプレゼントはstep-4でも下に落とさず留めるようにした　componebnt.css#1037 をコメントアウト＋opacityを０から１に変更
+・【SLC組込時】当クリスマス効果DOMセットの div.container をバッティングしないよう div.xmas_container に変更し、CSS内も変更し
+　モーダルライブラリの配下となるべく section.modal-window #modal-p01 以下にそのままコピペした。後にSVGを全部、靴下画像のsock.pngに置き換えた
+・閉じるボタンもxmas効果要素内プレゼントの１つのSVGの代わりとして、class名もそのままコピペした
+・demo.cssはbodyの背景色など余計な指定があったのでコメントアウト
+・アイコン群を落とさないように変更した ./css/xmas/component.css を ./css/style.css の最後尾にコピペした
+・xmas効果モーダルを入れたら、なぜかパンダ、蜂、Twitter枠、SLC外観が上方にズレてしまったのでCSSのmargin-topを再調整した
+・モーダル画面の背景色を淡黄色のopacity:0.8から薄いグレーのopacity:1にした
+・【本体と結合】最初のxmas効果モーダルを閉じた後、メイン画面でも雪を降らせるために以下の追加
+			HTML	div.pagesContainer の最後尾（page12の下）に降雪効果用canvas設置		<canvas id="snowfall2"></canvas>
+			CSS		style.css に以下の定義
+							canvas#snowfall2 {
+								  position: fixed;				← fixedにせずabsoluteの100%にしてしまうと11868px文になるので雪の落下速度が異常に速くなりライブラリ内をいじったが調整不可能だったので見えている部分の全画面を固定にして自然な降雪効果をキープした
+								  height: 100vh;
+								  width: 100vw;
+								  top: 0;
+								  left: 0;
+								  pointer-events: none;		← これしないとメインお画面内のボタンが効かなくなる
+							}		
+			JS		降雪ライブラリの構成はパーティクルの定義がsnow.js内のオブジェクトで、それを描画管理するクラスがrectangleEmitter.jsで
+						最初のモーダルで使うsnowパーティクルとプロパティーを変えたかったのでsnow.js内で２つ目のパーティクル定義：snow_slowを追加した
+						次に最初のモーダル内の「閉じる」ボタンクリックハンドラをmain.jsに持ってきて再読のモーダルを隠した後、
+						パーティクルのエミッターをカスタム定義の方のsnow_slowを引数に呼んで canvas#snowfall2 表示するようにした
+								$('.closeBTN').click(function(e){
+						      		letitsnow2();											// パーティクルエミッター呼ぶ関数：カスタムで、同ファイル内に後述している関数
+						      		$('.modal-window').hide();
+									$("#modal-p01").remove();
+						   		});
+・ここまでで ./src/index.html での組み込み作業は完了		gitのコミットは 1c436ae
+	HTMLへの変更は、ルーレットメニュー説明用モーダルの中身を降雪効果用のものにしたことと
+　メインの画面の降雪効果用にキャンバスを追加した２点（./build/index.htmlに設置し忘れないように）
+・ここから＜WebPackでのバンドル＞に向けて作業した
+	→ JS			./src/js/index.js に ./src/index.html で読み込んでる効果用JSファイル群の <!--以下xmas効果用--> の読み込みライブラリをそのままの順でimportした
+	→ CSS		./css/index.css に ./xmas/normalize.css と ./xmas/demo.css を@importした。component.css はすでにメインの方の ./css/style.css にコピペしている
+						（CSSも表示DOMに関することの多いメインのものは、できるだけ、プロジェクト自体のメインのCSSファルにまとめたほうがうまくいきそうだ：肥大化するが）
+	→HTML		./build/index.html にmini化したxmas効果用DOM（元はルーレットメニュー説明用のモーダル）を上記の場所にコピペ。
+						メインの画面での降雪効果用キャンバス canvas#snowfall2 を上記の位置にコピペ
+・ビルド後のエラー回避作業
+	やはりCommonJS非対応ライブラリは単純にimportしただけでは使えずグローバルの環境から見えなくなってしまうものも多かったので以下の変更を食え会えた
+	１）./xmas/main.js の即時関数内の中身をメインのmain.jsの $(document).ready(...) 内にコピペ
+	２）snow.js で定義されているパーティクルの定義オブジェクトを var snow = {  } から window.snow= {  } に変更しグローバルに晒す
+	３）classie.js がグローバルから見えないというエラーが出たので export default () => {...} で囲み、index.js内で関数としてimportし実行させる記述にした	→　 import myClassie from './xmas_effect/classie.js'   myClassie()
+	４）パーティクル生成オブジェクト rectangleEmitter も見えないと言うので var rectangleEmitter = {   } から window.rectangleEmitter = {  } としてグローバルに晒す
+    
+    
+    
+【プレゼント箱効果 詳細】
+	HTML
+		div.xmas_container
+				|---canvas#snowfall
+				|---div#merrywrap .merrywrap
+						|---div.giftbox
+						|		|---div.cover
+						|		|		|---div
+						|		|---div.box
+						|---div.icons
+						|		|---div.row
+						|		|		|---span
+						|		|		|		|---svg path 
+						|		|		|---span
+						|		|		|		|---svg path 
+						|		|			・・・
+						|		|---div.row
+						|		|		|---span
+						|		|		|		|---svg path 
+						|		|		|---span
+						|		|		|		|---svg path 
+						|		|			・・・					
+						|		|---div.row			複数の .row があり（計７つ）、その中の幾つかが一字ずつ .span.letter で囲まれたMERRY や CHRISTMAS のかたまりを内包している
+						|			・・・			（最初のBoxをクリックして現れるアイコングリッドの７行のこと）
+						|---div.background
+						|		|---svg
+
+CSS
+
+	各アイコンのベース定義
+			.icons span {
+				display: block;
+				float: left;
+				width: calc((100% / 11) - 1px);
+				height: 100%;
+				font-family: 'Peralta';
+				font-size: 74px;
+				text-transform: uppercase;
+				text-align: center;
+				opacity: 0;																						// 初期は不可視
+				-webkit-transition: -webkit-transform 0.5s ease-in, opacity 0.1s;		//上にも下にも移動は0.5sで設定
+				transition: transform 0.5s ease-in, opacity 0.1s;
+			}
+		
+	ラッパー要素にstep-1付与時の動き定義・・・斜め上に飛び出す（Xをプラスマイナスで左右を決定している）
+			/* First row */													（各行ごとに％を調整し、飛び出す感じを出している）
+			.step-1 .icons .row:first-child span:first-child {
+				-webkit-transform: translateY(700%) translateX(500%);
+				transform: translateY(700%) translateX(500%);
+			}
+				・・・
+			/* Second row */
+				・・・
+	ラッパー要素にstep-2付与時の動き定義・・・飛び出しながらopacityが１になっていく
+			.step-2 .icons span {
+				opacity: 1;
+				-webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.200, 0.910);
+				transition-timing-function: cubic-bezier(0.000, 0.000, 0.200, 0.910);
+			}
+			.step-2 .giftbox .cover {								/* ←飛び出す動きはアイコンのカバーごと上に引き上げてる */
+				-webkit-animation: flyUp 0.4s ease-out forwards;
+				animation: flyUp 0.4s ease-out forwards;
+			}
+			.step-2 .giftbox .box {									/* クリック後のBoxは落としている */
+				-webkit-animation: fallDown 0.2s 0.05s ease-in forwards;
+				animation: fallDown 0.2s 0.05s ease-in forwards;
+			}
+	ラッパー要素にstep-3付与時の動き定義・・・しばらくそのまま
+			.step-3 .icons span {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+	ラッパー要素にstep-4付与時の動き定義・・・全アイコンは消えながら落ちていく ＋ 文字が出現する
+			.step-4 .icons span:not(.letter) {
+				opacity: 0;
+				-webkit-transform: translateY(700%) rotate(20deg);
+				transform: translateY(700%) rotate(20deg);
+			}
+			.step-4 .icons span.letter {					
+				opacity: 1;
+			}
+		
+			
+JavaScript
+				
+		(function() {
+			'use strict';
+			var merrywrap = document.getElementById( 'merrywrap' ),
+				box = merrywrap.querySelector( '.giftbox' ),
+				step = 1,
+				stepTimes = [1000,1000,2000,2000];												// 各ステップ（１〜４）のディレイ時間
+		
+			function init() {
+				box.addEventListener( 'click', runAnimation );
+			}
+		
+			function runAnimation() {
+				if( step === 1 ) {
+					box.removeEventListener( 'click', runAnimation );
+				}																											
+				incStep( step );																					// 全体のラッパー要素にステップ番号をCSSクラスとして付与し、変更していく
+				if( step === 4 ) {																					// ↑この関数でstep-2が付与されるとCSSの定義の方でopacityが１になる（飛び出しながら見え出す感じ）
+					letitsnow();																						// 降雪開始
+					return;
+				}
+				if( step === 3 ) {																					// 各アイコンに下に落ちるtransformとそのディレイを設定
+					setGridDelays();
+				}																											// タイマーでディレしつつ再帰し各ステップを実行する
+				setTimeout(function() { runAnimation(); }, stepTimes[ step - 1 ] );
+				++step;
+			}
+		
+			function incStep( step ) {
+				classie.remove( merrywrap, 'step-' + Number( step - 1 ) );
+				classie.add( merrywrap, 'step-' + step );
+			}
+		
+			function setGridDelays() {																		// 各SVGアイコンに落ちるtransformのディレイ時間を設定する
+				[].slice.call( merrywrap.querySelectorAll( '.row' ) ).forEach( function( row, i ) {
+					var itemsrow = [].slice.call( row.querySelectorAll( 'span' ) ),
+						itemsrowCount = itemsrow.length,
+						factor = (itemsrowCount - 1) * 0.01,
+						delays = [ itemsrowCount - 1 ];
+		
+					for( var k = 0; k < itemsrowCount; ++k )
+						delays[k] = k * 0.01 + ( ( itemsrowCount - 1 - i ) * factor );
+					shuffle( itemsrow );
+					itemsrow.forEach( function( item, j ) {
+						var delay = delays[ j ];
+						item.style.webkitTransition = '-webkit-transform 0.4s ease-out ' + delay + 's, opacity 0.4s ' + delay + 's';
+						item.style.transition = 'transform 0.4s ease-out ' + delay + 's, opacity 0.4s ' + delay + 's';
+					} );
+				} )
+			}
+		
+			function letitsnow() {
+				// https://github.com/daveWid/canvas-snow
+				var canvas = document.getElementById("snowfall");
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+				// Now the emitter
+				var emitter = Object.create(rectangleEmitter);										// canvas に対して降雪クラス生成
+				emitter.setCanvas(canvas);
+				emitter.setBlastZone(0, -10, canvas.width, 1);
+				emitter.particle = snow;
+				emitter.runAhead(0);
+				emitter.start(60);																						// 落下スピード
+			}
+
+			function shuffle( array ) {
+				var currentIndex = array.length, temporaryValue	, randomIndex;
+				while (0 !== currentIndex) {
+					randomIndex = Math.floor(Math.random() * currentIndex);
+					currentIndex -= 1;
+					temporaryValue = array[currentIndex];
+					array[currentIndex] = array[randomIndex];
+					array[randomIndex] = temporaryValue;
+				}
+				return array;
+			}
+			init();
+		})();
