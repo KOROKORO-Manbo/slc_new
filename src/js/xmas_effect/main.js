@@ -38,6 +38,11 @@
 		}																													// タイマーでディレしつつ再帰し各ステップを実行する
 		setTimeout(function() { runAnimation(); }, stepTimes[ step - 1 ] );
 		++step;
+
+		setTimeout(function(){																		// 'MerryXmas' の表示モーダルを時間で閉じる
+			$('.closeBTN').trigger('click');
+		},18000);
+		
 	}
 
 	function incStep( step ) {

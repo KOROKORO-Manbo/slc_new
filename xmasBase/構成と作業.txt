@@ -1,6 +1,10 @@
 
 	注意：xmasブランチの./src/js/以下のJS群はすでにビルド後動作に仕上げており、ライブラリなど相当WebPack用に変更してしまってるので、
 				逆に ./src/index.html では動作しなくなっているので、こっちで動かしたい時はgitのコミットを 1c436ae にresetすること
+					↓ ↓ ↓ ↓ ↓ ↓ ↓ 
+				しかしそれではその後のページのクリスマス化がやりにくいので、./src/index.htmlでも動作するように
+				classie.jsをexport版ではなく、普通の元のものに戻して(./js/xmas_effect/classieForSRC.js)、
+				それを呼ぶようにしてメインページの作業をするようにした	20180730	結局、ビルド用変更はclassie.jsのみだった
 	
 			  またクリスマス効果はモーダルのプレゼント箱のものと本ページにおける降雪効果に別れ、
 			   DOMとしては両方ともcanvasを使っており、以下のような配置になっている
@@ -19,12 +23,17 @@
 								  落下スピードを返るために２種類のパーティクルをsnow.jsに定義している（snowとsnow_slow）
 				  
 
+	
+20180730 		プレゼント箱版降雪効果モーダルの綴じ方がわからないとメインのページに行けないので、以下の2箇所に
+						時間で閉じるコードも追加した（./js/xmas_effect/main.js #42）←このmain.jsは./src/index.htmlから読み込んでるものでビルド版では./js/main.jsに移植している
+																		  （./js/main.js #541）
+																		  
 【作業内容：作業順は上から】	
-・./bild/index.html内の修正「<h1 style="opacity: 0;">Page1</h1>」		（位置関係のズレを回避するためdisplay:noneでなく、このようにした）
-・かなり単純な構成で、降雪だけならライブラリとJSのコード１０行ほど
+・./bild/index.html内の修正「<h1 style="opacity: 0;">Page1</h1>」		（位置関係のズレを回避するためdisplay:noneでなく、このようにした・・・これがないと少しページが上に上がってしまうので）
+・かなり単純な構成で、プレゼント箱版降雪効果だけならライブラリとJSのコード１０行ほど
 ・雪用キャンバス <canvas id="snowfall"></canvas> を div.containerの外に出して正常動作するか確認→OK	（中でも外でも単独で使えるということ）
-・SVGに代わりにラスター画像でもOKか確認→OK
-・Boxから飛び出すプレゼントはstep-4でも下に落とさず留めるようにした　componebnt.css#1037 をコメントアウト＋opacityを０から１に変更
+・SVGに代わりにラスター画像でもOKか確認→OK		注意：靴下画像や閉じるボタン画像は div.xmas_container 以下のimg要素でセットしている
+・Boxから飛び出すプレゼントはstep-4でも下に落とさず留めるようにした　component.css#1037 をコメントアウト＋opacityを０から１に変更
 ・【SLC組込時】当クリスマス効果DOMセットの div.container をバッティングしないよう div.xmas_container に変更し、CSS内も変更し
 　モーダルライブラリの配下となるべく section.modal-window #modal-p01 以下にそのままコピペした。後にSVGを全部、靴下画像のsock.pngに置き換えた
 ・閉じるボタンもxmas効果要素内プレゼントの１つのSVGの代わりとして、class名もそのままコピペした
@@ -32,19 +41,20 @@
 ・アイコン群を落とさないように変更した ./css/xmas/component.css を ./css/style.css の最後尾にコピペした
 ・xmas効果モーダルを入れたら、なぜかパンダ、蜂、Twitter枠、SLC外観が上方にズレてしまったのでCSSのmargin-topを再調整した
 ・モーダル画面の背景色を淡黄色のopacity:0.8から薄いグレーのopacity:1にした
-・【本体と結合】最初のxmas効果モーダルを閉じた後、メイン画面でも雪を降らせるために以下の追加
+・【本体と結合】最初のプレゼント箱版xmas効果モーダルを閉じた後、メイン画面でも雪を降らせるために以下の追加
 			HTML	div.pagesContainer の最後尾（page12の下）に降雪効果用canvas設置		<canvas id="snowfall2"></canvas>
 			CSS		style.css に以下の定義
 							canvas#snowfall2 {
-								  position: fixed;				← fixedにせずabsoluteの100%にしてしまうと11868px文になるので雪の落下速度が異常に速くなりライブラリ内をいじったが調整不可能だったので見えている部分の全画面を固定にして自然な降雪効果をキープした
+								  position: fixed;				← fixedにせずabsoluteの100%にしてしまうとページの高さが全11868px分になり、そこから計算された雪の落下速度が異常に速くなりライブラリ内をいじったが調整不可能だったので見えている部分の全画面を固定にして自然な降雪効果をキープした
 								  height: 100vh;
 								  width: 100vw;
 								  top: 0;
 								  left: 0;
 								  pointer-events: none;		← これしないとメインお画面内のボタンが効かなくなる
 							}		
-			JS		降雪ライブラリの構成はパーティクルの定義がsnow.js内のオブジェクトで、それを描画管理するクラスがrectangleEmitter.jsで
-						最初のモーダルで使うsnowパーティクルとプロパティーを変えたかったのでsnow.js内で２つ目のパーティクル定義：snow_slowを追加した
+			JS		降雪ライブラリの構成は雪のパーティクル自体の定義がsnow.js内のオブジェクトで、それを描画管理するクラスがrectangleEmitter.jsで
+						最初のプレゼント箱版xmas効果の降雪と同じファイルを使っており、そこのsnowパーティクルとプロパティーを変えたかったので
+						そのsnow.js内で最初のに加えて２つ目のパーティクル定義：snow_slowを追加した
 						次に最初のモーダル内の「閉じる」ボタンクリックハンドラをmain.jsに持ってきて再読のモーダルを隠した後、
 						パーティクルのエミッターをカスタム定義の方のsnow_slowを引数に呼んで canvas#snowfall2 表示するようにした
 								$('.closeBTN').click(function(e){
