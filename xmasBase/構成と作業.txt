@@ -23,7 +23,22 @@
 								  落下スピードを返るために２種類のパーティクルをsnow.jsに定義している（snowとsnow_slow）
 				  
 
-	
+20180808		Xmas版のみだが、Edge では最初のモーダル画面のチェック部分で（main.js#190）エラーが出てその先に行かなくなったので、対応のために以下のように変更
+							//main.js#190
+								      if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
+								          return;
+								      }else{
+								        var t = window.localStorage.getItem("todo-first20170319");
+								        if (t === null || t=== 'true') {                      	//初回またはチェック無しで表示
+								          $('.modal-window').show();
+								        } else {
+								          $('.modal-window').hide();
+								        }
+								      }
+								      ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ 								
+								      
+								      $('.modal-window').show();							// localStrageのチェックは不要なので単にモーダルを表示するコマンドのみにした
+						
 20180730 		プレゼント箱版降雪効果モーダルの綴じ方がわからないとメインのページに行けないので、以下の2箇所に
 						時間で閉じるコードも追加した（./js/xmas_effect/main.js #42）←このmain.jsは./src/index.htmlから読み込んでるものでビルド版では./js/main.jsに移植している
 																		  （./js/main.js #541）

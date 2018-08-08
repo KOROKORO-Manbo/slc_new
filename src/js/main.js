@@ -187,17 +187,17 @@ $(document).ready(function(){
       // $('.cloud').click(function() {
       //   window.location.href = 'http://slc-mie.com/mainORG.htm';
       // });
-      if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
-          return;
-      }else{
-        var t = window.localStorage.getItem("todo-first20170319");
-        if (t === null || t=== 'true') {                      //初回またはチェック無しで表示
-          $('.modal-window').show();
-        } else {
-          $('.modal-window').hide();
-        }
-      }
-
+      // if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
+      //     return;
+      // }else{
+      //   var t = window.localStorage.getItem("todo-first20170319");
+      //   if (t === null || t=== 'true') {                      //xmas版はチェック不要で単に表示のみ
+      //     $('.modal-window').show();
+      //   } else {
+      //     $('.modal-window').hide();
+      //   }
+      // }
+      $('.modal-window').show();
       // $('.bbs_wrapper').on( 'click', function( e ) {          // bbs用切り株のクリックTEST
       //   alert("!!");
       // })
