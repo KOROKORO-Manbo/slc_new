@@ -32,8 +32,8 @@
 }
 .snwBallBase {
   position: absolute;
-  width: 240px;
-  height: 84px;
+  width: 160px;
+  height: 47px;
   background-image: url(./ballBase160.png);
   background-repeat: no-repeat;
   top: 310px;
