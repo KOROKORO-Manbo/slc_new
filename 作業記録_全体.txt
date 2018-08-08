@@ -6,6 +6,23 @@
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
 
+５０．	Xmas版のみだが、Edge では最初のモーダル画面のチェック部分で（main.js#190）エラーが出てその先に行かなくなったので、対応のために以下のように変更
+				//main.js#190( 20180808 )
+					      if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
+					          return;
+					      }else{
+					        var t = window.localStorage.getItem("todo-first20170319");
+					        if (t === null || t=== 'true') {                      	//初回またはチェック無しで表示
+					          $('.modal-window').show();
+					        } else {
+					          $('.modal-window').hide();
+					        }
+					      }
+					      ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ 								
+					      
+					      $('.modal-window').show();							// localStrageのチェックは不要なので単にモーダルを表示するコマンドのみにした
+			
+
 ４９．SSL対応手順について
 		SSLの対応で、結局のところ ./build/index.html 内のaタグのリンクで、http:// ⇒ https:// のするだけなので
 		各ブランチで、その都度、置き換えをやっていくことにする
