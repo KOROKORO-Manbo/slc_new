@@ -1033,6 +1033,7 @@ background-repeat: no-repeat;
   left: 440px;
   width: 320px;
   height: 367px;
+  z-index: 1;
 }
 
 .BBScontainer {                             /* xmas用BBSセット定義は #1761 まで続いている */
