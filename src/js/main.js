@@ -272,7 +272,27 @@ $(document).ready(function(){
       		if(displaying_percent>=100){
             win.clearInterval(timer);
             // alert("完了！");                                      /* 読み込み完了時（＝プログレスバーが消える直前に）なにか実行したい時はココ（下のremoveの完了ハンドラでは少し間が空いてしまうので） */
-      			$("#loadingOverlay").fadeOut("slow",function(){});			/* 本来、プログレスバーを消してイントロムービーに移行するところだが、イントロレイヤ自体を消してトップページに行く*/
+            $('.modal-inner').css('visibility','hidden');
+            $("#loadingOverlay").fadeOut('fast',function(){			    /* プログレスバーを消した完了イベントで元旦用アニメの開始を行う */
+                $('.modal-inner').css('visibility','visible');
+                TweenMax.set("#newversion", {rotation: 15});
+                $('#title-line1').lettering();
+                $('#title-line2').lettering();
+                $('#title-line3').lettering();
+                (new TimelineLite(/*{onComplete:initScrollAnimations}*/))
+                  .from( $('#title-line1 span'), .4, {delay: 1, css:{right:'1500px'}, ease:Back.easeOut})
+                  .from( $('#title-line2'), .4, {css:{top:'1500px',opacity:'0'}, ease:Expo.easeOut})
+                  .append([
+                    TweenMax.from( $('#title-line3 .char1'), .25+Math.random(), {css:{top: '-200px', right:'1000px'}, ease:Elastic.easeOut}),
+                    TweenMax.from( $('#title-line3 .char2'), .25+Math.random(), {css:{top: '300px', right:'1000px'}, ease:Elastic.easeOut}),
+                    TweenMax.from( $('#title-line3 .char3'), .25+Math.random(), {css:{top: '-400px', right:'1000px'}, ease:Elastic.easeOut}),
+                    TweenMax.from( $('#title-line3 .char4'), .25+Math.random(), {css:{top: '-200px', left:'1000px'}, ease:Elastic.easeOut}),
+                    TweenMax.from( $('#title-line3 .char5'), .25+Math.random(), {css:{top: '200px', left:'1000px'}, ease:Elastic.easeOut})
+                  ])
+                  .from("#newversion", .4, {scale: 5, autoAlpha: 0, ease: Elastic.easeOut})
+                  .to( $('#title-info'), .5, {css:{opacity:.99, 'margin-top':0}, delay:-1, ease:Quad.easeOut})
+                  .to( $('#download'), .25, {autoAlpha:1});
+            });
       		}else{
       			if(displaying_percent<now_percent){
       				displaying_percent++;
