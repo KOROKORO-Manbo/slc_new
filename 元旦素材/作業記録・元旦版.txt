@@ -1,0 +1,52 @@
+
+１１．元旦用フォント（ビルドのたびに毎回やらないといけないが仕方なし・・・）
+	style.css内でフォントファイルの読み込みをしていてローダーも指定してるのでバンドルファイルに今回のフォントがバンドルされているが
+	バンドルによって壊れてしまうためか、実際にはフォントが文字に反映されないので悩んだ。
+	そこで、./build/font/ を作ってそこにそのフォントファイルをおいてbundle.js内で
+	”MyFont3” のソースをWebpackに組込まれたものでなく直に上のフォントファイルを指定するようにした
+	
+	bundle.jsの /* 26 */ のところ
+	ーーーーーーーーーーーーー
+	font-family: \"MyFont3\";\n    src: url(" + __webpack_require__(27) + ") 
+																	↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ 
+	font-family: \"MyFont3\";\n    src: url(./font/rounded-x-mplus-1p-black.ttf)
+
+１０．JavaScript
+	indexSRC.html で読み込んでる ./js/gantan/ にある元旦用ライブラリの各ファイルをgantan_index.jsにまとめ
+	それを ./src/js/index.js でmain.jsの前に読み込むようにした
+
+９．新しく使っているフォントはCSS内で読んでるのでバンドルされるのでそのまま
+
+８．CSSは./css/style.cssに組み込んだのでそのままバンドルされるので何もしない
+
+７．追加DOMを./src/indexSRC.htmlから./build/index.htmlへ追加
+
+==ここまででindexSRC.htmlga完全に動作するようになった==
+
+６．プリローダーが完了してからganntannのアニメが始まるようにする
+	main.js#276 の１００％でプリローダーのフェードアウト完了ハンドラ内に素材のindexにあった
+	コードを記述してあるscriptタグの内容をおいた
+	注意：フェードアウトの画面が消えたときアニメが始まる前の元旦用文字が一瞬、見えてしまうので
+	　　　前後でvisibleプロパティーをhiddennし完了ハンドラ内でvisibleにしている
+	注意：TweenMaxなど未定義エラーにならないように、./src/indexSRCの中で
+	　　　元旦用アニメーション用ライブラリファイルの読み込みの後にこのmain.jsを配置し直した
+
+５．jQueryのバージョンを合わせる
+	素材で使っていたjQueryのバージョンはjquery-1.9.1.min.jsで $.live(...)gafunctionでないというエラーが出るようになるので
+	プロジェクト全体で使ってるjQueryに統一するため素材からコピペしたjQueryのscriptタグはコメントアウトした
+	
+４．JavaScript
+	とりあえず素材にあったとおりにプロジェクトの./js/配下に必要なライブラリなどファイルをセットし
+	./src/indexSRC.htmlに素材のとおりに記述した。
+	しかし、indexSRCの読み込みと同時に文字群おアニメーションが始まるので最初のローダーが消えた頃には
+	アニメーションが終了している。
+	
+３．この時点で初期モーダル画面（ルーレットメニュー説明ページ）にあけおめが表示されている
+
+２．CSS、フォント
+	素材のstyle.cssを./src/css/style.cssの#447からコピペし配置する。
+	フォントファイルを./fonts/に配置する。
+	※元の.modal-window .modal-inner もすこしサイズ関係の記述を追加している
+
+１．HTML
+	素材のindex.htmlのDOM要素部分を./src/indexSRC.htmlの ”div.modal-inner” 以下に配置

@@ -8,6 +8,10 @@
   font-weight: bold;
   src: local("YuGothic-bold"),local("Yu Gothic");
 }
+@font-face {
+  font-family: "MyFont3";
+    src: url("../fonts/rounded-x-mplus-1p-black.ttf") format('truetype');
+  }
 html{
 /* カスタムfont-face "MyYuGothicM" 優先 */
     font-family:
@@ -454,13 +458,6 @@ transition: opacity 0.4s;
   text-align: center;
   /* visibility: hidden; */
 }
-@font-face {
-  font-family: 'MyFont3';
-    src: url("../fonts/rounded-x-mplus-1p-black.ttf");
-  }
-.modal-window  h1 {
-    font-family: 'MyFont3';
-}
 
 .modal-window h1 {
   font-size: 120px;
@@ -470,6 +467,10 @@ transition: opacity 0.4s;
   color: #FFB000;
   text-shadow: 0 2px 1px #000;
   line-height: 1.2;
+}
+
+.title-line {
+    font-family: 'MyFont3';
 }
 
 .modal-window #title {

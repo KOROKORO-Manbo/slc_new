@@ -81,10 +81,11 @@ module.exports = {
         {
           test: /\.less$/,
           loader: 'style-loader!css-loader!less-loader'
-        }, {
+        }, 
+        {
         test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
         loader: 'url-loader'
-      },
+        },
       // {
       //   test: require.resolve('jquery'),
       //   use: [{
