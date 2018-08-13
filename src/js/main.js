@@ -238,9 +238,9 @@ $(document).ready(function(){
       });
 
       function init(){
-      	$win.load(function(){																						//読込完了でプリローダー除去＆スキップボタン付加
+        $win.load(function(){																						//読込完了でプリローダー除去＆スキップボタン付加
       			isPageLoaded=true;																					//ここはページ読み込み直後に来る（イントロが流れる前：btn-skipは追加されるが最初は不可視）
-      			$("body").find("#preLoad").remove();
+            $("body").find("#preLoad").remove();
       		});
       }
 
@@ -270,8 +270,9 @@ $(document).ready(function(){
 
       	var timer=win.setInterval(function(){
       		if(displaying_percent>=100){
-      			win.clearInterval(timer);
-      			$("#loadingOverlay").fadeOut("slow",function(){});			/* 本来、プリローダーを消してイントロムービーに移行するところだが、イントロレイヤ自体を消してトップページに行く*/
+            win.clearInterval(timer);
+            // alert("完了！");                                      /* 読み込み完了時（＝プログレスバーが消える直前に）なにか実行したい時はココ（下のremoveの完了ハンドラでは少し間が空いてしまうので） */
+      			$("#loadingOverlay").fadeOut("slow",function(){});			/* 本来、プログレスバーを消してイントロムービーに移行するところだが、イントロレイヤ自体を消してトップページに行く*/
       		}else{
       			if(displaying_percent<now_percent){
       				displaying_percent++;
@@ -339,10 +340,8 @@ $(document).ready(function(){
       		}
       	}
       };
-
-
   }).call(this);
-
+      //------------------------------------------------------ここまでがプリローダー処理
 
 
 
