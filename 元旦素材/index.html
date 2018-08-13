@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<title>SUPERSCROLLORAMA</title>
+	<link rel="stylesheet" href="./css/style.css" type="text/css">	
+	<style>
+
+	</style>
+</head>
+<body>
+
+	<div id="newversion">
+		<a href="http://janpaepke.github.io/ScrollMagic/">
+		<h2>New Version</h2>
+		<span>Click here to find out more!</span>
+		</a>
+	</div>
+	
+	<div id="intro">
+		<h1 id="title">
+			<span id="title-line1" class="title-line">あけまして</span>
+			<span id="title-line2" class="title-line">おめでとう</span>
+			<span id="title-line3" class="title-line">ございます</span>
+		</h1>
+	</div>
+
+	<script type="text/javascript" src="./js/TweenMax.min.js"></script>
+	<script src="./js/jquery-1.9.1.min.js"></script>
+  <!-- <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script> -->
+  <script src="./js/jquery.lettering-0.6.1.min.js"></script>
+	<script src="./js/jquery.superscrollorama.js"></script>
+	<script>
+		$(document).ready(function() {
+			TweenMax.set("#newversion", {rotation: 15});
+			$('body').css('visibility','visible');
+			$('#title-line1').lettering();
+			$('#title-line2').lettering();
+			$('#title-line3').lettering();
+			(new TimelineLite(/*{onComplete:initScrollAnimations}*/))
+				.from( $('#title-line1 span'), .4, {delay: 1, css:{right:'1500px'}, ease:Back.easeOut})
+				.from( $('#title-line2'), .4, {css:{top:'1500px',opacity:'0'}, ease:Expo.easeOut})
+				.append([
+					TweenMax.from( $('#title-line3 .char1'), .25+Math.random(), {css:{top: '-200px', right:'1000px'}, ease:Elastic.easeOut}),
+					TweenMax.from( $('#title-line3 .char2'), .25+Math.random(), {css:{top: '300px', right:'1000px'}, ease:Elastic.easeOut}),
+					TweenMax.from( $('#title-line3 .char3'), .25+Math.random(), {css:{top: '-400px', right:'1000px'}, ease:Elastic.easeOut}),
+					TweenMax.from( $('#title-line3 .char4'), .25+Math.random(), {css:{top: '-200px', left:'1000px'}, ease:Elastic.easeOut}),
+					TweenMax.from( $('#title-line3 .char5'), .25+Math.random(), {css:{top: '200px', left:'1000px'}, ease:Elastic.easeOut})
+				])
+				.from("#newversion", .4, {scale: 5, autoAlpha: 0, ease: Elastic.easeOut})
+				.to( $('#title-info'), .5, {css:{opacity:.99, 'margin-top':0}, delay:-1, ease:Quad.easeOut})
+				.to( $('#download'), .25, {autoAlpha:1});
+/*
+			function initScrollAnimations() {
+						タイトル表示完了イベントハンドラ
+			}
+*/
+		});
+	</script>
+
+</body></html>
