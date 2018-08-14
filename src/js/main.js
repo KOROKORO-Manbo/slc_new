@@ -273,6 +273,12 @@ $(document).ready(function(){
             win.clearInterval(timer);
             // alert("完了！");                                      /* 読み込み完了時（＝プログレスバーが消える直前に）なにか実行したい時はココ（下のremoveの完了ハンドラでは少し間が空いてしまうので） */
             $('.modal-inner').css('visibility','hidden');
+
+            setTimeout(function(){																	// 元旦用モーダル（元はルーレット説明モーダル）を消すタイマーをプログレスバーが消えたタイミングで発動
+              $('.modal-window').hide();
+              $("#modal-p01").remove();
+            },8000);
+
             $("#loadingOverlay").fadeOut('fast',function(){			    /* プログレスバーを消した完了イベントで元旦用アニメの開始を行う */
                 $('.modal-inner').css('visibility','visible');
                 TweenMax.set("#newversion", {rotation: 15});
@@ -372,17 +378,17 @@ $(document).ready(function(){
     // $('body,html').animate({scrollTop:position}, speed, 'swing');
 
 
-
-    $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
-      if ($(this).prop('checked')) {                        // 非表示＝false
-        window.localStorage.setItem("todo-first20170319", false);
-      } else {
-        window.localStorage.setItem("todo-first20170319", true);
-      }
-    });
-    $('.closeBTN').click(function(e){
-      $('.modal-window').hide();
-    });
+                                                            // ganntanには閉じるボタン、次回表示しないボタンはない
+    // $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
+    //   if ($(this).prop('checked')) {                        // 非表示＝false
+    //     window.localStorage.setItem("todo-first20170319", false);
+    //   } else {
+    //     window.localStorage.setItem("todo-first20170319", true);
+    //   }
+    // });
+    // $('.closeBTN').click(function(e){
+    //   $('.modal-window').hide();
+    // });
 
     $('.topObi_container1').hover(                                 // topObi内リンクボタンアニメ用
       function(){$(".topObi_container1 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container1 .flip-back").addClass("perspectiveDown");},
