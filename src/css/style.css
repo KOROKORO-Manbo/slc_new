@@ -443,6 +443,8 @@ overflow-x: hidden;
 text-align: center;
 width: 100%;
 height: 100%;
+background-image: url('../img/gantan/modalInnerBG.png');
+background-repeat: repeat;
 }
 
 .modal-window {
@@ -451,12 +453,30 @@ height: 100%;
 transition: opacity 0.4s;
 }
                                           /* ここから元旦素材用 */
+.gantan_wrap {
+  position: relative;
+  margin: auto;
+  margin-top: 60px;
+  width: 1080px;
+  height: 810px;
+  background-image: url('../img/gantan/akeomeBG.png');
+  background-size: cover;
+}
+
+.gantan_letter {
+  position: absolute;
+  top: 75px;
+  left: 90px;
+}
 .modal-window  {
-  background: #181d5b;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  /* visibility: hidden; */
+  background: rgba(255,255,255,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(30%, rgba(255,255,255,1)), color-stop(88%, rgba(230,181,34,1)), color-stop(100%, rgba(230,178,34,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6b222', GradientType=1 );
 }
 
 .modal-window h1 {
@@ -466,7 +486,7 @@ transition: opacity 0.4s;
   text-transform: uppercase;
   color: #FFB000;
   text-shadow: 0 2px 1px #000;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .title-line {
@@ -475,7 +495,7 @@ transition: opacity 0.4s;
 
 .modal-window #title {
   overflow: hidden;
-  font-size: 180px;
+  font-size: 155px;
   margin: 0 auto -580px;
   width: 100%;
   height: 1000px;
@@ -501,24 +521,14 @@ transition: opacity 0.4s;
   border-radius: 100px;
   box-shadow: 0 2px 1px #000;
 }
-.modal-window #newversion h2 {
-  font-size: 43px;
-  margin: 0;
-  padding: 30px 0px 0px 0px;
-  color: #FFFFFF;
-  font-style: normal;
-}
-.modal-window #newversion a {
-  text-decoration: none;
-  padding: 0px 20px 20px 20px;
-  display: block;
-  font-size: 18px;
-  color: #FFFFFF;
-}
-.modal-window #newversion a:hover span {
-  text-decoration: underline;
-}
-                                          /* ここまで元旦素材用 */
+.modal-window .inosisi {
+  position: relative;
+  height: 210px;
+  width: 210px;
+  background-image: url('../img/gantan/inosisi.png');
+  background-size: contain;
+
+}                                      /* ここまで元旦素材用 */
 
 
 .crane{
