@@ -1,0 +1,291 @@
+
+.stamp {                      /* 全体のラッパー */
+  position: absolute;
+  /* right: 6vmax;
+  top: 6vmax; */
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 350px;
+  height:350px;
+  text-align:center;
+  background: url('./letters/stampbg.png') no-repeat center center;
+  background-size:350px 350px;
+}
+.stamp p {
+  color: #ee3d3d;
+  font-size: 2vmax;
+  font-family: 'Asul', sans-serif;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  width: 100px;
+  text-align: center;
+}
+.stamp .circle {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  background-color: transparent;
+  -webkit-animation: rotating 9.5s linear infinite;
+          animation: rotating 9.5s linear infinite;
+
+}
+.stamp .circle span {
+  /* height: 12.3vmax;                                          回転半径 */
+
+  height:160px;
+  width: 40px;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right:0;
+  bottom: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+.char1 {
+  -webkit-transform: rotate(11deg);
+          transform: rotate(11deg);
+
+}
+.char2 {
+  -webkit-transform: rotate(22deg);
+          transform: rotate(22deg);
+        
+}
+.char3 {
+  -webkit-transform: rotate(33deg);
+          transform: rotate(33deg);
+        
+}
+.char4 {
+  -webkit-transform: rotate(44deg);
+          transform: rotate(44deg);
+        
+}
+.char5 {
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
+        
+}
+.char6 {
+  -webkit-transform: rotate(66deg);
+          transform: rotate(66deg);
+        
+}
+.char7 {
+  -webkit-transform: rotate(77deg);
+          transform: rotate(77deg);
+        
+}
+.char8 {
+  -webkit-transform: rotate(88deg);
+          transform: rotate(88deg);
+        
+}
+.char9 {
+  -webkit-transform: rotate(99deg);
+          transform: rotate(99deg);
+        
+}
+.char10 {
+  -webkit-transform: rotate(110deg);
+          transform: rotate(110deg);
+        
+}
+.char11 {
+  -webkit-transform: rotate(121deg);
+          transform: rotate(121deg);
+        
+}
+.char12 {
+  -webkit-transform: rotate(132deg);
+          transform: rotate(132deg);
+        
+}
+.char13 {
+  -webkit-transform: rotate(143deg);
+          transform: rotate(143deg);
+        
+}
+.char14 {
+  -webkit-transform: rotate(154deg);
+          transform: rotate(154deg);
+        
+}
+.char15 {
+  -webkit-transform: rotate(165deg);
+          transform: rotate(165deg);
+        
+}
+.char16 {
+  -webkit-transform: rotate(176deg);
+          transform: rotate(176deg);
+        
+}
+.char17 {
+  -webkit-transform: rotate(187deg);
+          transform: rotate(187deg);
+        
+}
+.char18 {
+  -webkit-transform: rotate(198deg);
+          transform: rotate(198deg);
+        
+}
+.char19 {
+  -webkit-transform: rotate(209deg);
+          transform: rotate(209deg);
+        
+}
+.char20 {
+  -webkit-transform: rotate(220deg);
+          transform: rotate(220deg);
+        
+}
+.char21 {
+  -webkit-transform: rotate(231deg);
+          transform: rotate(231deg);
+        
+}
+.char22 {
+  -webkit-transform: rotate(242deg);
+          transform: rotate(242deg);
+        
+}
+.char23 {
+  -webkit-transform: rotate(253deg);
+          transform: rotate(253deg);
+        
+}
+.char24 {
+  -webkit-transform: rotate(264deg);
+          transform: rotate(264deg);
+        
+}
+.char25 {
+  -webkit-transform: rotate(275deg);
+          transform: rotate(275deg);
+        
+}
+.char26 {
+  -webkit-transform: rotate(286deg);
+          transform: rotate(286deg);
+        
+}
+.char27 {
+  -webkit-transform: rotate(297deg);
+          transform: rotate(297deg);
+        
+}
+.char28 {
+  -webkit-transform: rotate(308deg);
+          transform: rotate(308deg);
+        
+}
+.char29 {
+  -webkit-transform: rotate(319deg);
+          transform: rotate(319deg);
+        
+}
+.char30 {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+        
+}
+.char31 {
+  -webkit-transform: rotate(341deg);
+          transform: rotate(341deg);
+        
+}
+.char32 {
+  -webkit-transform: rotate(352deg);
+          transform: rotate(352deg);
+        
+}
+/* .char33 {
+  -webkit-transform: rotate(363deg);
+          transform: rotate(363deg);
+        
+} */
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+	0% {transform: rotate(360deg);}
+	100% {transform: rotate(0deg);}
+}
+
+.etoWrapper{
+  position: relative;
+}
+.inosisiBou {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;;
+  background: url('./inosisi/inosisi-sasibo.png') no-repeat center center;
+  background-size:200px 200px;
+  animation: spin 5s linear infinite;
+  transition: opacity 1s;
+}
+.bbsInosisi {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 350px;
+  height: 350px;;
+  background: url('./inosisi/inosisi-frame-03a.png') no-repeat center center;
+  background-size:200px 200px;
+  opacity: 0;
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  transition: opacity top 1.5s;
+}
+
+.stamp:hover .inosisiBou {
+  opacity: 0;
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+.stamp:hover .bbsInosisi {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.stamp:hover .inosisiBou {
+  transition: all 1.2s ease;
+}
+.stamp:hover .bbsInosisi {
+  transition: all 0.8s ease;
+}

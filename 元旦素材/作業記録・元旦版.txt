@@ -1,4 +1,7 @@
 
+１３．元旦中央の掲示板リンク要素を「元旦中央」のものにする作業
+			（まずはHTMLを ./src/indexSRC.html へ置きCSSを./css/style.cssの最後尾に置いた）
+			
 １２．元旦用モーダル画面の閉じるタイマー設置
 	main.js#277に以下のように一定時間で元旦モーダルを閉じるタイマーを設置した
 	
@@ -27,7 +30,7 @@
 
 ８．CSSは./css/style.cssに組み込んだのでそのままバンドルされるので何もしない
 
-７．追加DOMを./src/indexSRC.htmlから./build/index.htmlへ追加
+７．追加DOMを./src/indexSRC.htmlから./build/index.htmlへ追加			← ./src/index.html は元旦効果は加えずそのまま放置している
 
 ==ここまででindexSRC.htmlga完全に動作するようになった==
 

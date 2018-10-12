@@ -865,7 +865,7 @@ div.elevit span:before{
 .flipContainer{
   position: absolute;
   margin-top: 400px;
-  margin-left: 740px;
+  margin-left: 790px;
   cursor: default;
 }
 .flip{
@@ -1009,8 +1009,8 @@ background-repeat: no-repeat;
 /* 外来混雑状況 */
 .kujiraContainer{
   position: absolute;
-  top: 20px;
-  left: 290px;
+  top: 0px;
+  left: 250px;
   width: 376px;
   height: 480px;
 }
@@ -1056,7 +1056,7 @@ background-repeat: no-repeat;
 /* 当院情報 */
 .touinJoho_wrapper {
   position: absolute;
-  left:110px;
+  left:160px;
   top:520px;
   width: 274px;
   height: 216px;
@@ -1114,8 +1114,8 @@ background-repeat: no-repeat;
 /* 掲示板 */
 .bbs_wrapper{
   position: absolute;
-  top: 510px;
-  left: 390px;
+  top: 530px;
+  left: 460px;
   width: 307px;
   height: 164px;
 }
@@ -1921,7 +1921,7 @@ svg {
   #CalWrapper{
   	position: absolute;			/*カレンダー部分はopacityゼロなだけで存在するので、この上側はHoverものは無反応になるのでこの位置（Clickものは反応する）*/
   	top: -40px;
-  	left: 100px;
+  	left: 80px;
     /*right:160px;*/
   	width: 300px;
   	height: 505px;
@@ -2015,3 +2015,296 @@ li img{ margin-top: 8px; margin-left: 10px;}
 .fr-dialogmodal--is-ready[aria-hidden="false"] {
 	visibility: visible;
 }*/
+
+
+
+.stamp {                      /* ーーーーーーーーーーーーーーーーーーーーーー正月中央全体のラッパー ーーーーーーーーーーーーーーーーーーーーーー */
+  position: absolute;
+  /* right: 6vmax;
+  top: 6vmax; */
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 350px;
+  height:350px;
+  text-align:center;
+  background: url('../images/letters/stampbg.png') no-repeat center center;
+  background-size:350px 350px;
+}
+.stamp p {
+  color: #08cde3;
+  font-size: 2vmax;
+  font-family: 'Asul', sans-serif;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  width: 100px;
+  text-align: center;
+}
+.stamp .circle {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  background-color: transparent;
+  -webkit-animation: rotating 9.5s linear infinite;
+          animation: rotating 9.5s linear infinite;
+
+}
+.stamp .circle span {
+  /* height: 12.3vmax;                                          回転半径 */
+
+  height:160px;
+  width: 40px;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right:0;
+  bottom: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+.stamp .char1 {
+  -webkit-transform: rotate(11deg);
+          transform: rotate(11deg);
+
+}
+.stamp .char2 {
+  -webkit-transform: rotate(22deg);
+          transform: rotate(22deg);
+        
+}
+.stamp .char3 {
+  -webkit-transform: rotate(33deg);
+          transform: rotate(33deg);
+        
+}
+.stamp .char4 {
+  -webkit-transform: rotate(44deg);
+          transform: rotate(44deg);
+        
+}
+.stamp .char5 {
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
+        
+}
+.stamp .char6 {
+  -webkit-transform: rotate(66deg);
+          transform: rotate(66deg);
+        
+}
+.stamp .char7 {
+  -webkit-transform: rotate(77deg);
+          transform: rotate(77deg);
+        
+}
+.stamp .char8 {
+  -webkit-transform: rotate(88deg);
+          transform: rotate(88deg);
+        
+}
+.stamp .char9 {
+  -webkit-transform: rotate(99deg);
+          transform: rotate(99deg);
+        
+}
+.stamp .char10 {
+  -webkit-transform: rotate(110deg);
+          transform: rotate(110deg);
+        
+}
+.stamp .char11 {
+  -webkit-transform: rotate(121deg);
+          transform: rotate(121deg);
+        
+}
+.stamp .char12 {
+  -webkit-transform: rotate(132deg);
+          transform: rotate(132deg);
+        
+}
+.stamp .char13 {
+  -webkit-transform: rotate(143deg);
+          transform: rotate(143deg);
+        
+}
+.stamp .char14 {
+  -webkit-transform: rotate(154deg);
+          transform: rotate(154deg);
+        
+}
+.stamp .char15 {
+  -webkit-transform: rotate(165deg);
+          transform: rotate(165deg);
+        
+}
+.stamp .char16 {
+  -webkit-transform: rotate(176deg);
+          transform: rotate(176deg);
+        
+}
+.stamp .char17 {
+  -webkit-transform: rotate(187deg);
+          transform: rotate(187deg);
+        
+}
+.stamp .char18 {
+  -webkit-transform: rotate(198deg);
+          transform: rotate(198deg);
+        
+}
+.stamp .char19 {
+  -webkit-transform: rotate(209deg);
+          transform: rotate(209deg);
+        
+}
+.stamp .char20 {
+  -webkit-transform: rotate(220deg);
+          transform: rotate(220deg);
+        
+}
+.stamp .char21 {
+  -webkit-transform: rotate(231deg);
+          transform: rotate(231deg);
+        
+}
+.stamp .char22 {
+  -webkit-transform: rotate(242deg);
+          transform: rotate(242deg);
+        
+}
+.stamp .char23 {
+  -webkit-transform: rotate(253deg);
+          transform: rotate(253deg);
+        
+}
+.stamp .char24 {
+  -webkit-transform: rotate(264deg);
+          transform: rotate(264deg);
+        
+}
+.stamp .char25 {
+  -webkit-transform: rotate(275deg);
+          transform: rotate(275deg);
+        
+}
+.stamp .char26 {
+  -webkit-transform: rotate(286deg);
+          transform: rotate(286deg);
+        
+}
+.stamp .char27 {
+  -webkit-transform: rotate(297deg);
+          transform: rotate(297deg);
+        
+}
+.stamp .char28 {
+  -webkit-transform: rotate(308deg);
+          transform: rotate(308deg);
+        
+}
+.stamp .char29 {
+  -webkit-transform: rotate(319deg);
+          transform: rotate(319deg);
+        
+}
+.stamp .char30 {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+        
+}
+.stamp .char31 {
+  -webkit-transform: rotate(341deg);
+          transform: rotate(341deg);
+        
+}
+.stamp .char32 {
+  -webkit-transform: rotate(352deg);
+          transform: rotate(352deg);
+        
+}
+/* .stamp .char33 {
+  -webkit-transform: rotate(363deg);
+          transform: rotate(363deg);
+        
+} */
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+	0% {transform: rotate(360deg);}
+	100% {transform: rotate(0deg);}
+}
+
+.etoWrapper{
+  position: relative;
+}
+.inosisiBou {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;;
+  background: url('../images/inosisi/inosisi-sasibo.png') no-repeat center center;
+  background-size:200px 200px;
+  animation: spin 5s linear infinite;
+  transition: opacity 1s;
+}
+.bbsInosisi {
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 350px;
+  height: 350px;;
+  background: url('../images/inosisi/inosisi-frame-03a.png') no-repeat center center;
+  background-size:200px 200px;
+  opacity: 0;
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  transition: opacity top 1.5s;
+}
+
+.stamp:hover .inosisiBou {
+  opacity: 0;
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+.stamp:hover .bbsInosisi {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.stamp:hover .inosisiBou {
+  transition: all 1.2s ease;
+}
+.stamp:hover .bbsInosisi {
+  transition: all 0.8s ease;
+}
