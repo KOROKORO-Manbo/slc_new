@@ -7,7 +7,7 @@
 
 ５３．./css/pretty_index.css から pretty_font.css の記述を除外した　2018/10/28
 			FireFoxでこのファイルからの外部フォントファイルの読込が安全でないのでブロックと表示されてしまうので除外しbundleに含めないようにした。
-			ちなみにPrettyPhotoの閉じるボタンはBase64としてbundleに組み込まれてるので、他のフォントは不要
+			これらは院内食や院内の要素のスライド用のもので、PrettyPhotoの閉じるボタンはBase64としてbundleに組み込まれてるので、他のフォントは不要
 
 ５２．SSLで、ブラウザの鍵マークのところで「一部安全でない（画像など）」と表示されるのは、
 		   ./build/index.html 内にまだhttp://slc-mie.comが残っているからで、
