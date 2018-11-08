@@ -190,7 +190,7 @@ $(document).ready(function(){
       if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
           return;
       }else{
-        var t = window.localStorage.getItem("todo-first20170319");
+        var t = window.localStorage.getItem("todo-first20181108");
         if (t === null || t=== 'true') {                      //初回またはチェック無しで表示
           $('.modal-window').show();
         } else {
@@ -355,9 +355,9 @@ $(document).ready(function(){
 
     $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
       if ($(this).prop('checked')) {                        // 非表示＝false
-        window.localStorage.setItem("todo-first20170319", false);
+        window.localStorage.setItem("todo-first20181108", false);
       } else {
-        window.localStorage.setItem("todo-first20170319", true);
+        window.localStorage.setItem("todo-first20181108", true);
       }
     });
     $('.closeBTN').click(function(e){
