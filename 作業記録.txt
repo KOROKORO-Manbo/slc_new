@@ -1,0 +1,33 @@
+
+HTML    以下のモーダル部分の画像をキリンから風疹用に変更(index.html)
+
+  <section class="modal-window" id="modal-p01">
+    <div class="modal-inner">
+      <div class="closeBTN"><img src="./img/close.png"></div><input class="neverShow" type="checkbox" name="name" value="">次から表示しない<br>
+      <a href="https://slc-mie.com/flue/fuushin.pdf"><img class="crane" src="./img/fuushinbanner.png" style="width:550px;height:387px;"></a>
+    </div>
+  </section>
+
+JS      誰にも最初は表示するように「次から表示しない」のキーを新たにする(main.js)
+
+    #356
+    $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
+      if ($(this).prop('checked')) {                        // 非表示＝false
+        window.localStorage.setItem("todo-first20181108", false);
+      } else {
+        window.localStorage.setItem("todo-first20181108", true);
+      }
+    });
+
+
+    #192
+        ・・・
+      }else{
+        var t = window.localStorage.getItem("todo-first20181108");
+        if (t === null || t=== 'true') {                      //初回またはチェック無しで表示
+          $('.modal-window').show();
+        } else {
+          $('.modal-window').hide();
+        }
+      }
+        ・・・
