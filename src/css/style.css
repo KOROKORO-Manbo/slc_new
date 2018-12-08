@@ -467,11 +467,7 @@ transition: opacity 0.4s;
   background-repeat: repeat-x;
 }
 .topBtns{
-<<<<<<< HEAD
-  width:600px;
-=======
   width:800px;
->>>>>>> 6b41450... add BTN for van
   margin-right: 20px;
   display:flex;
   float: right;
