@@ -5,7 +5,13 @@
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
-
+５５．TopBtn追加・・・作業内容はmenuTest ブランチを参照のこと
+			cherry-pick時はブランチの以下の２つを古い方からやること
+				commit 6b41450e69fc0cc05b9f7aaef9a4587679ca3bf5 (HEAD -> menuTest)Author: KOROKORO <pingping_hiromi@yahoo.co.jp>Date:   Mon Dec 10 13:38:26 2018 +0900
+    				add BTN for van
+				commit 84488efdf02fb2cd7294b6d8677a9d71a779c3d0Author: KOROKORO <pingping_hiromi@yahoo.co.jp>Date:   Sat Dec 8 13:32:46 2018 +0900
+    				add topBtn material
+    				
 ５４．緊急告知　pop-noticeブランチ・・・キリンのモーダルの画像差し替え（詳細はブランチ内の作業記録）
 
 ５３．./css/pretty_index.css から pretty_font.css の記述を除外した　2018/10/28
