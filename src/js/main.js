@@ -442,6 +442,19 @@ $(document).ready(function(){
       }
     });
 
+    $('.topObi_container8').hover(
+      function(){$(".topObi_container8 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container8 .flip-back").addClass("perspectiveDown");},
+      function(){
+        $(".topObi_container8 .flip-back").removeClass("perspectiveDown");
+        $(".topObi_container8 .flip-back").addClass("perspectiveDownReturn");
+      }
+    )
+    $(".topObi_container8 .flip-back").on('webkitAnimationEnd', function(){
+      if($(".topObi_container8 .flip-back").hasClass('perspectiveDownReturn')){
+          return $(".topObi_container8 .flip-back").removeClass('perspectiveDownReturn');
+      }
+    });
+
     $('#usagi').click(function () {
       if ($('#CarouselSpace').css('opacity') == "0") {
           $('#CarouselSpace').css('opacity', '1');
