@@ -100,6 +100,8 @@ body
       <div class="area"><div class="marquee">新美容サービス💘</div></div>
     </div>
 
+    mini化HTML：      <div class="topObi_container8"><div class="flip-front"><a href="http://slc-mie.com/van/" target="_blank"><img src="./img/topObiBtns/vanura.png" /></a></div><div class="flip-back"><img src="./img/topObiBtns/van.png" /></div><div class="area"><div class="marquee">新美容サービス💘</div></div></div>
+
   main.jsにCSSクラス付与／削除コード追加
     $('.topObi_container8').hover(
       function(){$(".topObi_container8 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container8 .flip-back").addClass("perspectiveDown");},
