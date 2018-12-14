@@ -5,9 +5,10 @@
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
 
-５５．TopBtn追加・・・作業内容は「menuTest ブランチ」を参照のこと← cherry-pickはやっちゃだめ
+５５．TopBtn追加・・・作業内容は「menuTest ブランチ」を参照のこと← cherry-pickは素材追加のコミットのみにすること
 			cherry-pickをやるとすれば以下の2つのコミットを順に下からやるのだが、各ブランチの./build/index.html と ./src/css/style.css の内容が完全に共通でないので
-			競合が発生し、入力側のmenuTest ブランチで上書きしてしまうと、各ブランチの効果などが素の状態になってしまうので、やはり、menuTest ブランチの手順に従ってそれぞれのブランチで作業するしかない
+			競合が発生し、入力側のmenuTest ブランチで上書きしてしまうと、各ブランチの効果などが素の状態になってしまうので、下の素材画像追加だけのコミットはcherry-pickし
+			HTML、CSS、JavaScriptの変更についてはmenuTest ブランチの作業記録ファイルを開いておいて、それに従って、それぞれのブランチで作業するしかない
 			
 				commit 6b41450e69fc0cc05b9f7aaef9a4587679ca3bf5 (HEAD -> menuTest)Author: KOROKORO <pingping_hiromi@yahoo.co.jp>Date:   Mon Dec 10 13:38:26 2018 +0900
     				add BTN for van
