@@ -92,9 +92,10 @@ body
 
   ※ フォントについては最後尾で説明
 
-  ./img/topObiBtns/ に van.png vanura.png 追加
-
-  index.htmlに以下を追加（topObi_container5の次に配置）・・・./build/index.html にもmini化後、追加
+  ./img/topObiBtns/ に van.png vanura.png 追加・・・この作業まではどのブランチでもcherry-pickで導入し、以下は手作業でやったほうが安全
+                                                                                        （このブランチでのコミットのハッシュ＝84488ef （add topBtn material））
+                                                                                        
+  index.htmlに以下を追加（topObi_container5の次に配置）・・・./build/index.html にもmini化後、追加     
     <div class="topObi_container8">
       <div class="flip-front"><a href="http://slc-mie.com/van/" target="_blank"><img src="./img/topObiBtns/vanura.png" /></a></div><div class="flip-back"><img src="./img/topObiBtns/van.png" /></div>
       <div class="area"><div class="marquee">新美容サービス💘</div></div>
