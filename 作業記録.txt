@@ -1,5 +1,5 @@
 
-HTML    以下のモーダル部分の画像をキリンから風疹用に変更(index.html)
+HTML    以下のモーダル部分の画像をキリンから風疹用に変更(index.html)・・・なので各ブランチで元のキリンに戻す時は手作業で以下のHTMLを戻すだけ（JSはそのままでいい）
 
   <section class="modal-window" id="modal-p01">
     <div class="modal-inner">
