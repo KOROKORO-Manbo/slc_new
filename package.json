@@ -31,6 +31,7 @@
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "uglify-save-license": "^0.4.1",
+    "url-loader": "^1.1.2",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1"
   },
