@@ -1,0 +1,170 @@
+
+HTMLは以下のような構成になっており、トップの横並びのボタン群は div.topBtns であり、
+その全体の幅は全ボタンを格納するために津要請しないといけない（その親の div.topObi は１００vwとなっている）
+注意：具体的作業は後述の＝作業記録＝を参照
+body
+  |---div#rouletteContainer
+        |---div.topObi
+        |     |---div.topBtns
+        |           |---div.topObi_container7
+        |           |     |---div.elevit <a href="./images/elevit.pdf" target="_blank"><img src="./images/elevit_logo.png"></a><span>妊婦さんのサプリ</span></div>
+        |           |---div.topObi_container6
+        |                 |---div.flip-front  <a href="./images/folicacid.pdf" target="_blank"><img src="./images/folicacidUra.png"></a>
+        |                 |---div.flip-back"  <img src="./images/folicacidOmote.png">
+        |             ・・・
+        |
+        |---ul#roulette .number-1
+              |---li
+                ・・・
+
+ボタン群コンテナ（div.topBtns）の幅設定は ./css/style.css#465 から・・・
+
+.topBtns{
+  width:650px;          ← ← ← ← ここでボタン全体のコンテナの幅を決めてる
+  margin-right: 20px;
+  display:flex;
+  float: right;
+}
+
+.topBtns img{
+  height:40px;
+}
+.topObi .perspectiveDown{     ← ← ← ← ボタンのフリップについては JS で Hover時のCSSクラスの付与／削除をしている（main.js#367から）
+  animation-duration: 0.5s;           注意；各div.topObi_container１つ１つにJSの Hover設定 があるので、メニューを追加したらJSも追加必要
+  animation-name: perspectiveDown;                            例）
+  transform-origin: 0 100%;                                     $('.topObi_container1').hover(                                 // topObi内リンクボタンアニメ用
+  transform: perspective(800px) rotateX(-180deg);                 function(){$(".topObi_container1 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container1 .flip-back").addClass("perspectiveDown");},
+}                                                                 function(){
+.topObi .perspectiveDownReturn {                                    $(".topObi_container1 .flip-back").removeClass("perspectiveDown");
+  animation-duration: 0.1s;                                         $(".topObi_container1 .flip-back").addClass("perspectiveDownReturn");
+  animation-name: perspectiveDownReturn;                          }
+  transform-origin: 0 100%;                                      )
+  transform: perspective(800px) rotateX(0deg)
+}
+.topObi .flip-front{
+  position: absolute;
+  top:0px;
+  left:5px;
+  width:75.7px;
+  height:40px;
+  /*background-color: rgba(0, 255, 0, 1);*/
+}
+.topObi .flip-back{
+  position: absolute;
+  top:0px;
+  left:5px;
+  width:75.7px;
+  height:40px;
+  /*background-color: rgba(255, 0, 0, 1);*/
+}
+.flip-back.perspectiveDown, .flip-back.perspectiveDownReturn{
+  margin-top: -5px;
+}
+
+@keyframes perspectiveDown {
+  0% {
+    transform-origin: 0 100%;
+    margin-top:0px;
+    transform: perspective(800px) rotateX(0)
+  }
+  100% {
+    transform-origin: 0 100%;
+    margin-top:-5px;
+    transform: perspective(800px) rotateX(-180deg);
+  }
+}
+
+@keyframes perspectiveDownReturn {
+  0% {
+    transform-origin: 0 100%;
+    transform: perspective(800px) rotateX(-180deg)
+  }
+  100% {
+    transform-origin: 0 100%;
+    margin-top: 0px;
+    transform: perspective(800px) rotateX(0)
+  }
+}
+
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝作業記録＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+  ※ フォントについては最後尾で説明
+
+  ./img/topObiBtns/ に van.png vanura.png 追加・・・この作業まではどのブランチでもcherry-pickで導入し、以下は手作業でやったほうが安全
+                                                                                        （このブランチでのコミットのハッシュ＝84488ef （add topBtn material））
+                                                                                        
+  index.htmlに以下を追加（topObi_container5の次に配置）・・・./build/index.html にもmini化後、追加     
+    <div class="topObi_container8">
+      <div class="flip-front"><a href="http://slc-mie.com/van/" target="_blank"><img src="./img/topObiBtns/vanura.png" /></a></div><div class="flip-back"><img src="./img/topObiBtns/van.png" /></div>
+      <div class="area"><div class="marquee">新美容サービス💘</div></div>
+    </div>
+
+    mini化HTML：      <div class="topObi_container8"><div class="flip-front"><a href="http://slc-mie.com/van/" target="_blank"><img src="./img/topObiBtns/vanura.png" /></a></div><div class="flip-back"><img src="./img/topObiBtns/van.png" /></div><div class="area"><div class="marquee">新美容サービス💘</div></div></div>
+
+  main.jsにCSSクラス付与／削除コード追加
+    $('.topObi_container8').hover(
+      function(){$(".topObi_container8 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container8 .flip-back").addClass("perspectiveDown");},
+      function(){
+        $(".topObi_container8 .flip-back").removeClass("perspectiveDown");
+        $(".topObi_container8 .flip-back").addClass("perspectiveDownReturn");
+      }
+    )
+    $(".topObi_container8 .flip-back").on('webkitAnimationEnd', function(){
+      if($(".topObi_container8 .flip-back").hasClass('perspectiveDownReturn')){
+          return $(".topObi_container8 .flip-back").removeClass('perspectiveDownReturn');
+      }
+    });
+  style.css で、.topBtns のwidthを800pxに広げる
+  style.css で、514行目に .topObi_container8 を追加
+  ボタンに使うフォントをDLし./fonts/HonyaJi-Re.ttfに設置
+  style.css で、以下を追加
+    .topObi_container8 {
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+  [フォントについて]  style.css 先頭部分に、以下を追加  （バンドル時は削除）           GoogleFont
+    /*
+    @font-face {
+    	font-family: 'MyFont';
+    	src: url(../fonts/HonyaJi-Re.ttf);          ← DLしてローカルファイルとすると、バンドル後、反映されなくなってしまうので
+    }                                               以下のようにCDNで指定するようにした
+    */
+          ↓ ↓ ↓ ↓ 
+    @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
+
+  style.css 最後尾に、以下を追加
+    .topObi_container8:hover .area {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .topObi_container8 .area {
+      margin-top: 10px;
+      margin-left:17px;
+      width: 80px;
+      /* border: 1px solid #ddd; */
+      overflow: hidden;
+    }
+    /* 表示領域に合わせてサイズと余白を設定 */
+    .topObi_container8 .marquee {
+        width: 80px;
+        padding-left: 80px;
+        white-space: nowrap;
+        color: blue;
+        animation-name: marquee;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        font-family: 'Kosugi Maru', sans-serif;
+    }
+    @keyframes marquee {
+        from    { transform: translate(0%); } 
+        100%,to { transform: translate(-100%); }
+    }
+
+    ○ フォントについて
+        フォントは上記のように ./src/ でフォントファイルをDLしてローカルで指定しても  
+        ./src/ ではうまく反映されるが ./dist/ ではフォント自体バンドルされてるのに反映されない
+        ⇒ なのでstyle.cssの先頭で@importにしてCDNでやるようにしている
