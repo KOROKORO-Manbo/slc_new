@@ -1,7 +1,7 @@
 
 HTMLは以下のような構成になっており、トップの横並びのボタン群は div.topBtns であり、
 その全体の幅は全ボタンを格納するために津要請しないといけない（その親の div.topObi は１００vwとなっている）
-
+注意：具体的作業は後述の＝作業記録＝を参照
 body
   |---div#rouletteContainer
         |---div.topObi
