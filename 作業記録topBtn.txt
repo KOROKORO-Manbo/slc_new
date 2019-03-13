@@ -130,7 +130,7 @@ body
     @font-face {
     	font-family: 'MyFont';
     	src: url(../fonts/HonyaJi-Re.ttf);          ← DLしてローカルファイルとすると、バンドル後、反映されなくなってしまうので
-    }                                               以下のようにCDNで指定するようにした
+    }                                               以下のようにstyle.cssにCDNで指定するようにした
     */
           ↓ ↓ ↓ ↓ 
     @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
