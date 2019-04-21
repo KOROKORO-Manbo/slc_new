@@ -1,6 +1,8 @@
 
-△ 題材：SLC_HPのクリスマスバージョン（ブランチ：xmas）で初期モーダルアニメ＆降雪効果追加時
+△ 題材：1) SLC_HPのクリスマスバージョン（ブランチ：xmas）で初期モーダルアニメ＆降雪効果追加時
+				2) SLC_HPの梅雨シーズン（ブランチ：rainySeason）
 
+1)
 △ 効果素材の構成と初期状態：
 
 	index.html
@@ -21,23 +23,35 @@
 	モジュール管理のWebPackでバンドルすると、使おうとするモジュール（ライブラリなど）は
 	モジュールの囲いの中に収めれれて管理されるようになる。
 	そうすると、使う側／使われる側 の間がスコープ的に遮断され見えなくなり動作しなくなる現象が起こる
-	これはいくら依存関係を考えてimportするファイルや位置を買えても同じで、< どこでimportしても同じ > で
+	基本的には、使う側で、使われるライブラリなどのファイルをimportして、他に依存などなければOKだが
+	複雑な場合、依存関係を考えてimportするファイルや位置を買えても同じで、< どこでimportしても同じ > で
 	囲まれてしまうので見えなくなる。解決策としては囲まれる時に全部グローバルに晒すかES6仕様（import/export）にすることになる	
 
 △モジュール管理する意味
+	まず、WebPackでバンドルするということは、バンドルされたライブラリなど、各モジュールの機能を保有するオブジェクトは
+	グローバル側からは遮断され、WebPack 内だけで利用するものとなる。更に、そのWebPack内でも、各モジュールごとに
+	スコープは区切られていて、同じWebPack内でも基本的には見えない。
+	そこでWebPack内の各モジュールで、必要とされるモジュールを必要とするモジュール側でimportで読み込めばつながることができる
 	色々なものをグローバル晒すやり方より、依存関係を守って、使いたい機能だけを使われる側と使う側の「間だけ」でやりとりし
-	他から見えない形にしたほうが安全であり、それがモジュール管理なので、できるだけそうすること
-	そうするにはwindowを使って晒すのではなく、
-	使われる方で export し、使う方で import し、その二者間以外には全く見えなくすれば大規模化・複雑化しても安全性が確保される
-																						 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	他から見えない形にしたほうが安全であり、それがモジュール管理なので、できるだけそうすること、
+	そうするにはwindowを使って晒すのではなく、使われる方で export し、使う方で import し、
+	その二者間以外には全く見えなくすれば大規模化・複雑化しても安全性が確保される
+
+	今回のSLCの降雪効果は './xmas_effect/' フォルダ以下の３つのモジュール（rectangleEmitter.js、snow.js	、classie.js）を
+	降雪効果全体を管理している './xmas_effect/main.js' でimportすれば完成するはずなので
+	そのmain.jsを１つ上の階層の './js/main.js' でimportすれば、既存のページに降雪効果を付与できるはずだったが
+	 './xmas_effect/main.js' を './js/main.js' でimportすると他のコードとの関係からうまく効果が発現しなかったので
+	 './xmas_effect/main.js' の内容を './js/main.js' に直接、コピペして設置した。
+	 その関係で、 './xmas_effect/' フォルダ以下の３つのモジュールも./js/index.jsで読み込むこととした。
+	 本当は、 './xmas_effect/main.js' を './js/main.js' に移動したのだから、それが必要とする、依存の３つも
+	  './js/main.js' でimportすればいいだけかもしれないが試していない
+	
 
 △ 解決策１：全てをグローバルにさらす
 ーーーーーーーーーーーーーーーーーー
 	index.html に scriptタグで読み込まれている順で index.js に import したら ./build/index.html  では動作不具合となった
-	そもそもCommonJS仕様で作られていないライブラリをimportしただけでは機能を組み込めない
-	（個々の例のようにグローバルに晒すか、後述のように機能をexportし必要な場所でimportする必要がある）
 				import './xmas_effect/rectangleEmitter.js'
-				import './xmas_effect/snow.js'															← ダメ例
+				import './xmas_effect/snow.js'
 				import myClassie from './xmas_effect/classie.js'
 		↓
 	エミッターやパーティクルの定義がWebPackの「モジュールの囲い」に収められたため、外から見えなくなってしまった
@@ -45,7 +59,7 @@
 	「モジュールの囲い」に収められながらも読み込み時にグローバルに晒す変更をした
 				rectangleEmitter.js		window.rectangleEmitter = { ... }
 				snow.js							window.snow = { ... }
-				classie.js						( function( window ) { ... window.classie = { ... } } )( window ) }		// windowを渡して、そこにプロパティーとして付ける
+				classie.js						( function( window ) { ... window.classie = { ... } } )( window ) }
 		↓																				  ^^^^^^^^
 	index.js での import も少し変更
 				import './xmas_effect/rectangleEmitter.js'
@@ -55,12 +69,12 @@
 	このようにして、HTML内で、scriptタグによって読み込んでいるがごとく、全部グローバルにさらして解決した
 
 
-△ 解決策２：ライブラリの中身をES6仕様（import/export）にする
+△ 解決策２：ライブラリの中身をES6仕様（import/export）にする					外に晒すeportのいくつかのパターン
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-				各モジュールの変更
-					rectangleEmitter.js		export let rectangleEmitter = { ... }
-					snow.js							export let snow = { ... }  	export let snow_slow = { ... }
-					classie.js						export default ()=>{ ( function( window ) { ... var classie = { ... } } )( window ) }　元のIIFEをexportする関数内に収めてる
+			３つのモジュール内の変更
+				rectangleEmitter.js		export let rectangleEmitter = { ... }
+				snow.js							export let snow = { ... }  	export let snow_slow = { ... }
+				classie.js						export default ()=>{ ( function( window ) { ... var classie = { ... } } )( window ) }　元のIIFEをexportする関数内に収めてる
 					↓ ↓ ↓ ↓ 
 				モジュールの組込	./js/index.js					
 					mport './xmas_effect/rectangleEmitter.js'
@@ -77,8 +91,8 @@
 									import classie from './xmas_effect/classie.js'						←全体のCSS操作ライブラリはindex.jsでimport
 									classie( )																				　importした関数実行で、元のIIFEを実行している
 									import './xmas_effect/main.js'												効果用JSをまとめたmain.jsを元のmain.jでimport
-					
-					
+									
+									
 △ モジュールの囲い：bundle.js内でモジュール単位で「囲まれ」ている
 
 	/* 11 */ (function(module, exports) { module.exports = "data:image/png;base64,iVBO ...
@@ -87,3 +101,30 @@
 	(function(module, exports, __webpack_require__) {
 	exports = module.exports = __webpack_require__(1)();
 		・・・
+
+2) SLC梅雨シーズン降雨効果
+	index.html
+		js
+		 |--- index.js
+		 |--- main.js
+		 |--- jquery.inview.js
+		 		・・・
+		 |--- effect 
+		 		|--- jquery.easing.1.3.js
+		 		|--- modernizr.custom.56320.js
+		 		|--- sncjm-min.js
+				|--- main.js
+
+	（変更）
+		jquery.easing.1.3.js					そのまま
+		modernizr.custom.56320.js		window.Modernizr = function (a, b, c) {	...
+		sncjm-min.js								export default () => {  window.SNCJM == undefined && (window.SNCJM = {});		...
+	
+	（index.js）
+		//effect関連
+		import './effect/modernizr.custom.56320.js'
+		import fSNCJM from './effect/sncjm-min.js'
+		fSNCJM()    														// sncjmの_utilを得るための実行（main.js内で使われている）  window._util = new SNCJM.util; 
+		import './effect/jquery.easing.1.3.js'
+		import './effect/main.js'
+				
