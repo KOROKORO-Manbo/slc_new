@@ -92,7 +92,7 @@ body
 
   ※ フォントについては最後尾で説明
 
-  ./img/topObiBtns/ に van.png vanura.png 追加・・・この作業まではどのブランチでもcherry-pickで導入し、以下は手作業でやったほうが安全
+  ./img/topObiBtns/ に van.png vanura.png 追加・・・この画像を設置する作業はどのブランチにおいてもcherry-pickで導入し、以下は手作業でやったほうが安全
                                                                                         （このブランチでのコミットのハッシュ＝84488ef （add topBtn material））
                                                                                         
   index.htmlに以下を追加（topObi_container5の次に配置）・・・./build/index.html にもmini化後、追加     
