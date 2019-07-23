@@ -4,7 +4,7 @@
 
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
-
+５６．elevitのボタンを"./images/elevit.pdf"から”https://www.elevit.jp/”に変更20190723
 ５５．TopBtn追加・・・作業内容は「menuTest ブランチ」を参照のこと← cherry-pickは素材追加のコミットのみにすること
 			cherry-pickをやるとすれば以下の2つのコミットを順に下からやるのだが、各ブランチの./build/index.html と ./src/css/style.css の内容が完全に共通でないので
 			競合が発生し、入力側のmenuTest ブランチで上書きしてしまうと、各ブランチの効果などが素の状態になってしまうので、下の素材画像追加だけのコミットはcherry-pickし
