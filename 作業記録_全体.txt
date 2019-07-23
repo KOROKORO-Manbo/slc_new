@@ -16,7 +16,56 @@ rm
 
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
+<<<<<<< HEAD
 
+=======
+５６．elevitのボタンを"./images/elevit.pdf"から”https://www.elevit.jp/”に変更20190723
+５５．TopBtn追加・・・作業内容は「menuTest ブランチ」を参照のこと← cherry-pickは素材追加のコミットのみにすること
+			cherry-pickをやるとすれば以下の2つのコミットを順に下からやるのだが、各ブランチの./build/index.html と ./src/css/style.css の内容が完全に共通でないので
+			競合が発生し、入力側のmenuTest ブランチで上書きしてしまうと、各ブランチの効果などが素の状態になってしまうので、下の素材画像追加だけのコミットはcherry-pickし
+			HTML、CSS、JavaScriptの変更についてはmenuTest ブランチの作業記録ファイルを開いておいて、それに従って、それぞれのブランチで作業するしかない
+			
+				commit 6b41450e69fc0cc05b9f7aaef9a4587679ca3bf5 (HEAD -> menuTest)Author: KOROKORO <pingping_hiromi@yahoo.co.jp>Date:   Mon Dec 10 13:38:26 2018 +0900
+    				add BTN for van
+				commit 84488efdf02fb2cd7294b6d8677a9d71a779c3d0Author: KOROKORO <pingping_hiromi@yahoo.co.jp>Date:   Sat Dec 8 13:32:46 2018 +0900
+    				add topBtn material
+    				
+５４．緊急告知　pop-noticeブランチ・・・キリンのモーダルの画像差し替え（詳細はブランチ内の作業記録）
+
+５３．./css/pretty_index.css から pretty_font.css の記述を除外した　2018/10/28
+			FireFoxでこのファイルからの外部フォントファイルの読込が安全でないのでブロックと表示されてしまうので除外しbundleに含めないようにした。
+			これらは院内食や院内の様子のスライド用のもので、PrettyPhotoの閉じるボタンはBase64としてbundleに組み込まれてるので、他のフォントは不要
+			masterブランチでの変更のコミットハッシュは「5905de2」・・・まだ全部ランチにcherry−pickしていない
+
+５２．SSLで、ブラウザの鍵マークのところで「一部安全でない（画像など）」と表示されるのは、
+		   ./build/index.html 内にまだhttp://slc-mie.comが残っているからで、
+		   置き換え検索で ”http://slc-mie.com” ⇒ ”https://slc-mie.com” をやってアップすれば解消される
+
+５１．　最初のローダー（プログレスバー）の完了直後になにか実行したいときのタイミングは main.js#274 で ”// alert("完了！");” がおいてあるところがベスト
+
+５０．	Xmas版のみだが、Edge では最初のモーダル画面のチェック部分で（main.js#190）エラーが出てその先に行かなくなったので、対応のために以下のように変更
+				//main.js#190( 20180808 )
+					      if (!window.localStorage) {                              // ルーレットメニュー説明モーダル表示
+					          return;
+					      }else{
+					        var t = window.localStorage.getItem("todo-first20170319");
+					        if (t === null || t=== 'true') {                      	//初回またはチェック無しで表示
+					          $('.modal-window').show();
+					        } else {
+					          $('.modal-window').hide();
+					        }
+					      }
+					      ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ 								
+					      
+					      $('.modal-window').show();							// localStrageのチェックは不要なので単にモーダルを表示するコマンドのみにした
+			
+
+４９．SSL対応手順について
+		SSLの対応で、結局のところ ./build/index.html 内のaタグのリンクで、http:// ⇒ https:// のするだけなので
+		各ブランチで、その都度、置き換えをやっていくことにする
+		（注意）全部を置き換えた後、「小児科学会」と「SMC」だけは http:// に戻すこと
+		
+>>>>>>> 70941d4... elevit  url change
 ４８．$.live( ) is not defined 問題について		2018/06/15		https://qiita.com/seltzer/items/e60c4400e258f4f0d0bd
 	　（jQuery 1.9以降で「has no method 'live'」と出たら、 $(document).onを使う）
 		動的に生成された要素にイベントを割り当てられる「.live」メソッドは、
