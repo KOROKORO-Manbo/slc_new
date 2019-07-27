@@ -4,6 +4,12 @@
 
 （注意：コード編集→バンドル→./build/ の検証とすすめるが、HTMLファイルの変更はWebPackのバンドル対象にしていないので
 　　　　DOMなどの追加があった場合は手動で./build/ のindex.htmlにミニ化された状態で追加すること）
+５７．cherry-pickについて
+			やはり./dist/index.htmlは圧縮され１行としているのに加え、DOM要素の構成もブランチによって大きく変わっているので
+			一部分だけの変更のcherry-pickでも、「入力側の変更を受け入れる」を選択すると、ほしい部分以外も大幅に書き換えられてしまう
+			さらに「両方の変更を受け入れる」にするともっとごちゃごちゃになってしまう。
+			（たとえばlevitのURL変更のchery-pickではfeb-noCではうまく行っても、gantan-noCでは動作しなくなってしまった）
+			また./src/側のCSSやJSファイルでもブランチによって大きく変わっているのでcherry-pickは危険かもしれない
 ５６．elevitのボタンを"./images/elevit.pdf"から”https://www.elevit.jp/”に変更20190723
 ５５．TopBtn追加・・・作業内容は「menuTest ブランチ」を参照のこと← cherry-pickは素材追加のコミットのみにすること
 			cherry-pickをやるとすれば以下の2つのコミットを順に下からやるのだが、各ブランチの./build/index.html と ./src/css/style.css の内容が完全に共通でないので
