@@ -1,3 +1,58 @@
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋求人ボタン追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+１．recruiteUra.png recruiteOmote.png recruiteFukidasi.png の画像を ▸ ⁨src⁩ ▸ ⁨img⁩ ▸ ⁨page1⁩⁩ ▸ ⁨に追加
+２．./src/index.html に HTML追加（７７行目）
+              <div class="recruiteWrapper">                                                               <!-- 求人 -->
+                <div class="kanban"><div class="fukidasi"></div></div>
+              </div>
+３．./src/css/style.css にCSS追加（９３１行目）
+
+            /* 求人ボタン */
+            .recruiteWrapper {
+              position: absolute;
+              left:1060px;
+              top:290px;
+              padding: 0;
+              border: 0;
+              width: 60px;
+              height: 75px;
+              background: url("../img/page1/recruiteOmote.png") no-repeat; /* チラ防 */
+              background-size: contain;
+            }
+            .recruiteWrapper .kanban {
+              background: url("../img/page1/recruiteOmote.png") no-repeat;
+              background-size: contain;
+              width: 60px;
+              height: 75px;
+              display: block; 
+              text-indent: -9999px;
+            }
+            .recruiteWrapper .kanban:hover {
+              background-image: url("../img/page1/recruiteUra.png");
+              cursor: pointer;
+            }
+            .recruiteWrapper .kanban > .fukidasi{
+              position: absolute;
+              left:0px;
+              top:-50px;
+              margin-left: -50px;
+              margin-top: -200px;
+              width: 300px;
+              height: 257px;
+              background-image: url("../img/page1/recruiteFukidasi.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              display: none;
+            }
+            .recruiteWrapper .kanban:hover > .fukidasi{
+              display: block;
+            }      
+５．バンドル後、./build/index.htmlに「２．」のHTML追加
+        "div.LINE_wrapper" 要素の直後（このdivの外側）に追加
+          <div class="recruiteWrapper"><div class="kanban"><div class="fukidasi"></div></div></div>
+          
+注意：今回の使用画像はBase64化でバンドルされ、./build/img/page1/に置かなくても表示される
+
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋以下、ヴァンキッシュ　メニューボタン（TopObi）追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
 
 HTMLは以下のような構成になっており、トップの横並びのボタン群は div.topBtns であり、
 その全体の幅は全ボタンを格納するために調整しないといけない（その親の div.topObi は１００vwとなっている）
