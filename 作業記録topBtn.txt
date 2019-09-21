@@ -1,3 +1,38 @@
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋アイクレオ（江崎グリコ）追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+    HTML要素の追加のみ（aタグのリンク）で、リンクボタン集の背景はli要素の追加で自動的に高さが調整されCSSの編集は不要。
+    よって追加HTMLをminiしてから./build⁩/index.htmlの所定の位置に置く＋ icreo.jpg を▸ ⁨build⁩ ▸ ⁨img⁩ ▸ ⁨topObiBtns⁩ ▸ ⁨link⁩ ▸ 以下に配置
+    
+    設置位置
+    div#rouletteContainer
+       div.topObi
+          div.topBtns
+              div.topObi_container4
+                  div.LinkNavBnr
+                      div.lip-front
+                      div.flip-back
+                      ul#fukidashiMenu
+                        li （５つめ：森永乳業の後ろ）
+    HTML
+              <li style="border-bottom: 1px solid rgb(230, 230, 230);">
+                <a href="https://www.icreo.jp/" target=blunk>
+                  <p class="LinkNav_txt">
+                    <span class="LinkNav__catch">健やかな明日のために</span><br>
+                    <span class="LinkNav__name">江崎グリコ株式会社</span>
+                    <p class="LinkNav_icon">
+                      <img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left: 5px">
+                    </p>
+                  </p>
+                </a>
+              </li>
+              <li style="border-bottom: 1px solid rgb(230, 230, 230);">
+                <!-- 江崎グリコ横長のため、右横にこのダミーを置く -->
+              </li>
+
+    miniHTML
+            <li style="border-bottom:1px solid #e6e6e6"><a href="https://www.icreo.jp/" target="blunk"><p class="LinkNav_txt"><span class="LinkNav__catch">健やかな明日のために</span><br><span class="LinkNav__name">江崎グリコ株式会社</span></p><p class="LinkNav_icon"><img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left:5px"></p><p></p></a></li><li style="border-bottom:1px solid #e6e6e6"><!-- 江崎グリコ横長のため、右横にこのダミーを置く --></li>
+    
+   📍  ./build⁩/index.htmlの設置位置確認方法は森永乳業の li 要素クリックで判明する閉じタグの後ろにコピペ
+              
 ＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋求人ボタン追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
 １．recruiteUra.png recruiteOmote.png recruiteFukidasi.png の画像を ▸ ⁨src⁩ ▸ ⁨img⁩ ▸ ⁨page1⁩⁩ ▸ ⁨に追加
 ２．./src/index.html に HTML追加（７７行目）
