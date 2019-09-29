@@ -1320,22 +1320,10 @@ background-repeat: no-repeat;
   padding-top: 50px;
 
 }
-.milks {
-  position: absolute;
-  width: 1000px;
-  height: 850px;
-  background-image: url(../img/page4/pg4Cover.png);
-  background-repeat: no-repeat;
-
-}
 #page4 table {
   margin: 0 auto;
 }
-.mainTable{
-  position: relative;
-  margin-left: -113px;
-  margin-top: 65px;
-}
+
 .milkEx {
   text-align:center;
   line-height: 140%;
@@ -1343,10 +1331,27 @@ background-repeat: no-repeat;
   border-color:#990000;
   border-width:1px;
   border-style:solid;
-  height:200px;
+  height:215px;
   width:480px;
   background:#D1E3E7;
 }
+.tableCover{
+  width: 1325px;
+  height: 700px;
+  background-image: url(../img/page4/pg4Cover.png);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+.milks {
+  position: relative;
+  margin-top: 100px;
+}
+.mainTable{
+  position: relative;
+  width:1270px;
+  margin-left: 10px;
+}
+
 .milkEx img {
   margin: 0 auto;
 }
