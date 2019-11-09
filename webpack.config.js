@@ -100,7 +100,7 @@ module.exports = {
     // （個別JSファイル内だけでなくWebPack管理下全体に＄とjQuery変数を行き渡らせる意味がある）
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
-    //   jQuery: 'jquery'
+    //   jQuery: 'jquery'           ←　現在は（最終は）index.jsでjQueryをimportしている
     // }),
 
     // npmモジュールのjqueryをグローバルの’jQuery’としてさらす
