@@ -1,33 +1,29 @@
-
-@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru");
 
 @font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
-  src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
+  src: local("YuGothic-Medium"), local("Yu Gothic Medium"),
+    local("YuGothic-Regular");
 }
 @font-face {
   font-family: "MyYuGothicM";
   font-weight: bold;
-  src: local("YuGothic-bold"),local("Yu Gothic");
+  src: local("YuGothic-bold"), local("Yu Gothic");
 }
 @font-face {
   font-family: "MyFont3";
-    src: url("../fonts/rounded-x-mplus-1p-black.ttf") format('truetype');
-  }
-html{
-/* カスタムfont-face "MyYuGothicM" 優先 */
-    font-family:
-    MyYuGothicM,  /* windows */
-
-    -apple-system,/* iOS SanFrancisco(font) */
-    BlinkMacSystemFont,/* iOS Chrome SanFrancisco(font) */
-    "Hiragino Kaku Gothic ProN",/* OS X, iOS ヒラギノ */
-    Meiryo,       /* windows */
-    sans-serif;
+  src: url("../fonts/rounded-x-mplus-1p-black.ttf") format("truetype");
+}
+html {
+  /* カスタムfont-face "MyYuGothicM" 優先 */
+  font-family: MyYuGothicM, /* windows */ -apple-system,
+    /* iOS SanFrancisco(font) */ BlinkMacSystemFont,
+    /* iOS Chrome SanFrancisco(font) */ "Hiragino Kaku Gothic ProN",
+    /* OS X, iOS ヒラギノ */ Meiryo, /* windows */ sans-serif;
 }
 
-body{
+body {
   margin: 0px;
   padding: 0px;
   /*overflow-x: hidden;*/
@@ -35,11 +31,11 @@ body{
   background-image: url(../img/page2/pg2BG.png);
 }
 
-#rouletteContainer{
+#rouletteContainer {
   position: fixed;
   top: -110px;
   left: -110px;
-  width:320px;          /* rouletteは308角でそのラッパーは320 */
+  width: 320px; /* rouletteは308角でそのラッパーは320 */
   z-index: 3;
   /*background-color: rgba(123,33,255,.5);*/
   /*z-index:10;*/
@@ -48,55 +44,56 @@ body{
 
 .controller {
   position: relative;
-  width:100%;
-  top:0px;
+  width: 100%;
+  top: 0px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   /*z-index:11;*/
 }
-#back img, #forward img{
-  width:80px;
-  height:80px;
+#back img,
+#forward img {
+  width: 80px;
+  height: 80px;
 }
-#back{
+#back {
   margin-left: 230px;
   margin-top: 13px;
 }
-#forward{
+#forward {
   margin-top: -55px;
 }
 
-.arrow{
+.arrow {
   cursor: pointer;
 }
 
-#directMenu{
-  width:100px;
+#directMenu {
+  width: 100px;
   margin-left: 10px;
   /*background-image: url(../img/directMenuBG.jpg);*/
 }
-#directMenu ul{
-  position:fixed;
+#directMenu ul {
+  position: fixed;
   background-image: url(../img/directMenuBG.png);
   background-repeat: no-repeat;
   margin-top: -200px;
   margin-left: 100px;
-  display:none;
-  list-style:none;
+  display: none;
+  list-style: none;
   cursor: pointer;
 }
-#directMenu ul li:nth-child(1){
+#directMenu ul li:nth-child(1) {
   margin-top: 10px;
 }
-#directMenu ul li:not(:first-child){
+#directMenu ul li:not(:first-child) {
   margin-top: -10px;
 }
-.directMenuPiece{
+.directMenuPiece {
   margin-left: -15px;
-  width:120px;
+  width: 120px;
 }
-.rouletteCover{
+.rouletteCover {
   position: absolute;
   margin-top: -47px;
   margin-left: -46px;
@@ -106,7 +103,7 @@ body{
   width: 403px;
   height: 401px;
   /*background-color: rgba(123,33,255,.5);*/
-  background-image: url('../img/rCover.png');
+  background-image: url("../img/rCover.png");
   background-repeat: no-repeat;
   pointer-events: none;
 }
@@ -127,65 +124,73 @@ body{
   counter-reset: num;
 }
 #roulette.number-1 {
-          animation-name: number-1;
+  animation-name: number-1;
 }
 #roulette.number-2 {
-          animation-name: number-2;
+  animation-name: number-2;
 }
 #roulette.number-3 {
-          animation-name: number-3;
+  animation-name: number-3;
 }
 #roulette.number-4 {
-          animation-name: number-4;
+  animation-name: number-4;
 }
 #roulette.number-5 {
-          animation-name: number-5;
+  animation-name: number-5;
 }
 #roulette.number-6 {
-          animation-name: number-6;
+  animation-name: number-6;
 }
 #roulette.number-7 {
-          animation-name: number-7;
+  animation-name: number-7;
 }
 #roulette.number-8 {
-          animation-name: number-8;
+  animation-name: number-8;
 }
 #roulette.number-9 {
-          animation-name: number-9;
+  animation-name: number-9;
 }
 #roulette.number-10 {
-          animation-name: number-10;
+  animation-name: number-10;
 }
 #roulette.number-11 {
-          animation-name: number-11;
+  animation-name: number-11;
 }
 #roulette.number-12 {
-          animation-name: number-12;
+  animation-name: number-12;
 }
-#roulette:hover{
+#roulette:hover {
   cursor: pointer;
 }
-.star{
-  position:absolute;
+.star {
+  position: absolute;
   width: 100px;
   height: 100px;
   background-image: url(../img/star.png);
   margin-top: -205px;
   margin-left: 110px;
-  z-index:4;
-  opacity:1;
+  z-index: 4;
+  opacity: 1;
 }
-.star.rotate{
+.star.rotate {
   -webkit-animation: spin 0.4s linear infinite;
   animation: spin 0.4s linear infinite;
 }
 @-webkit-keyframes spin {
-	0% {-webkit-transform: rotate(0deg);}
-	100% {-webkit-transform: rotate(360deg);}
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #roulette::after {
@@ -239,86 +244,87 @@ body{
   color: #00f;
   font-weight: bold;
 }
-#roulette li:nth-of-type(1) {                        /*ページ１のメニューを右下に出すため４つ分回す意味で１０コマの時は３６✕４＝１４４*/
-  background-image: url('../img/p1.png');                                                              /*１２コマではもう少し回して３０✕５＝１５０*/
-          transform: rotate(-30deg);
+#roulette li:nth-of-type(1) {
+  /*ページ１のメニューを右下に出すため４つ分回す意味で１０コマの時は３６✕４＝１４４*/
+  background-image: url("../img/p1.png"); /*１２コマではもう少し回して３０✕５＝１５０*/
+  transform: rotate(-30deg);
 }
 #roulette li:nth-of-type(1)::before {
-  border-color:transparent transparent;
+  border-color: transparent transparent;
 }
 #roulette li:nth-of-type(2) {
-  background-image: url('../img/p2.png');
-          transform: rotate(0deg);
+  background-image: url("../img/p2.png");
+  transform: rotate(0deg);
 }
 #roulette li:nth-of-type(2)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(3) {
-  background-image: url('../img/p3.png');
-          transform: rotate(30deg);
+  background-image: url("../img/p3.png");
+  transform: rotate(30deg);
 }
 #roulette li:nth-of-type(3)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(4) {
-  background-image: url('../img/p4.png');
-          transform: rotate(60deg);
+  background-image: url("../img/p4.png");
+  transform: rotate(60deg);
 }
 #roulette li:nth-of-type(4)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(5) {
-  background-image: url('../img/p5.png');
-          transform: rotate(90deg);
+  background-image: url("../img/p5.png");
+  transform: rotate(90deg);
 }
 #roulette li:nth-of-type(5)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(6) {
-  background-image: url('../img/p6.png');
-          transform: rotate(120deg);
+  background-image: url("../img/p6.png");
+  transform: rotate(120deg);
 }
 #roulette li:nth-of-type(6)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(7) {
-  background-image: url('../img/p7.png');
-          transform: rotate(150deg);
+  background-image: url("../img/p7.png");
+  transform: rotate(150deg);
 }
 #roulette li:nth-of-type(7)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(8) {
-  background-image: url('../img/p8.png');
-          transform: rotate(180deg);
+  background-image: url("../img/p8.png");
+  transform: rotate(180deg);
 }
 #roulette li:nth-of-type(8)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(9) {
-  background-image: url('../img/p9.png');
-          transform: rotate(210deg);
+  background-image: url("../img/p9.png");
+  transform: rotate(210deg);
 }
 #roulette li:nth-of-type(9)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(10) {
-  background-image: url('../img/p10.png');
-          transform: rotate(240deg);
+  background-image: url("../img/p10.png");
+  transform: rotate(240deg);
 }
 #roulette li:nth-of-type(10)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(11) {
-  background-image: url('../img/p11.png');
-          transform: rotate(270deg);
+  background-image: url("../img/p11.png");
+  transform: rotate(270deg);
 }
 #roulette li:nth-of-type(11)::before {
   border-color: transparent transparent;
 }
 #roulette li:nth-of-type(12) {
-  background-image: url('../img/p12.png');
-          transform: rotate(300deg);
+  background-image: url("../img/p12.png");
+  transform: rotate(300deg);
 }
 #roulette li:nth-of-type(12)::before {
   border-color: transparent transparent;
@@ -326,143 +332,143 @@ body{
 
 @keyframes number-1 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2700deg);
+    transform: rotate(2700deg);
   }
 }
 @keyframes number-2 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2670deg);
+    transform: rotate(2670deg);
   }
 }
 @keyframes number-3 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2640deg);
+    transform: rotate(2640deg);
   }
 }
 @keyframes number-4 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2610deg);
+    transform: rotate(2610deg);
   }
 }
 @keyframes number-5 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2580deg);
+    transform: rotate(2580deg);
   }
 }
 @keyframes number-6 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2550deg);
+    transform: rotate(2550deg);
   }
 }
 
 @keyframes number-7 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2520deg);
+    transform: rotate(2520deg);
   }
 }
 @keyframes number-8 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2490deg);
+    transform: rotate(2490deg);
   }
 }
 @keyframes number-9 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2460deg);
+    transform: rotate(2460deg);
   }
 }
 @keyframes number-10 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2430deg);
+    transform: rotate(2430deg);
   }
 }
 @keyframes number-11 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2400deg);
+    transform: rotate(2400deg);
   }
 }
 @keyframes number-12 {
   from {
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-            transform: rotate(2370deg);
+    transform: rotate(2370deg);
   }
 }
 
 /* モーダル */
 .modal-window {
   display: none;
-transform: translate(0, 0);
-transform: translate3d(0, 0%, 0);
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-/*z-index: 999;*/
-opacity: 1;
-line-height: 1.3;
-background-color: rgba(255, 200, 66, 0.8);
-z-index: 6;
+  transform: translate(0, 0);
+  transform: translate3d(0, 0%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*z-index: 999;*/
+  opacity: 1;
+  line-height: 1.3;
+  background-color: rgba(255, 200, 66, 0.8);
+  z-index: 6;
 }
 
 .modal-window .modal-inner {
-position: relative;
-z-index: 20;
-overflow-x: hidden;
-text-align: center;
-width: 100%;
-height: 100%;
-background-image: url('../img/gantan/modalInnerBG.png');
-background-repeat: repeat;
+  position: relative;
+  z-index: 20;
+  overflow-x: hidden;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/gantan/modalInnerBG.png");
+  background-repeat: repeat;
 }
 
 .modal-window {
--webkit-transition: opacity 0.4s;
--o-transition: opacity 0.4s;
-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
-                                          /* ここから元旦素材用 */
+/* ここから元旦素材用 */
 .gantan_wrap {
   position: relative;
   margin: auto;
   margin-top: 60px;
   width: 1080px;
   height: 810px;
-  background-image: url('../img/gantan/akeomeBG.png');
+  background-image: url("../img/gantan/akeomeBG.png");
   background-size: cover;
 }
 
@@ -471,14 +477,58 @@ transition: opacity 0.4s;
   top: 75px;
   left: 90px;
 }
-.modal-window  {
-  background: rgba(255,255,255,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(30%, rgba(255,255,255,1)), color-stop(88%, rgba(230,181,34,1)), color-stop(100%, rgba(230,178,34,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(230,181,34,1) 88%, rgba(230,178,34,1) 100%);
+.modal-window {
+  background: rgba(255, 255, 255, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(230, 181, 34, 1) 88%,
+    rgba(230, 178, 34, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(255, 255, 255, 1)),
+    color-stop(30%, rgba(255, 255, 255, 1)),
+    color-stop(88%, rgba(230, 181, 34, 1)),
+    color-stop(100%, rgba(230, 178, 34, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(230, 181, 34, 1) 88%,
+    rgba(230, 178, 34, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(230, 181, 34, 1) 88%,
+    rgba(230, 178, 34, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(230, 181, 34, 1) 88%,
+    rgba(230, 178, 34, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(230, 181, 34, 1) 88%,
+    rgba(230, 178, 34, 1) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6b222', GradientType=1 );
 }
 
@@ -487,13 +537,13 @@ transition: opacity 0.4s;
   font-weight: normal;
   margin: 0;
   text-transform: uppercase;
-  color: #FFB000;
+  color: #ffb000;
   text-shadow: 0 2px 1px #000;
   line-height: 1.5;
 }
 
 .title-line {
-    font-family: 'MyFont3';
+  font-family: "MyFont3";
 }
 
 .modal-window #title {
@@ -507,10 +557,24 @@ transition: opacity 0.4s;
   z-index: 99;
 }
 
-.modal-window .title-line { position: relative; display: block; margin: auto; width: 300%; left: -100%; }
-.modal-window #title-line2 { top: -60px; }
-.modal-window #title-line3 { top: -120px; }
-.modal-window .title-line span { display: inline-block; line-height: 1.1; position: relative; }
+.modal-window .title-line {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 300%;
+  left: -100%;
+}
+.modal-window #title-line2 {
+  top: -60px;
+}
+.modal-window #title-line3 {
+  top: -120px;
+}
+.modal-window .title-line span {
+  display: inline-block;
+  line-height: 1.1;
+  position: relative;
+}
 
 .modal-window #newversion {
   position: absolute;
@@ -518,7 +582,7 @@ transition: opacity 0.4s;
   left: 55%;
   margin-left: 250px;
   z-index: 100;
-  background-color: #D92B00;
+  background-color: #d92b00;
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -528,16 +592,14 @@ transition: opacity 0.4s;
   position: relative;
   height: 210px;
   width: 210px;
-  background-image: url('../img/gantan/inosisi.png');
+  background-image: url("../img/gantan/inosisi.png");
   background-size: contain;
+} /* ここまで元旦素材用 */
 
-}                                      /* ここまで元旦素材用 */
-
-
-.crane{
-  height:650px;
+.crane {
+  height: 650px;
 }
-.closeBTN img{
+.closeBTN img {
   margin: 0 auto;
   width: 70px;
   cursor: pointer;
@@ -545,26 +607,26 @@ transition: opacity 0.4s;
 
 .topObi {
   position: fixed;
-  top:0;
-  left:0;
-  width:100vw;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 70px;
   background-image: url(../img/topObi.png);
   background-repeat: repeat-x;
 }
-.topBtns{
-  width:800px;
+.topBtns {
+  width: 800px;
   margin-right: 20px;
-  display:flex;
+  display: flex;
   float: right;
 }
 /*.topBtns .container1,.topBtns .container2{
   margin-right: 0px;
 }*/
-.topBtns img{
-  height:40px;
+.topBtns img {
+  height: 40px;
 }
-.topObi .perspectiveDown{
+.topObi .perspectiveDown {
   animation-duration: 0.5s;
   animation-name: perspectiveDown;
   transform-origin: 0 100%;
@@ -573,12 +635,12 @@ transition: opacity 0.4s;
 @keyframes perspectiveDown {
   0% {
     transform-origin: 0 100%;
-    margin-top:0px;
-    transform: perspective(800px) rotateX(0)
+    margin-top: 0px;
+    transform: perspective(800px) rotateX(0);
   }
   100% {
     transform-origin: 0 100%;
-    margin-top:-5px;
+    margin-top: -5px;
     transform: perspective(800px) rotateX(-180deg);
   }
 }
@@ -586,27 +648,32 @@ transition: opacity 0.4s;
   animation-duration: 0.1s;
   animation-name: perspectiveDownReturn;
   transform-origin: 0 100%;
-  transform: perspective(800px) rotateX(0deg)
+  transform: perspective(800px) rotateX(0deg);
 }
 @keyframes perspectiveDownReturn {
   0% {
     transform-origin: 0 100%;
-    transform: perspective(800px) rotateX(-180deg)
+    transform: perspective(800px) rotateX(-180deg);
   }
   100% {
     transform-origin: 0 100%;
     margin-top: 0px;
-    transform: perspective(800px) rotateX(0)
+    transform: perspective(800px) rotateX(0);
   }
 }
 
-
-.topObi_container1,.topObi_container2,.topObi_container3,.topObi_container4,.topObi_container5,.topObi_container6, .topObi_container8 {
+.topObi_container1,
+.topObi_container2,
+.topObi_container3,
+.topObi_container4,
+.topObi_container5,
+.topObi_container6,
+.topObi_container8 {
   position: relative;
   margin: 0;
   padding: 0;
-  width:128px;
-  height:50px;
+  width: 128px;
+  height: 50px;
 }
 .topObi_container7 {
   position: relative;
@@ -626,102 +693,104 @@ transition: opacity 0.4s;
   padding: 0;
 }
 
-div.elevit span {                                /* elevit 吹き出し部分 */
-    display: none;
+div.elevit span {
+  /* elevit 吹き出し部分 */
+  display: none;
 }
 div.elevit:hover {
-    position: relative;
-    color: #333;
+  position: relative;
+  color: #333;
 }
 div.elevit:hover span {
-    display: block;/* ボックス要素にする */
-    position: absolute;/* relativeからの絶対位置 */
-    top: 45px;
-    font-size: 90%;
-    color: #fff;
-    background-color: #51A2C1;
-    width: 120px;
-    padding: 5px;
-    border-radius:3px;
-    z-index:100;
+  display: block; /* ボックス要素にする */
+  position: absolute; /* relativeからの絶対位置 */
+  top: 45px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #51a2c1;
+  width: 120px;
+  padding: 5px;
+  border-radius: 3px;
+  z-index: 100;
 }
 /* フキダシ部分を作成 */
-div.elevit span:before{
-    content:'';
-    display:block;
-    position:absolute;/* relativeからの絶対位置 */
-    height:0;
-    width:0;
-    top:-13px;
-    left:15px;
-    border:13px transparent solid;
-    border-right-width:0;
-    border-left-color:#51A2C1;
-    transform:rotate(270deg);/* 傾きをつける */
-    -webkit-transform:rotate(270deg);
-    -o-transform:rotate(270deg);
-    z-index:100;
+div.elevit span:before {
+  content: "";
+  display: block;
+  position: absolute; /* relativeからの絶対位置 */
+  height: 0;
+  width: 0;
+  top: -13px;
+  left: 15px;
+  border: 13px transparent solid;
+  border-right-width: 0;
+  border-left-color: #51a2c1;
+  transform: rotate(270deg); /* 傾きをつける */
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  z-index: 100;
 }
 
-.topObi .flip-front{
+.topObi .flip-front {
   position: absolute;
-  top:0px;
-  left:5px;
-  width:75.7px;
-  height:40px;
+  top: 0px;
+  left: 5px;
+  width: 75.7px;
+  height: 40px;
   /*background-color: rgba(0, 255, 0, 1);*/
 }
-.topObi .flip-back{
+.topObi .flip-back {
   position: absolute;
-  top:0px;
-  left:5px;
-  width:75.7px;
-  height:40px;
+  top: 0px;
+  left: 5px;
+  width: 75.7px;
+  height: 40px;
   /*background-color: rgba(255, 0, 0, 1);*/
 }
-.flip-back.perspectiveDown, .flip-back.perspectiveDownReturn{
+.flip-back.perspectiveDown,
+.flip-back.perspectiveDownReturn {
   margin-top: -5px;
 }
 
 /* ------------------------------------------------------個別ページベース設定 ---------------------------------*/
-.pagesContainer{
+.pagesContainer {
   position: relative;
   margin: 0px;
   padding: 0px;
 }
-.page{
+.page {
   position: relative;
   top: 0;
   margin: 0px;
   padding: 0px;
-  width:100vw;
-  height:988px;
+  width: 100vw;
+  height: 988px;
 }
 
 /*--------------------------------------------------------------PAGE1-----------------------------------*/
-#page1{
+#page1 {
   background-image: url(../img/page1/P1bg.png);
   background-repeat: repeat-x;
   height: 988px;
 }
 
 /* 丘背景とキャラのまとめラッパー */
-.page1_wrapper{
+.page1_wrapper {
   position: relative;
   height: 988px;
-  width:1300px;
+  width: 1300px;
   background-image: url(../img/page1/p1BGfinal.png);
   /*margin: 0 auto;*/
-  margin-left: calc((100vw - 1300px)/2);
+  margin-left: calc((100vw - 1300px) / 2);
 }
 /* 太陽 */
-#page1 .sunSet{
-    margin-top: -110px;
-    position: absolute;
-    width: 164px;
-    height: 163px;
-    right: 160px;
-  }
+#page1 .sunSet {
+  margin-top: -110px;
+  position: absolute;
+  width: 164px;
+  height: 163px;
+  right: 160px;
+}
 #page1 .sun {
   width: 164px;
   height: 163px;
@@ -729,7 +798,7 @@ div.elevit span:before{
   background-image: url(../img/page1/sunOnly.png);
   animation: sunBase 11.5s linear infinite;
 }
-#page1 .gurguru{
+#page1 .gurguru {
   top: 0;
   left: 0;
   width: 60px;
@@ -743,45 +812,45 @@ div.elevit span:before{
 }
 @keyframes sunBase {
   from {
-      transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes sunGuruguru {
   from {
-      transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-      transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 /* 外観 */
 #gaikanContainer {
   position: absolute;
-  width:400px;
-  height:228px;
+  width: 400px;
+  height: 228px;
   margin-left: 770px;
   margin-top: 50px;
 }
 #gaikanContainer .reveal {
   position: absolute;
   top: 160px;
-  left:5px;
+  left: 5px;
   top: 0;
-  width:400px;
-  height:228px;
+  width: 400px;
+  height: 228px;
   background-image: url(../img/page1/SLCoutDefauBack500.png);
   background-size: cover;
 }
 #gaikanContainer .box {
   position: absolute;
-  top:160px;
-  left:5px;
+  top: 160px;
+  left: 5px;
   top: 0;
-  width:400px;
-  height:228px;
+  width: 400px;
+  height: 228px;
   background-image: url(../img/page1/SLCoutDefau500.png);
   background-size: cover;
 }
@@ -794,11 +863,11 @@ div.elevit span:before{
 @keyframes perspectiveUp {
   0% {
     transform-origin: 0% 1%;
-    transform: perspective(800px) rotateX(0)
+    transform: perspective(800px) rotateX(0);
   }
   100% {
     transform-origin: 0% 1%;
-    transform: perspective(800px) rotateX(180deg)
+    transform: perspective(800px) rotateX(180deg);
   }
 }
 .perspectiveUpReturn {
@@ -810,169 +879,182 @@ div.elevit span:before{
 @keyframes perspectiveUpReturn {
   0% {
     transform-origin: 0 1%;
-    transform: perspective(800px) rotateX(180deg)
+    transform: perspective(800px) rotateX(180deg);
   }
   100% {
     transform-origin: 0 1%;
-    transform: perspective(800px) rotateX(0)
+    transform: perspective(800px) rotateX(0);
   }
 }
 
 /* Twitter */
-.twtWrapper{
+.twtWrapper {
   position: absolute;
   margin-top: -60px;
-  left: calc((100% - 460px)/2);  /* 外観にかぶらないよう、若干、左寄りにした */
-  width:420px;
-  height:425px;
+  left: calc((100% - 460px) / 2); /* 外観にかぶらないよう、若干、左寄りにした */
+  width: 420px;
+  height: 425px;
 }
-.timeLine{
+.timeLine {
   position: absolute;
-  top: 30px; left: 59px;      /* ←ウィジットの枠内配置 */
+  top: 30px;
+  left: 59px; /* ←ウィジットの枠内配置 */
   width: 320px;
   height: 385px;
   margin: 0 auto;
 }
-.timelineCover{
+.timelineCover {
   position: absolute;
   left: -15px;
   top: 0px;
   width: 440px;
   height: 415px;
   background-image: url(../img/page1/BBS_Waku.png);
-  background-size:100% 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   pointer-events: none;
 }
 .koara {
   position: absolute;
-  top:270px;
-  left:300px;
+  top: 270px;
+  left: 300px;
   width: 150px;
   height: 139px;
   background-image: url(../img/page1/koara.png);
   background-repeat: no-repeat;
   /*background-size:contain;*/
-  animation: descend .5s ease 0s 1 normal;
+  animation: descend 0.5s ease 0s 1 normal;
   opacity: 0;
-
 }
-.twtWrapper:hover .koara, .timeline:hover .koara  {
+.twtWrapper:hover .koara,
+.timeline:hover .koara {
   top: 100px;
   opacity: 1;
   animation: clime 1s ease 0s 1 normal;
 }
 @keyframes clime {
-    0% {opacity: 0; top:270px;}
-    100% {opacity: 1; top: 100px;}
+  0% {
+    opacity: 0;
+    top: 270px;
+  }
+  100% {
+    opacity: 1;
+    top: 100px;
+  }
 }
 @keyframes descend {
-    0% {opacity: 1; top:100px;}
-    100% {opacity: 0; top: 270px;}
+  0% {
+    opacity: 1;
+    top: 100px;
+  }
+  100% {
+    opacity: 0;
+    top: 270px;
+  }
 }
 /* 診察時間 */
-.flipContainer{
+.flipContainer {
   position: absolute;
   margin-top: 400px;
   margin-left: 790px;
   cursor: default;
 }
-.flip{
+.flip {
   position: absolute;
 }
-.flip img{
-  width:410px;
+.flip img {
+  width: 410px;
 }
 /* 外来担当医 */
 .view {
   position: absolute;
-   width: 160px;                                  /* view がマウス反応領域なので表面の画像の大きさにあわせ、overflowはみせればウラ面が大きい画像でも全部見える */
-   height: 169px;
-   margin-left: 640px;
-   margin-top: 200px;
-   /*float: left;*/
-   /*border: 10px solid #fff;*/
-   /*overflow: hidden;*/
-   text-align: center;
-   /*box-shadow: 1px 1px 2px #e6e6e6;*/
-   cursor: default;
-   /*background: #fff url(../images/bgimg.jpg) no-repeat center center;*/
+  width: 160px; /* view がマウス反応領域なので表面の画像の大きさにあわせ、overflowはみせればウラ面が大きい画像でも全部見える */
+  height: 169px;
+  margin-left: 640px;
+  margin-top: 200px;
+  /*float: left;*/
+  /*border: 10px solid #fff;*/
+  /*overflow: hidden;*/
+  text-align: center;
+  /*box-shadow: 1px 1px 2px #e6e6e6;*/
+  cursor: default;
+  /*background: #fff url(../images/bgimg.jpg) no-repeat center center;*/
 }
-.view .cover{
+.view .cover {
   width: 160px;
   height: 169px;
 }
 .view .mask {
-   width: 258px;
-   height: 519px;
-   position: absolute;
-   overflow: hidden;
-   top: 0;
-   left: 0;
+  width: 258px;
+  height: 519px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
 }
 .view img {
-   display: block;
-   position: relative;
+  display: block;
+  position: relative;
 }
 .view-fourth img {
-   transition: all 0.4s ease-in-out 0.2s;
-   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-   filter: alpha(opacity=100);
-   opacity: 1;
+  transition: all 0.4s ease-in-out 0.2s;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
 }
 .view-fourth .mask {
-   /*background-color: rgba(0,0,0,0.8);*/
-   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-   filter: alpha(opacity=0);
-   opacity: 0;
-   transform: scale(0) rotate(-180deg);
-   -webkit-transition: all 0.4s ease-in;
-   -moz-transition: all 0.4s ease-in;
-   -o-transition: all 0.4s ease-in;
-   -ms-transition: all 0.4s ease-in;
-   transition: all 0.4s ease-in;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
+  /*background-color: rgba(0,0,0,0.8);*/
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transform: scale(0) rotate(-180deg);
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 
 .view-fourth:hover .mask {
-   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-   top:-220px;
-   left:-20px;
-   filter: alpha(opacity=100);
-   opacity: 1;
-   -webkit-transform: scale(1) rotate(0deg);
-   -moz-transform: scale(1) rotate(0deg);
-   -o-transform: scale(1) rotate(0deg);
-   -ms-transform: scale(1) rotate(0deg);
-   transform: scale(1) rotate(0deg);
-   -webkit-transition-delay: 0.2s;
-   -moz-transition-delay: 0.2s;
-   -o-transition-delay: 0.2s;
-   -ms-transition-delay: 0.2s;
-   transition-delay: 0.2s;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  top: -220px;
+  left: -20px;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 .view-fourth:hover img {
-   -webkit-transform: scale(0);
-   -moz-transform: scale(0);
-   -o-transform: scale(0);
-   -ms-transform: scale(0);
-   transform: scale(0);
-   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-   filter: alpha(opacity=0);
-   opacity: 0;
-   -webkit-transition-delay: 0s;
-   -moz-transition-delay: 0s;
-   -o-transition-delay: 0s;
-   -ms-transition-delay: 0s;
-   transition-delay: 0s;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
 }
 /* LINE */
 .LINE_wrapper {
   position: absolute;
-  left:850px;
-  top:290px;
+  left: 850px;
+  top: 290px;
   width: 260px;
   height: 170px;
 }
@@ -983,7 +1065,7 @@ div.elevit span:before{
   top: 90px;
   left: 140px;
   background-image: url(../img/page1/mogura.png);
-background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 .LINE_wrapper .board {
   position: absolute;
@@ -1000,33 +1082,41 @@ background-repeat: no-repeat;
   top: 14px;
   left: 0px;
   background-image: url(../img/page1/LINE_QR.png);
-  animation: fadeOut .5s ease 0s 1 normal;
+  animation: fadeOut 0.5s ease 0s 1 normal;
   opacity: 0;
 }
-.LINE_wrapper:hover .qr{
+.LINE_wrapper:hover .qr {
   opacity: 1;
-  animation: fadeInn .5s ease 0s 1 normal;
+  animation: fadeInn 0.5s ease 0s 1 normal;
 }
 @keyframes fadeInn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /* 外来混雑状況 */
-.kujiraContainer{
+.kujiraContainer {
   position: absolute;
   top: 0px;
   left: 250px;
   width: 376px;
   height: 480px;
 }
-.kujira{
+.kujira {
   position: absolute;
-  top:330px;
-  left:60px;
+  top: 330px;
+  left: 60px;
   width: 280px;
   height: 149px;
   background-image: url(../img/page1/kujira.png);
@@ -1035,7 +1125,7 @@ background-repeat: no-repeat;
 .kujiraWaku {
   position: absolute;
   top: 0px;
-  left:20px;
+  left: 20px;
   width: 349px;
   height: 342px;
   background-image: url(../img/page1/kujiraWaku.png);
@@ -1043,18 +1133,28 @@ background-repeat: no-repeat;
   animation: fadeOut 0.5s ease 0s 1 normal;
   opacity: 0;
 }
-.kujira:hover+.kujiraWaku{
-    position: absolute;
-    opacity: 1;
-    animation: fadeIn 0.5s ease 0s 1 normal;
+.kujira:hover + .kujiraWaku {
+  position: absolute;
+  opacity: 1;
+  animation: fadeIn 0.5s ease 0s 1 normal;
 }
 @keyframes fadeIn {
-    0% {opacity: 0; top: 30px;}
-    100% {opacity: 1; top: 0px;}
+  0% {
+    opacity: 0;
+    top: 30px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
 }
 @keyframes fadeOut {
-    0% {opacity: 1}
-    100% {opacity: 0}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .kujiraWaku img {
   position: absolute;
@@ -1065,8 +1165,8 @@ background-repeat: no-repeat;
 /* 当院情報 */
 .touinJoho_wrapper {
   position: absolute;
-  left:160px;
-  top:520px;
+  left: 160px;
+  top: 520px;
   width: 274px;
   height: 216px;
   cursor: pointer;
@@ -1078,7 +1178,7 @@ background-repeat: no-repeat;
   top: 14px;
   left: 0px;
   background-image: url(../img/page1/touinJyouhouUra.png);
-  animation: fadeOut .5s ease 0s 1 normal;
+  animation: fadeOut 0.5s ease 0s 1 normal;
   opacity: 0;
 }
 .touinJoho_wrapper .zouOmote {
@@ -1090,17 +1190,25 @@ background-repeat: no-repeat;
   background-image: url(../img/page1/touinJyouhouOmote.png);
 }
 
-.touinJoho_wrapper:hover .zouUra{
+.touinJoho_wrapper:hover .zouUra {
   opacity: 1;
-  animation: fadeInn .5s ease 0s 1 normal;
+  animation: fadeInn 0.5s ease 0s 1 normal;
 }
 @keyframes fadeInn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .cloud {
@@ -1116,19 +1224,23 @@ background-repeat: no-repeat;
 }
 
 @keyframes cloudFlow {
-  0% {      transform:translateX(-1500px);   }
-  100% {      transform:translateX(2500px);    }
+  0% {
+    transform: translateX(-1500px);
+  }
+  100% {
+    transform: translateX(2500px);
+  }
 }
 
 /* 掲示板 */
-.bbs_wrapper{
+.bbs_wrapper {
   position: absolute;
   top: 530px;
   left: 460px;
   width: 307px;
   height: 164px;
 }
-.kirikabu{
+.kirikabu {
   margin: 0px;
   padding: 0px;
   width: 307px;
@@ -1138,21 +1250,61 @@ background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* 求人ボタン */
+.recruiteWrapper {
+  position: absolute;
+  left: 1060px;
+  top: 290px;
+  padding: 0;
+  border: 0;
+  width: 60px;
+  height: 75px;
+  background: url("../img/page1/recruiteOmote.png") no-repeat; /* チラ防 */
+  background-size: contain;
+}
+.recruiteWrapper .kanban {
+  background: url("../img/page1/recruiteOmote.png") no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 75px;
+  display: block;
+  text-indent: -9999px;
+}
+.recruiteWrapper .kanban:hover {
+  background-image: url("../img/page1/recruiteUra.png");
+  cursor: pointer;
+}
+.recruiteWrapper .kanban > .fukidasi {
+  position: absolute;
+  left: 0px;
+  top: -50px;
+  margin-left: -50px;
+  margin-top: -200px;
+  width: 300px;
+  height: 257px;
+  background-image: url("../img/page1/recruiteFukidasi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+}
+.recruiteWrapper .kanban:hover > .fukidasi {
+  display: block;
+}
+
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
-#page2{
+#page2 {
   /*height:970px;*/
   background-image: url(../img/page2/pg2BG.png);
 }
-.page2_wrapper{
+.page2_wrapper {
   position: relative;
   height: 970px;
-  width:943px;
-  margin-left: calc((100vw - 943px)/2);
+  width: 943px;
+  margin-left: calc((100vw - 943px) / 2);
   background-image: url(../img/page2/touinBoardFinal.png);
   background-repeat: no-repeat;
 }
-
 
 /*--------------------------------------------------------------PAGE3----------------------------------*/
 #page3 {
@@ -1163,29 +1315,30 @@ background-repeat: no-repeat;
 .p3Wrapper {
   width: 1000px;
   height: 900px;
-  margin-left: calc((100vw - 1000px)/2);
+  margin-left: calc((100vw - 1000px) / 2);
   padding-top: 80px;
   /*background-color: rgba(255, 0, 0, 0.5);*/
 }
 
-#page3 .list{                                                          /* Page3 助産師外来 */
+#page3 .list {
+  /* Page3 助産師外来 */
   margin-left: -40px;
   list-style-type: none;
   overflow: hidden;
 }
-#page3 .list li{
+#page3 .list li {
   margin: 50px 20px 50px 20px;
   float: left;
   transition: 1s;
 }
-#page3 .list-mv03{
-  transform: rotate(0deg) scale(0.1,0.1);
-  -webkit-transform: rotate(0deg) scale(0.1,0.1);
+#page3 .list-mv03 {
+  transform: rotate(0deg) scale(0.1, 0.1);
+  -webkit-transform: rotate(0deg) scale(0.1, 0.1);
   opacity: 0;
 }
-#page3 .mv03{
-  transform: rotate(360deg) scale(1,1);
-  -webkit-transform: rotate(360deg) scale(1,1);
+#page3 .mv03 {
+  transform: rotate(360deg) scale(1, 1);
+  -webkit-transform: rotate(360deg) scale(1, 1);
   opacity: 1;
 }
 
@@ -1195,35 +1348,39 @@ background-repeat: no-repeat;
 }
 .page4Wrapper {
   padding-top: 50px;
-
-}
-.milks {
-  position: absolute;
-  width: 1000px;
-  height: 850px;
-  background-image: url(../img/page4/pg4Cover.png);
-  background-repeat: no-repeat;
-
 }
 #page4 table {
   margin: 0 auto;
 }
-.mainTable{
-  position: relative;
-  margin-left: -113px;
-  margin-top: 65px;
-}
+
 .milkEx {
-  text-align:center;
+  text-align: center;
   line-height: 140%;
-  padding:5px;
-  border-color:#990000;
-  border-width:1px;
-  border-style:solid;
-  height:200px;
-  width:480px;
-  background:#D1E3E7;
+  padding: 5px;
+  border-color: #990000;
+  border-width: 1px;
+  border-style: solid;
+  height: 215px;
+  width: 480px;
+  background: #d1e3e7;
 }
+.tableCover {
+  width: 1325px;
+  height: 700px;
+  background-image: url(../img/page4/pg4Cover.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.milks {
+  position: relative;
+  margin-top: 100px;
+}
+.mainTable {
+  position: relative;
+  width: 1270px;
+  margin-left: 10px;
+}
+
 .milkEx img {
   margin: 0 auto;
 }
@@ -1235,13 +1392,13 @@ background-repeat: no-repeat;
 .p5Wrapper {
   position: absolute;
   top: 0;
-  left: calc((100vw - 1100px)/2);
+  left: calc((100vw - 1100px) / 2);
   width: 1100px;
   height: 777px;
   background-image: url(../img/page5/p5BG.png);
   background-repeat: no-repeat;
 }
-.p5Contents{
+.p5Contents {
   position: absolute;
   width: 900px;
   height: 800px;
@@ -1250,10 +1407,6 @@ background-repeat: no-repeat;
   background-image: url(../img/page5/poach.png);
 }
 
-
-
-
-
 /*--------------------------------------------------------------PAGE6----------------------------------*/
 #page6 {
   background-image: url(../img/page2/pg2BG.png);
@@ -1261,12 +1414,12 @@ background-repeat: no-repeat;
 .relax {
   position: absolute;
   top: 150px;
-  left: calc((100vw - 920px)/2);  /* エステのメインテーブル幅は920px */
+  left: calc((100vw - 920px) / 2); /* エステのメインテーブル幅は920px */
   /*background: linear-gradient(-45deg, rgba(246, 255, 0, .4), rgba(255, 0, 161, .4));*/
   background-color: #fff;
-   box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.4);
+  box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.4);
 }
-.relaxTitle{
+.relaxTitle {
   position: absolute;
   top: 170px;
   left: 320px;
@@ -1278,76 +1431,77 @@ background-repeat: no-repeat;
 }
 
 .relax:hover .relaxTitle {
-  transform:translateY(-350px);
-    animation: flow 1.5s linear 1;
-  }
+  transform: translateY(-350px);
+  animation: flow 1.5s linear 1;
+}
 @keyframes flow {
-  0% {      transform:translateY(0px);   }
-  100% {      transform:translateY(-350px);    }
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-350px);
+  }
 }
 @keyframes flowBack {
-  0% {      transform:translateY(-350px);   }
-  100% {      transform:translateY(0px);    }
+  0% {
+    transform: translateY(-350px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-
-
 /*--------------------------------------------------------------PAGE7----------------------------------*/
-#page7{
+#page7 {
   background-image: url(../img/page7/page7BG.gif);
 }
 
 img {
-	border: none;
+  border: none;
 }
 
-ul, li {
-	list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
 #galleryP7 {
-	position:absolute;
+  position: absolute;
   margin-top: 100px;
-	overflow: hidden;
-	text-align: center;
-	width: 1000px;
-	height:820px;
-	margin-left: calc((100vw - 1000px)/2);
+  overflow: hidden;
+  text-align: center;
+  width: 1000px;
+  height: 820px;
+  margin-left: calc((100vw - 1000px) / 2);
   background-image: url(../img/page7/tableMatteORG.png);
 }
 
-
-#galleryP7 .contentP7 {							/* とりあえず1ページ分で周囲画像つきで収まる大きさにした */
-	position: absolute;
-	left: calc((1000 - 800)/2);
-	width: 800px;
-	height: 800px;
-	/*margin: 0 auto;*/
+#galleryP7 .contentP7 {
+  /* とりあえず1ページ分で周囲画像つきで収まる大きさにした */
+  position: absolute;
+  left: calc((1000 - 800) / 2);
+  width: 800px;
+  height: 800px;
+  /*margin: 0 auto;*/
   margin-top: 120px;
   margin-left: 100px;
-	position: relative;
-	/*background-color: rgba(100, 200, 200, 0.2);*/
+  position: relative;
+  /*background-color: rgba(100, 200, 200, 0.2);*/
 }
 
-
-
 #galleryP7 li img:hover {
-	opacity: 0.7;
+  opacity: 0.7;
   cursor: pointer;
 }
 
-
 /* widthが1000pxであることを前提にキレイに.content内に並ぶ横幅にした */
 
-#galleryP7 li img{
-	float: left;
+#galleryP7 li img {
+  float: left;
   border-radius: 5px;
-	width: 130px;
-	margin: 2px 2px 0 0;
+  width: 130px;
+  margin: 2px 2px 0 0;
 }
-
-
-
 
 /* widthが1000pxであることを前提にキレイに.content内に並ぶ横幅にした */
 
@@ -1357,42 +1511,42 @@ ul, li {
 	margin: 2px 2px 0 0;
 }*/
 
-
 /*--------------------------------------------------------------PAGE8----------------------------------*/
-#page8{
+#page8 {
   background-image: url(../img/page2/pg2BG.png);
 }
 
 #page8 #gallery {
-	position:absolute;
-	overflow: hidden;
-	text-align: center;
-	width: 1000px;
-	height:888px;
-  top:100px;
-	margin-left: calc((100vw - 1000px)/2);
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  width: 1000px;
+  height: 888px;
+  top: 100px;
+  margin-left: calc((100vw - 1000px) / 2);
   background-image: url(../img/page8/SLCdefaultGaikan.png);
   background-repeat: no-repeat;
 }
-#page8 #gallery .content {							/* とりあえず1ページ分で周囲画像つきで収まる大きさにした */
-	position: absolute;
-	top: 100px;
-	left: 50px;
-	width: 600px;
-	height: 800px;
-	margin: 0 auto;
-	position: relative;
-	/*background-color: rgba(100, 200, 200, 0.2);*/
+#page8 #gallery .content {
+  /* とりあえず1ページ分で周囲画像つきで収まる大きさにした */
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 600px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+  /*background-color: rgba(100, 200, 200, 0.2);*/
 }
 #page8 #gallery li img {
-	border-radius: 5px;
-	max-width: 100%;
+  border-radius: 5px;
+  max-width: 100%;
 }
 
 #page8 #gallery li {
-	float: left;
-	width: 130px;
-	margin: 2px 2px 0 0;
+  float: left;
+  width: 130px;
+  margin: 2px 2px 0 0;
 }
 
 #page8 #gallery li:nth-child(25) {
@@ -1400,24 +1554,22 @@ ul, li {
 }
 
 /*--------------------------------------------------------------PAGE9-----------------------------------*/
-#page9{
+#page9 {
   background-image: url(../img/page2/pg2BG.png);
 }
-.gmap iframe{
-  position:relative;
+.gmap iframe {
+  position: relative;
   /*width: 1000px;
   height: 880px;*/
- margin-top:100px;
- margin-left: calc((100vw - 1000px)/2);
+  margin-top: 100px;
+  margin-left: calc((100vw - 1000px) / 2);
 }
-
-
-
 
 /*--------------------------------------------------------------PAGE10-----------------------------------*/
 
 /* メールフォーム波 */
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100%;
 }
@@ -1429,8 +1581,8 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(#05FBFF, #1D62F0 );
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(#05fbff, #1d62f0);
   background-image: url(../img/page10/P10bg.png);
   background-repeat: repeat-x;
 }
@@ -1442,16 +1594,16 @@ html, body {
   margin-top: -280px;
   background: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: #1E384C;
+  background: #1e384c;
 }
 @media (min-width: 500px) {
   .stage {
-    top:200px;
+    top: 200px;
     border-radius: 5px;
     max-height: 650px;
     max-width: 700px;
   }
-}                                              /*↑ここまでのCSSの記述を削除すると全画面になる*/
+} /*↑ここまでのCSSの記述を削除すると全画面になる*/
 
 .waves {
   position: absolute;
@@ -1460,7 +1612,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition: .4s transform ease;
+  transition: 0.4s transform ease;
   transform-origin: bottom center;
 }
 @media (min-width: 500px) {
@@ -1496,11 +1648,11 @@ html, body {
 }
 .wave--front {
   z-index: 2;
-  color: #32BAFA;
+  color: #32bafa;
 }
 .wave--back {
   z-index: 1;
-  color: #2C7FBE;
+  color: #2c7fbe;
   animation-direction: reverse;
 }
 
@@ -1531,13 +1683,14 @@ svg {
     transform: translate3d(100%, 0, 0);
   }
 }
-.waveContent {                            /* メールフォームラッパー */
+.waveContent {
+  /* メールフォームラッパー */
   z-index: 2;
   position: absolute;
   bottom: 0;
   left: 0;
   top: 280px;
-  color:black;
+  color: black;
   width: 100%;
   height: 650px;
   display: -webkit-box;
@@ -1547,7 +1700,7 @@ svg {
   justify-content: center;
 }
 
-.nimo{
+.nimo {
   position: absolute;
   top: 300px;
   width: 100%;
@@ -1555,22 +1708,21 @@ svg {
   animation: nimoSwim 11.5s linear infinite;
   z-index: 10;
 }
-.nimo img{
+.nimo img {
   width: 108px;
   height: 63px;
 }
 
 @keyframes nimoSwim {
   from {
-      opacity: 1;
-      left: 750px;
+    opacity: 1;
+    left: 750px;
   }
   to {
     opacity: 1;
     left: -100px;
   }
 }
-
 
 /*--------------------------------------------------------------PAGE11-----------------------------------*/
 
@@ -1579,35 +1731,40 @@ svg {
   padding-left: 100px;
 }
 .doctorWrap table.doctor {
-    width: 901px;
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 1px 0;
-    font-size: 15px;
+  width: 901px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 1px 0;
+  font-size: 15px;
 }
 .doctorWrap table.doctor th,
 .doctorWrap table.doctor td {
-    padding: 10px;
+  padding: 10px;
 }
-.doctorWrap table.doctor th.c1, .doctorWrap table.doctor th.c3 {
-    box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
-    border-radius: 5px 5px 10px 10px;
-    background: #88b7d5;
-    vertical-align: middle;
-    text-align: center;
-    width: 125px;
-    height: 50px;
-    position: relative;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    font-size: 24px;
+.doctorWrap table.doctor th.c1,
+.doctorWrap table.doctor th.c3 {
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8) inset;
+  border-radius: 5px 5px 10px 10px;
+  background: #88b7d5;
+  vertical-align: middle;
+  text-align: center;
+  width: 125px;
+  height: 50px;
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
 }
 
 .doctorWrap table.doctor th.c1 {
-    width: 450px;
-    text-align: center;
-    background: linear-gradient(to bottom,  rgba(204,20,69,1) 1%,rgba(182,17,61,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc1445', endColorstr='#b6113d',GradientType=0 ); /* IE6-9 */
+  width: 450px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(204, 20, 69, 1) 1%,
+    rgba(182, 17, 61, 1) 100%
+  ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc1445', endColorstr='#b6113d',GradientType=0 ); /* IE6-9 */
 }
 
 .doctorWrap table.doctor th.c2 {
@@ -1616,79 +1773,83 @@ svg {
 
 .doctorWrap table.doctor th.c3 {
   width: 450px;
-  background: linear-gradient(to bottom,  rgba(97,174,36,1) 1%,rgba(86,155,32,1) 100%); /* W3C */
+  background: linear-gradient(
+    to bottom,
+    rgba(97, 174, 36, 1) 1%,
+    rgba(86, 155, 32, 1) 100%
+  ); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61ae24', endColorstr='#569b20',GradientType=0 ); /* IE6-9 */
 }
 
 .doctorWrap table.doctor th:after {
-    top: 69px;
-    left: 5px;
-    content: '';
-    height: 0;
-    width: 0;
-    margin-left: -85px;
-    position: absolute;
-    pointer-events: none;
-    border: 78px solid transparent;
+  top: 69px;
+  left: 5px;
+  content: "";
+  height: 0;
+  width: 0;
+  margin-left: -85px;
+  position: absolute;
+  pointer-events: none;
+  border: 78px solid transparent;
 }
 
 .doctorWrap table.doctor th::after {
-    padding: 0;
-    top: 60px;
-    left: 0;
-    content: '';
-    height: 0;
-    width: 0;
-    position: relative;
-    pointer-events: none;
-    border: 50px solid transparent;
-    border-top: #B7D567 15px solid;
+  padding: 0;
+  top: 60px;
+  left: 0;
+  content: "";
+  height: 0;
+  width: 0;
+  position: relative;
+  pointer-events: none;
+  border: 50px solid transparent;
+  border-top: #b7d567 15px solid;
 }
 .doctorWrap table.doctor th.c1:after {
-    border-top: #b6113d 15px solid;
+  border-top: #b6113d 15px solid;
 }
 .doctorWrap table.doctor th.c2:after {
-    display: none;
+  display: none;
 }
 .doctorWrap table.doctor th.c3:after {
-    border-top: #569b20 15px solid;
+  border-top: #569b20 15px solid;
 }
 
 .doctorWrap table.doctor td {
-    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
-    text-align: center;
-    padding-top: 15px;
-    border: none;
-    height: 70px;
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset;
+  text-align: center;
+  padding-top: 15px;
+  border: none;
+  height: 70px;
 }
 
-.doctorWrap table.doctor tr:nth-child(2n+1) td.c1 {
-    background: #ffecf5;
+.doctorWrap table.doctor tr:nth-child(2n + 1) td.c1 {
+  background: #ffecf5;
 }
-.doctorWrap table.doctor tr:nth-child(2n+0) td.c1 {
-    background: #ffdfed;
-}
-
-.doctorWrap table.doctor tr:nth-child(2n+1) td.c2 {
-    background: #fff;
-}
-.doctorWrap table.doctor tr:nth-child(2n+0) td.c2 {
-    background: #eee;
+.doctorWrap table.doctor tr:nth-child(2n + 0) td.c1 {
+  background: #ffdfed;
 }
 
-.doctorWrap table.doctor tr:nth-child(2n+1) td.c3 {
-    background: #f7f9e8;
+.doctorWrap table.doctor tr:nth-child(2n + 1) td.c2 {
+  background: #fff;
 }
-.doctorWrap table.doctor tr:nth-child(2n+0) td.c3 {
-    background: #e2efbc;
+.doctorWrap table.doctor tr:nth-child(2n + 0) td.c2 {
+  background: #eee;
 }
 
+.doctorWrap table.doctor tr:nth-child(2n + 1) td.c3 {
+  background: #f7f9e8;
+}
+.doctorWrap table.doctor tr:nth-child(2n + 0) td.c3 {
+  background: #e2efbc;
+}
 
 .doctorWrap table.doctor tr:last-child td {
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
-.doctorWrap td.c1.career, td.c3.career {
+.doctorWrap td.c1.career,
+td.c3.career {
   text-align: left;
   padding-left: 50px;
 }
@@ -1700,14 +1861,14 @@ svg {
 }
 
 /*--------------------------------------------------------------PAGE12-----------------------------------*/
-#page12{
-  height: 1000px;                        /* ラストのページだけ縦を長くしてpage9の下端が見えないようにする */
+#page12 {
+  height: 1000px; /* ラストのページだけ縦を長くしてpage9の下端が見えないようにする */
 }
-.page10Wrapper{
+.page10Wrapper {
   position: absolute;
   width: 1000px;
   height: 888px;
-  margin-left: calc((100vw - 1000px)/2);
+  margin-left: calc((100vw - 1000px) / 2);
 }
 .page10Wrapper img {
   position: absolute;
@@ -1716,287 +1877,365 @@ svg {
   bottom: 0;
   left: 0;
   margin: auto;
-
 }
 
-
-
-
-
-
-
-
-
 /* ↓以下、プリローダー関連 */
-  #loadingOverlay {
-  	display: block;
-  	width: 100%;
-  	height: 100%;
-  	background: #FFF;
-  	position: fixed;
-  	top: 0;
-  	left: 0;
-  	z-index: 500;
-  }
-  #loadingOverlay .inner {
-  	max-width: 1263px;
-  	height: 100%;
-  	margin: 0 auto;
-  	position: relative;
-  }
-  #loadingOverlay span {
-  	display: none;
-  }
-  #loadingOverlay .text {
-  	width: 660px;
-  	height: 324px;
-  	margin: 0 0 0 -330px;
-  	text-align: center;
-  	position: absolute;
-  	top: 150px;
-  	left: 50%;
-  	z-index: 2;
-  }
-  .slc_logo{
-  	position: absolute;
-  	background-image: url(../img/slc600.png);
-  	background-repeat: no-repeat;
-  	width: 600px;
-  	height:195px;
-  	top:200px;
-  	left: calc(50vw - 300px);
-  }
-  #loader,
-  #bar {
-  	width: 200px;
-  }
-  #loader {
-  	display: block;
-  	margin: 0 0 0 -100px;
-  	text-align: center;
-  	background: #fff;
-  	color: #0aa;
-  	position: absolute;
-  	top: 550px;
-  	left: 50%;
-  	z-index: 9999;
-  }
-  #load-text {
-  	display: inline !important;
-  }
-  #bar,
-  #bar span {
-  	height: 3px;
-  }
-  #bar {
-  	margin-top: 5px;
-  	padding: 1px;
-  	font-size: 1px;
-  	text-align: left;
-  	border: 1px solid #f32416;
-  	position: relative;
-  	left: -1px;
-  }
-  #bar span {
-    margin-top: -1px;
-  	display: block;
-  	width: 0px;
-  	background: #f382ff;
-  }
+#loadingOverlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+}
+#loadingOverlay .inner {
+  max-width: 1263px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#loadingOverlay span {
+  display: none;
+}
+#loadingOverlay .text {
+  width: 660px;
+  height: 324px;
+  margin: 0 0 0 -330px;
+  text-align: center;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  z-index: 2;
+}
+.slc_logo {
+  position: absolute;
+  background-image: url(../img/slc600.png);
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 195px;
+  top: 200px;
+  left: calc(50vw - 300px);
+}
+#loader,
+#bar {
+  width: 200px;
+}
+#loader {
+  display: block;
+  margin: 0 0 0 -100px;
+  text-align: center;
+  background: #fff;
+  color: #0aa;
+  position: absolute;
+  top: 550px;
+  left: 50%;
+  z-index: 9999;
+}
+#load-text {
+  display: inline !important;
+}
+#bar,
+#bar span {
+  height: 3px;
+}
+#bar {
+  margin-top: 5px;
+  padding: 1px;
+  font-size: 1px;
+  text-align: left;
+  border: 1px solid #f32416;
+  position: relative;
+  left: -1px;
+}
+#bar span {
+  margin-top: -1px;
+  display: block;
+  width: 0px;
+  background: #f382ff;
+}
 /*↑以上、プリローダー関連 */
-
 
 /* 以下カレンダー関係 */
 
-  /* カルーセル カレンダー＝300✕312px、ナビ部分の高さ 30px、うさぎ＝131 × 163px */
-  #CarouselSpace {
-  	width:300px;
-  	height:312px;
-  	/*margin: 0px auto;*/
-    margin-left: 220px;
-    margin-top: 170px;
-  	opacity: 0;
-  }
+/* カルーセル カレンダー＝300✕312px、ナビ部分の高さ 30px、うさぎ＝131 × 163px */
+#CarouselSpace {
+  width: 300px;
+  height: 312px;
+  /*margin: 0px auto;*/
+  margin-left: 220px;
+  margin-top: 170px;
+  opacity: 0;
+}
 
-  /* 表示領域 */
-  #wrapper {
-  	/* マスクのサイズ */
-  	width:300px;
-  	height:312px;
-  	/* はみ出さないようにoverflowで指定します。
+/* 表示領域 */
+#wrapper {
+  /* マスクのサイズ */
+  width: 300px;
+  height: 312px;
+  /* はみ出さないようにoverflowで指定します。
   	　※古いOSの場合positionとz-indexの指定が必要ですが
   	　最近のwebkitではさほど気にしなくても動きます */
-  	float:left;
-  	position:relative;
-  	z-index:1;
-  	overflow:hidden;
-  	/* 角丸の背景 */
-  	-webkit-border-radius:10px;
-  	-moz-border-radius:10px;
-  	-o-border-radius:10px;
-  	border-radius:10px;
-  	background:#fff;
-  }
-  /* スクロールコンテンツ全体 */
-  #scroller {
-  	/* 中身の横幅の合計を足したものを指定します */
-  	width:3600px;
-  	height:100%;
-  	float:left;
-  	padding:0;
-  }
-  /* スクロールコンテンツ　ul要素 */
-  #scroller ul {
-  	list-style:none;
-  	display:block;
-  	float:left;
-  	width:100%;
-  	height:100%;
-  	padding:0;
-  	margin:0;
-  	text-align:left;
-  }
-  /* スクロールコンテンツ　li要素 */
-  #scroller li {
-  	/* ボックスサイズをpaddingとborderを含んだものに指定 */
-  	-webkit-box-sizing:border-box;
-  	-moz-box-sizing:border-box;
-  	-o-box-sizing:border-box;
-  	box-sizing:border-box;
-  	/* コンテンツのサイズ */
-  	display:block; float:left;
-  	width:300px; height:160px;
-  	text-align:center;
-  	font-family:georgia;
-  	font-size:18px;
-  	line-height:140%;
-  }
-  #nav {
-    background-color: rgba(100, 100, 200, 0.7);
-    color: #f0f;
-  	width:300px;
-  	float:left;
-  }
-  #PrevBtn, #NextBtn {
-  	float:left;
-  	font-weight:bold;
-  	font-size:14px;
-  	margin-top:5px;
-  	padding:2px 4px;
-  	width:52px;
-  	cursor:pointer;
-  	-webkit-border-radius:4px;
-  	-moz-border-radius:4px;
-  	-o-border-radius:4px;
-  	border-radius:4px;
-  	background:#fff;
-  }
-  #PrevBtn:hover, #NextBtn:hover {
-  	color:#fff;
-  	background:#aaa;
-  	text-shadow: 0 1px 0 #999;
-  }
-  #NextBtn {
-  	float:right;
-  	text-align:right;
-  }
-  #indicator, #indicator > li {
-  	display:block; float:left;
-  	list-style:none;
-  	padding:0; margin:0;
-  }
-  #indicator {
-  	width:110px;
-  	padding:12px 0 0 50px;
-  }
-  #indicator > li {
-  	text-indent:-9999em;
-  	width:8px; height:8px;
-  	-webkit-border-radius:4px;
-  	-moz-border-radius:4px;
-  	-o-border-radius:4px;
-  	border-radius:4px;
-  	background:#fff;
-  	overflow:hidden;
-  	margin-right:4px;
-  }
-  #indicator > li.active {
-  	background:#888;
-  }
-  #indicator > li:last-child {
-  	margin:0;
-  }
-  /* カレンダー＝300✕312px、ナビ部分の高さ 30px、うさぎ＝131 × 163px */
-  #CalWrapper{
-  	position: absolute;			/*カレンダー部分はopacityゼロなだけで存在するので、この上側はHoverものは無反応になるのでこの位置（Clickものは反応する）*/
-  	top: -40px;
-  	left: 80px;
-    /*right:160px;*/
-  	width: 300px;
-  	height: 505px;
-  }
+  float: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* 角丸の背景 */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+/* スクロールコンテンツ全体 */
+#scroller {
+  /* 中身の横幅の合計を足したものを指定します */
+  width: 3600px;
+  height: 100%;
+  float: left;
+  padding: 0;
+}
+/* スクロールコンテンツ　ul要素 */
+#scroller ul {
+  list-style: none;
+  display: block;
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+/* スクロールコンテンツ　li要素 */
+#scroller li {
+  /* ボックスサイズをpaddingとborderを含んだものに指定 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  /* コンテンツのサイズ */
+  display: block;
+  float: left;
+  width: 300px;
+  height: 160px;
+  text-align: center;
+  font-family: georgia;
+  font-size: 18px;
+  line-height: 140%;
+}
+#nav {
+  background-color: rgba(100, 100, 200, 0.7);
+  color: #f0f;
+  width: 300px;
+  float: left;
+}
+#PrevBtn,
+#NextBtn {
+  float: left;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 2px 4px;
+  width: 52px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+}
+#PrevBtn:hover,
+#NextBtn:hover {
+  color: #fff;
+  background: #aaa;
+  text-shadow: 0 1px 0 #999;
+}
+#NextBtn {
+  float: right;
+  text-align: right;
+}
+#indicator,
+#indicator > li {
+  display: block;
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#indicator {
+  width: 110px;
+  padding: 12px 0 0 50px;
+}
+#indicator > li {
+  text-indent: -9999em;
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+  margin-right: 4px;
+}
+#indicator > li.active {
+  background: #888;
+}
+#indicator > li:last-child {
+  margin: 0;
+}
+/* カレンダー＝300✕312px、ナビ部分の高さ 30px、うさぎ＝131 × 163px */
+#CalWrapper {
+  position: absolute; /*カレンダー部分はopacityゼロなだけで存在するので、この上側はHoverものは無反応になるのでこの位置（Clickものは反応する）*/
+  top: -40px;
+  left: 80px;
+  /*right:160px;*/
+  width: 300px;
+  height: 505px;
+}
 
-  /*.usagi:hover ~ #CarouselSpace {				hoverでやると、うさぎのhoverにするとカレンダー操作できず、親にすると遠くでもカレンダーがでてしまう
+/*.usagi:hover ~ #CarouselSpace {				hoverでやると、うさぎのhoverにするとカレンダー操作できず、親にすると遠くでもカレンダーがでてしまう
   	opacity: 1;														⇒解決策：うさぎのクリックでカレンダーの表示/非表示
   }*/
 
-  #usagi{
-  	position: absolute;
-  	width: 131px;
-  	height: 163px;
-  	top: 380px;
-  	left: calc((312px - 131px)/2);
-  	background-image: url('../calendar/usagi.png');
-  	cursor: pointer;
-  }
+#usagi {
+  position: absolute;
+  width: 131px;
+  height: 163px;
+  top: 380px;
+  left: calc((312px - 131px) / 2);
+  background-image: url("../calendar/usagi.png");
+  cursor: pointer;
+}
 /* ↑以上、カレンダー関連*/
-
 
 /* --------リンクポップアップ　LinkPopUp--------- */
 
-.LinkNav { display: none; position: absolute; top: 30px; right: -15px; border: 2px solid #ff6699; background: #fff; list-style: none; padding: 12px 0 15px 22px; width: 590px; -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15); box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15); z-index: 99; box-sizing: content-box; }
+.LinkNav {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: -15px;
+  border: 2px solid #ff6699;
+  background: #fff;
+  list-style: none;
+  padding: 12px 0 15px 22px;
+  width: 590px;
+  -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+  box-sizing: content-box;
+}
 
-.LinkNav::after, .LinkNav::before { content: " "; position: absolute; bottom: 100%; left: 522px; border: solid transparent; height: 0; width: 0; pointer-events: none; }
+.LinkNav::after,
+.LinkNav::before {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 522px;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
 
-.LinkNav::after { border-color: rgba(255, 255, 255, 0); border-bottom-color: rgb(167,195,60); border-width: 10px; margin-left: -10px; }
+.LinkNav::after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: rgb(167, 195, 60);
+  border-width: 10px;
+  margin-left: -10px;
+}
 
 /*
     ↑　本来、吹き出しの矢印部分の中の白地を::afterのborderでやっていて、borderを画像を使って草原で埋めたかったがきれいに三角形にならなかったので、
     　　草原の上に白地が残るより赤岳になったほうがいいので削除した  border-image: url("bg.png");も使えるのだがきれいな三角形にならなかった
 */
 
-.LinkNav::before { border-color: rgba(245, 43, 2, 0); border-bottom-color: #ff6699; border-width: 13px; margin-left: -13px; }
+.LinkNav::before {
+  border-color: rgba(245, 43, 2, 0);
+  border-bottom-color: #ff6699;
+  border-width: 13px;
+  margin-left: -13px;
+}
 
-.LinkNav li { float: left; width: 272px; margin-right: 22px; padding: 0; }
+.LinkNav li {
+  float: left;
+  width: 272px;
+  margin-right: 22px;
+  padding: 0;
+}
 
 /*.LinkNav li:not(:last-child) { border-bottom: 1px solid #e6e6e6;
 }*/
-.LinkNav li a { display: block; position: relative; padding: 12px 8px; color: #04c; text-decoration: none; }
+.LinkNav li a {
+  display: block;
+  position: relative;
+  padding: 12px 8px;
+  color: #04c;
+  text-decoration: none;
+}
 
-.LinkNav li a:after { display: block; content: ''; position: absolute; top: 50%; right: 66px; width: 10px; height: 10px; border-top: 2px solid #f9170a; border-right: 2px solid #f9170a; -webkit-transform: rotate(45deg) translate(0, -50%); -ms-transform: rotate(45deg) translate(0, -50%); transform: rotate(45deg) translate(0, -50%); }
+.LinkNav li a:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 66px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #f9170a;
+  border-right: 2px solid #f9170a;
+  -webkit-transform: rotate(45deg) translate(0, -50%);
+  -ms-transform: rotate(45deg) translate(0, -50%);
+  transform: rotate(45deg) translate(0, -50%);
+}
 
-.LinkNav li a:hover { filter: alpha(opacity=70); opacity: 0.7; }
+.LinkNav li a:hover {
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
 
-.LinkNav_icon { display: inline-block; vertical-align: middle; margin: 0; width: 58px; height: 40px; text-align: right; }
+.LinkNav_icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  width: 58px;
+  height: 40px;
+  text-align: right;
+}
 
-.LinkNav_txt { display: inline-block; vertical-align: middle; margin: 0; width: 194px; height: 40px; }
+.LinkNav_txt {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  width: 194px;
+  height: 40px;
+}
 
-.LinkNav__catch { font-size: 0.8rem; color: #636363; }
+.LinkNav__catch {
+  font-size: 0.8rem;
+  color: #636363;
+}
 
-.LinkNav__name { font-size: 0.9rem; font-weight: bold; }
+.LinkNav__name {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
 
-li img{ margin-top: 8px; margin-left: 10px;}
+li img {
+  margin-top: 8px;
+  margin-left: 10px;
+}
 
-#fukidashiMenu{
+#fukidashiMenu {
   background-image: url(../img/topObiBtns/link/linkbg.png);
 }
 
-
 .insta {
   background-image: url(../images/instaLogo.png);
-  width:440px;
+  width: 440px;
   height: 63px;
-
 }
 
 /* 院内案内、入院食案内写真モーダル：元はローダーで読み込んでたdialogmodal.cssファイルをココに強くでおいた */
@@ -2025,9 +2264,8 @@ li img{ margin-top: 8px; margin-left: 10px;}
 	visibility: visible;
 }*/
 
-
-
-.stamp {                      /* ーーーーーーーーーーーーーーーーーーーーーー正月中央全体のラッパー ーーーーーーーーーーーーーーーーーーーーーー */
+.stamp {
+  /* ーーーーーーーーーーーーーーーーーーーーーー正月中央全体のラッパー ーーーーーーーーーーーーーーーーーーーーーー */
   position: absolute;
   /* right: 6vmax;
   top: 6vmax; */
@@ -2038,21 +2276,21 @@ li img{ margin-top: 8px; margin-left: 10px;}
   right: 0;
   margin: auto;
   width: 350px;
-  height:350px;
-  text-align:center;
-  background: url('../images/letters/stampbg.png') no-repeat center center;
-  background-size:350px 350px;
+  height: 350px;
+  text-align: center;
+  background: url("../images/letters/stampbg.png") no-repeat center center;
+  background-size: 350px 350px;
 }
 .stamp p {
   color: #08cde3;
   font-size: 2vmax;
-  font-family: 'Asul', sans-serif;
+  font-family: "Asul", sans-serif;
   position: absolute;
   top: 75%;
   left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100px;
   text-align: center;
 }
@@ -2063,181 +2301,148 @@ li img{ margin-top: 8px; margin-left: 10px;}
   top: 50%;
   background-color: transparent;
   -webkit-animation: rotating 9.5s linear infinite;
-          animation: rotating 9.5s linear infinite;
-
+  animation: rotating 9.5s linear infinite;
 }
 .stamp .circle span {
   /* height: 12.3vmax;                                          回転半径 */
 
-  height:160px;
+  height: 160px;
   width: 40px;
   position: absolute;
   display: inline-block;
   left: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 .stamp .char1 {
   -webkit-transform: rotate(11deg);
-          transform: rotate(11deg);
-
+  transform: rotate(11deg);
 }
 .stamp .char2 {
   -webkit-transform: rotate(22deg);
-          transform: rotate(22deg);
-        
+  transform: rotate(22deg);
 }
 .stamp .char3 {
   -webkit-transform: rotate(33deg);
-          transform: rotate(33deg);
-        
+  transform: rotate(33deg);
 }
 .stamp .char4 {
   -webkit-transform: rotate(44deg);
-          transform: rotate(44deg);
-        
+  transform: rotate(44deg);
 }
 .stamp .char5 {
   -webkit-transform: rotate(55deg);
-          transform: rotate(55deg);
-        
+  transform: rotate(55deg);
 }
 .stamp .char6 {
   -webkit-transform: rotate(66deg);
-          transform: rotate(66deg);
-        
+  transform: rotate(66deg);
 }
 .stamp .char7 {
   -webkit-transform: rotate(77deg);
-          transform: rotate(77deg);
-        
+  transform: rotate(77deg);
 }
 .stamp .char8 {
   -webkit-transform: rotate(88deg);
-          transform: rotate(88deg);
-        
+  transform: rotate(88deg);
 }
 .stamp .char9 {
   -webkit-transform: rotate(99deg);
-          transform: rotate(99deg);
-        
+  transform: rotate(99deg);
 }
 .stamp .char10 {
   -webkit-transform: rotate(110deg);
-          transform: rotate(110deg);
-        
+  transform: rotate(110deg);
 }
 .stamp .char11 {
   -webkit-transform: rotate(121deg);
-          transform: rotate(121deg);
-        
+  transform: rotate(121deg);
 }
 .stamp .char12 {
   -webkit-transform: rotate(132deg);
-          transform: rotate(132deg);
-        
+  transform: rotate(132deg);
 }
 .stamp .char13 {
   -webkit-transform: rotate(143deg);
-          transform: rotate(143deg);
-        
+  transform: rotate(143deg);
 }
 .stamp .char14 {
   -webkit-transform: rotate(154deg);
-          transform: rotate(154deg);
-        
+  transform: rotate(154deg);
 }
 .stamp .char15 {
   -webkit-transform: rotate(165deg);
-          transform: rotate(165deg);
-        
+  transform: rotate(165deg);
 }
 .stamp .char16 {
   -webkit-transform: rotate(176deg);
-          transform: rotate(176deg);
-        
+  transform: rotate(176deg);
 }
 .stamp .char17 {
   -webkit-transform: rotate(187deg);
-          transform: rotate(187deg);
-        
+  transform: rotate(187deg);
 }
 .stamp .char18 {
   -webkit-transform: rotate(198deg);
-          transform: rotate(198deg);
-        
+  transform: rotate(198deg);
 }
 .stamp .char19 {
   -webkit-transform: rotate(209deg);
-          transform: rotate(209deg);
-        
+  transform: rotate(209deg);
 }
 .stamp .char20 {
   -webkit-transform: rotate(220deg);
-          transform: rotate(220deg);
-        
+  transform: rotate(220deg);
 }
 .stamp .char21 {
   -webkit-transform: rotate(231deg);
-          transform: rotate(231deg);
-        
+  transform: rotate(231deg);
 }
 .stamp .char22 {
   -webkit-transform: rotate(242deg);
-          transform: rotate(242deg);
-        
+  transform: rotate(242deg);
 }
 .stamp .char23 {
   -webkit-transform: rotate(253deg);
-          transform: rotate(253deg);
-        
+  transform: rotate(253deg);
 }
 .stamp .char24 {
   -webkit-transform: rotate(264deg);
-          transform: rotate(264deg);
-        
+  transform: rotate(264deg);
 }
 .stamp .char25 {
   -webkit-transform: rotate(275deg);
-          transform: rotate(275deg);
-        
+  transform: rotate(275deg);
 }
 .stamp .char26 {
   -webkit-transform: rotate(286deg);
-          transform: rotate(286deg);
-        
+  transform: rotate(286deg);
 }
 .stamp .char27 {
   -webkit-transform: rotate(297deg);
-          transform: rotate(297deg);
-        
+  transform: rotate(297deg);
 }
 .stamp .char28 {
   -webkit-transform: rotate(308deg);
-          transform: rotate(308deg);
-        
+  transform: rotate(308deg);
 }
 .stamp .char29 {
   -webkit-transform: rotate(319deg);
-          transform: rotate(319deg);
-        
+  transform: rotate(319deg);
 }
 .stamp .char30 {
   -webkit-transform: rotate(330deg);
-          transform: rotate(330deg);
-        
+  transform: rotate(330deg);
 }
 .stamp .char31 {
   -webkit-transform: rotate(341deg);
-          transform: rotate(341deg);
-        
+  transform: rotate(341deg);
 }
 .stamp .char32 {
   -webkit-transform: rotate(352deg);
-          transform: rotate(352deg);
-        
+  transform: rotate(352deg);
 }
 /* .stamp .char33 {
   -webkit-transform: rotate(363deg);
@@ -2248,30 +2453,34 @@ li img{ margin-top: 8px; margin-left: 10px;}
 @-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
-	0% {transform: rotate(360deg);}
-	100% {transform: rotate(0deg);}
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.etoWrapper{
+.etoWrapper {
   position: relative;
 }
 .inosisiBou {
@@ -2279,9 +2488,10 @@ li img{ margin-top: 8px; margin-left: 10px;}
   top: 0;
   left: 0;
   width: 350px;
-  height: 350px;;
-  background: url('../images/inosisi/inosisi-sasibo.png') no-repeat center center;
-  background-size:200px 200px;
+  height: 350px;
+  background: url("../images/inosisi/inosisi-sasibo.png") no-repeat center
+    center;
+  background-size: 200px 200px;
   animation: spin 5s linear infinite;
   transition: opacity 1s;
 }
@@ -2290,25 +2500,26 @@ li img{ margin-top: 8px; margin-left: 10px;}
   top: -10px;
   left: -3px;
   width: 350px;
-  height: 350px;;
-  background: url('../images/inosisi/inosisi-frame-03a.png') no-repeat center center;
-  background-size:200px 200px;
+  height: 350px;
+  background: url("../images/inosisi/inosisi-frame-03a.png") no-repeat center
+    center;
+  background-size: 200px 200px;
   opacity: 0;
   -webkit-transform: translateY(80px);
-          transform: translateY(80px);
+  transform: translateY(80px);
   transition: opacity top 1.5s;
 }
 
 .stamp:hover .inosisiBou {
   opacity: 0;
   -webkit-transform: translateY(-80px);
-          transform: translateY(-80px);
+  transform: translateY(-80px);
 }
 
 .stamp:hover .bbsInosisi {
   opacity: 1;
   -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .stamp:hover .inosisiBou {
@@ -2324,24 +2535,29 @@ li img{ margin-top: 8px; margin-left: 10px;}
 }
 .topObi_container8 .area {
   margin-top: 10px;
-  margin-left:17px;
+  margin-left: 17px;
   width: 80px;
   /* border: 1px solid #ddd; */
   overflow: hidden;
 }
 /* 表示領域に合わせてサイズと余白を設定 */
 .topObi_container8 .marquee {
-    width: 80px;
-    padding-left: 80px;
-    white-space: nowrap;
-    color: blue;
-    animation-name: marquee;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    font-family: 'Kosugi Maru', sans-serif;
+  width: 80px;
+  padding-left: 80px;
+  white-space: nowrap;
+  color: blue;
+  animation-name: marquee;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  font-family: "Kosugi Maru", sans-serif;
 }
 @keyframes marquee {
-    from    { transform: translate(0%); } 
-    100%,to { transform: translate(-100%); }
+  from {
+    transform: translate(0%);
+  }
+  100%,
+  to {
+    transform: translate(-100%);
+  }
 }
