@@ -41,8 +41,25 @@
             <li style="border-bottom:1px solid #e6e6e6"><a href="https://www.icreo.jp/" target="blunk"><p class="LinkNav_txt"><span class="LinkNav__catch">健やかな明日のために</span><br><span class="LinkNav__name">江崎グリコ株式会社</span></p><p class="LinkNav_icon"><img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left:5px"></p><p></p></a></li><li style="border-bottom:1px solid #e6e6e6"><!-- 江崎グリコ横長のため、右横にこのダミーを置く --></li>
     
    
-   
-   📍 「ミルク紹介(page4)」ページに追加する場合ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+   📍 「アイクレオ紹介(topObi_container4)」 のリンク集内にglicoアイクレオボタン を追加する
+            必要画像："./img/topObiBtns/link/icreo.jpg"
+            場所：topBtnsーtopObi_container4ーulーli（森永乳業の下に追加）
+            HTML
+                 <li style="border-bottom: 1px solid rgb(230, 230, 230);">
+                    <a href="https://www.icreo.jp/" target=blunk>
+                      <p class="LinkNav_txt">
+                        <span class="LinkNav__catch">健やかな明日のために</span><br>
+                        <span class="LinkNav__name">江崎グリコ株式会社</span>
+                        <p class="LinkNav_icon">
+                          <img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left: 5px">
+                        </p>
+                      </p>
+                    </a>
+                  </li>
+            CSS
+                    特になし
+                    
+   📍 「アイクレオ紹介(page4)」ページに追加する場合ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
             div#page4 内のtableにtd要素で既存２社と同じ構成で（画像と説明文）追加する：多少の横長もスクロール可能になっているのでOK
             増設は以下のHTMLと全体を調整し直したCSSで置き換えコンパイルし、./build/以下に ./glico/フォルダを置く（テーブル全体の背景画像はバンドルされる）
             注意：HTMLもCSSも念の為、div.page4全体の単位で置き換える
