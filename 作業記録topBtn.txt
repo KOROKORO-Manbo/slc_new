@@ -4,7 +4,7 @@
      まず素材の画像関係は、以下の画像軍をデスクトップなどにコピーしてから変更を加えるブランチにチェックアウトして作業をすすめる
          ./img/ ⁨topObiBtns⁩ / ⁨link⁩ / icreo.jpg 
          ./img/page4/pg4/Cover.png 
-         ./img/page4/pg4/glico/  
+         ./img/page4/pg4/glico/ *.*
     チェックアウト先ではまず、./src/index.html でのHTMLやCSSの変更でテストし、その後コンパイル後、./build/index.htmlで確認していく
 
     📍 リンクボタン設置
@@ -20,7 +20,7 @@
                       div.lip-front
                       div.flip-back
                       ul#fukidashiMenu
-                        li （５つめ：森永乳業の後ろ）
+                        li （５つめ：森永乳業の後ろに新規 li として以下のを追加）
     HTML
               <li style="border-bottom: 1px solid rgb(230, 230, 230);">
                 <a href="https://www.icreo.jp/" target=blunk>
@@ -39,25 +39,7 @@
 
     miniHTML     ./build⁩/index.htmlの設置位置確認方法は森永乳業の li 要素クリックで判明する閉じタグの後ろにコピペ
             <li style="border-bottom:1px solid #e6e6e6"><a href="https://www.icreo.jp/" target="blunk"><p class="LinkNav_txt"><span class="LinkNav__catch">健やかな明日のために</span><br><span class="LinkNav__name">江崎グリコ株式会社</span></p><p class="LinkNav_icon"><img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left:5px"></p><p></p></a></li><li style="border-bottom:1px solid #e6e6e6"><!-- 江崎グリコ横長のため、右横にこのダミーを置く --></li>
-    
-   
-   📍 「アイクレオ紹介(topObi_container4)」 のリンク集内にglicoアイクレオボタン を追加する
-            必要画像："./img/topObiBtns/link/icreo.jpg"
-            場所：topBtnsーtopObi_container4ーulーli（森永乳業の下に追加）
-            HTML
-                 <li style="border-bottom: 1px solid rgb(230, 230, 230);">
-                    <a href="https://www.icreo.jp/" target=blunk>
-                      <p class="LinkNav_txt">
-                        <span class="LinkNav__catch">健やかな明日のために</span><br>
-                        <span class="LinkNav__name">江崎グリコ株式会社</span>
-                        <p class="LinkNav_icon">
-                          <img src="./img/topObiBtns/link/icreo.jpg" width="150px" alt="江崎グリコ株式会社" style="padding-left: 5px">
-                        </p>
-                      </p>
-                    </a>
-                  </li>
-            CSS
-                    特になし
+ 
                     
    📍 「アイクレオ紹介(page4)」ページに追加する場合ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
             div#page4 内のtableにtd要素で既存２社と同じ構成で（画像と説明文）追加する：多少の横長もスクロール可能になっているのでOK
