@@ -48,7 +48,13 @@
         
             作業的にはCSSの入替え後、コンパイルして、./build/index.htmlに mini HTMLをおいて起動し足りてない画像があれば.／build／img／のほうに適宜追加する流れ
                 （一応、./src/index.html のdiv.page4も置き換える）
+
                 
+            画像移動（./dist/へのコピーも同じ）
+            	./SLCグリコアイクレオ修正/icreo.jpg				→		./src/img/topObiBtns/link/
+            	./SLCグリコアイクレオ修正/pg4Cover.jpg			→		./src/img/page4/
+            	./SLCグリコアイクレオ修正/glico/						→		./src/img/page4/				フォルダごと配置
+            	
             HTML
                   <div id="page4" class="page">
                     <div class="page4Wrapper">
