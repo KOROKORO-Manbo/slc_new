@@ -1,4 +1,4 @@
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
   src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
@@ -927,6 +927,47 @@ background-repeat: no-repeat;
     0% {opacity: 1;}
     100% {opacity: 0;}
 }
+/* 求人ボタン */
+.recruiteWrapper {
+  position: absolute;
+  left:1060px;
+  top:290px;
+  padding: 0;
+  border: 0;
+  width: 60px;
+  height: 75px;
+  background: url("../img/page1/recruiteOmote.png") no-repeat; /* チラ防 */
+  background-size: contain;
+}
+.recruiteWrapper .kanban {
+  background: url("../img/page1/recruiteOmote.png") no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 75px;
+  display: block; 
+  text-indent: -9999px;
+}
+.recruiteWrapper .kanban:hover {
+  background-image: url("../img/page1/recruiteUra.png");
+  cursor: pointer;
+}
+.recruiteWrapper .kanban > .fukidasi{
+  position: absolute;
+  left:0px;
+  top:-50px;
+  margin-left: -50px;
+  margin-top: -200px;
+  width: 300px;
+  height: 257px;
+  background-image: url("../img/page1/recruiteFukidasi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+}
+.recruiteWrapper .kanban:hover > .fukidasi{
+  display: block;
+}      
+
 /* 外来混雑状況 */
 .kujiraContainer{
   position: absolute;
