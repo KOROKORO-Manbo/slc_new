@@ -3,8 +3,8 @@
     作業としてはリンク集へのHTMLのみの追加と、「ミルク紹介」ページのHTML、CSSの置き換え＆コンパイルとその後tの調整という流れ
      まず素材の画像関係は、以下の画像軍をデスクトップなどにコピーしてから変更を加えるブランチにチェックアウトして作業をすすめる
          ./img/ ⁨topObiBtns⁩ / ⁨link⁩ / icreo.jpg 
-         ./img/page4/pg4/Cover.png 
-         ./img/page4/pg4/glico/ *.*
+         ./img/page4/Cover.png 
+         ./img/page4/glico/ *.*     ← フォルダごと
     チェックアウト先ではまず、./src/index.html でのHTMLやCSSの変更でテストし、その後コンパイル後、./build/index.htmlで確認していく
 
     📍 リンクボタン設置
