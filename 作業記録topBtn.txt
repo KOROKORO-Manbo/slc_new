@@ -1,3 +1,37 @@
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋新型肺炎追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+
+１．singataNormal.png、singataHover.pngを ./src/img/page1/ に追加（バンドル後は./build/img/page1/にも追加）
+
+２．HTML部を./src/index.htmlに追加（バンドル後は./build/index.htmlにも）
+
+	追加場所：.page1_wrapper > .twtWrapper > .timelineCover > .koara の兄弟要素として下に追加（”<div class="koara"></div>” の直後）
+	
+	追加HTML： <a href="https://www.jaog.or.jp/news/200218/"><div class="singata"><div class="singata_a"><img src="./img/page1/singataHover.png" alt="" /></div><div class="singata_b"><img src="./img/page1/singataNormal.png" alt="" /></div></div></a>
+
+３．CSSを./src/css/style.css のPAGE1の最下部に追加
+		
+		/* 新型肺炎看板 */
+		.singata {
+		  position: absolute;
+		  top:30px;
+		  left:310px;
+		  width:100px;
+		  height:83px;
+		  pointer-events: all;
+		 }
+		 .singata_a {
+		    display: none;
+		  }
+		
+		  .singata_b {
+		    display: block;
+		  }
+		  .singata:hover > .singata_a {
+		    display: block;
+		  }
+		  .singata:hover > .singata_b {
+		    display: none;
+		  }
 ＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋アイクレオ（江崎グリコ）追加作業＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
     
     作業としてはリンク集へのHTMLのみの追加と、「ミルク紹介」ページのHTML、CSSの置き換え＆コンパイルとその後tの調整という流れ
