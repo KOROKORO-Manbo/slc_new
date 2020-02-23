@@ -1,9 +1,9 @@
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: normal;
   src: local("YuGothic-Medium"),local("Yu Gothic Medium"),local("YuGothic-Regular");
 }
-@@font-face {
+@font-face {
   font-family: "MyYuGothicM";
   font-weight: bold;
   src: local("YuGothic-bold"),local("Yu Gothic");
@@ -919,6 +919,48 @@ background-repeat: no-repeat;
     0% {opacity: 1;}
     100% {opacity: 0;}
 }
+
+/* 求人ボタン */
+.recruiteWrapper {
+  position: absolute;
+  left:1120px;
+  top:290px;
+  padding: 0;
+  border: 0;
+  width: 60px;
+  height: 75px;
+  background: url("../img/page1/recruiteOmote.png") no-repeat; /* チラ防 */
+  background-size: contain;
+}
+.recruiteWrapper .kanban {
+  background: url("../img/page1/recruiteOmote.png") no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 75px;
+  display: block; 
+  text-indent: -9999px;
+}
+.recruiteWrapper .kanban:hover {
+  background-image: url("../img/page1/recruiteUra.png");
+  cursor: pointer;
+}
+.recruiteWrapper .kanban > .fukidasi{
+  position: absolute;
+  left:0px;
+  top:-50px;
+  margin-left: -50px;
+  margin-top: -200px;
+  width: 300px;
+  height: 257px;
+  background-image: url("../img/page1/recruiteFukidasi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+}
+.recruiteWrapper .kanban:hover > .fukidasi{
+  display: block;
+}      
+
 /* 外来混雑状況 */
 .kujiraContainer{
   position: absolute;
@@ -1122,22 +1164,10 @@ background-repeat: no-repeat;
   padding-top: 50px;
 
 }
-.milks {
-  position: absolute;
-  width: 1000px;
-  height: 850px;
-  background-image: url(../img/page4/pg4Cover.png);
-  background-repeat: no-repeat;
-
-}
 #page4 table {
   margin: 0 auto;
 }
-.mainTable{
-  position: relative;
-  margin-left: -113px;
-  margin-top: 65px;
-}
+
 .milkEx {
   text-align:center;
   line-height: 140%;
@@ -1145,13 +1175,31 @@ background-repeat: no-repeat;
   border-color:#990000;
   border-width:1px;
   border-style:solid;
-  height:200px;
+  height:215px;
   width:480px;
   background:#D1E3E7;
 }
+.tableCover{
+  width: 1325px;
+  height: 700px;
+  background-image: url(../img/page4/pg4Cover.png);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+.milks {
+  position: relative;
+  margin-top: 100px;
+}
+.mainTable{
+  position: relative;
+  width:1270px;
+  margin-left: 10px;
+}
+
 .milkEx img {
   margin: 0 auto;
 }
+                    
 
 /*--------------------------------------------------------------PAGE5----------------------------------*/
 #page5 {
