@@ -6,7 +6,7 @@
 
 	追加場所：.page1_wrapper > .twtWrapper > .timelineCover > .koara の兄弟要素として下に追加（”<div class="koara"></div>” の直後）
 	
-	追加HTML： <a href="https://www.jaog.or.jp/news/200218/"><div class="singata"><div class="singata_a"><img src="./img/page1/singataHover.png" alt="" /></div><div class="singata_b"><img src="./img/page1/singataNormal.png" alt="" /></div></div></a>
+	追加HTML： <a href="https://www.jaog.or.jp/news/covid-19/"><div class="singata"><div class="singata_a"><img src="./img/page1/singataHover.png" alt="" /></div><div class="singata_b"><img src="./img/page1/singataNormal.png" alt="" /></div></div></a>
 
 ３．CSSを./src/css/style.css のPAGE1の最下部に追加
 		
