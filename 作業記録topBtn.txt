@@ -7,6 +7,7 @@
   main.js内の”todo-first[日付]”の日付部分を作成日のものに変更する（全部で３箇所）
   ビルド後、以下のHTMLを./build/index.htmlのsectuon.modal-windowと置き換える
   なので、むしろ通常のものに戻したときの日付の戻しに注意（またはgitのreset --hardで戻っても良い）
+  なお日付をもとに戻すときの日付は ”todo-first20170319”
 
   以下は「里帰り出産告知」時の最終のHTML（mini化済）
 
