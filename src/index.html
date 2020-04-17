@@ -604,12 +604,14 @@
   <div class="button" style="display: flex;width: 100vw; flex-direction: row;align-items: center;justify-content: center; margin: 5px auto;"><div class="closeBTN"><img src="./img/close.png" style="width:50px;height:50px;"></div><input class="neverShow" type="checkbox" name="name" value="" style="padding-top:30px;height: 16px;line-height: 16px; ">次から表示しない</div>
   <!-- 当院の基本方針 -->
   <style>
+
 .modal-window .accordion {
 	margin: auto;
 	width: 610px;;
 }
 .modal-window .accordion input {
 	display: none;
+  cursor: pointer;
 }
 .modal-window .box {
 	position: relative;
@@ -641,7 +643,7 @@
 .modal-window header.box {
 	background: #00BCD4;
 	z-index: 100;
-  cursor: initial;
+  cursor: default;
   color:#ffffff;
 	box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
 }
@@ -652,7 +654,7 @@
   padding: 0 10px;
   font-size: 15pt;
 	display: inline-block;
-	cursor: pointer;
+	cursor: default;
 	-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
 }
 .modal-window .box-content {
@@ -668,7 +670,7 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	cursor: pointer;
+	cursor: default;
 	display: none;
 }
 input:checked + .box {
@@ -706,13 +708,13 @@ input:checked + section.box .box-title:before {
     <header class="box title">
      <label for="acc-close" class="box-title">新型コロナウイルス感染防止対策に伴うお願い（2020年4月16日現在）</label>
     </header>
-    <input type="radio" name="accordion" id="cb1" />
+    <input type="checkbox" name="accordion" id="cb1" checked="checked"/>
     <section class="box">
      <label class="box-title" for="cb1">外来受診について</label>
      <label class="box-close" for="acc-close"></label>
      <div class="box-content">外来受診の際は、原則患者様ご本人のみで来院いただきますようお願いいたします。（ご家族などの同伴が必要な場合、同伴される方はお車でお待ち下さい） 院内へ入られる際には必ず手指消毒を行い、マスクを着用してください。 発熱、その他疑わしい症状のある場合は、来院前にご連絡ください</div>
     </section>
-    <input type="radio" name="accordion" id="cb2" />
+    <input type="checkbox" name="accordion" id="cb2" checked="checked" />
     <section class="box">
      <label class="box-title" for="cb2">面会について</label>
      <label class="box-close" for="acc-close"></label>
@@ -728,7 +730,7 @@ input:checked + section.box .box-title:before {
       ・ 2週間以内に県外・海外の方、または<br>&nbsp;&nbsp;&nbsp;&nbsp;県外・海外に行かれた方と接触された方<br>
       ・ 同居のご家族が県外に通勤通学などをしている方</div>
     </section>
-    <input type="radio" name="accordion" id="cb3" />
+    <input type="checkbox" name="accordion" id="cb3" checked="checked" />
     <section class="box">
      <label class="box-title" for="cb3">分娩時の立ち会いについて</label>
      <label class="box-close" for="acc-close"></label>
@@ -740,13 +742,13 @@ input:checked + section.box .box-title:before {
       ・ 2週間以内に県外・海外の方、または<br>&nbsp;&nbsp;&nbsp;&nbsp;県外・海外に行かれた方と接触された方<br>
       ・ 同居のご家族が県外に通勤通学などをしている方</div>
     </section>
-    <input type="radio" name="accordion" id="cb4" />
+    <input type="checkbox" name="accordion" id="cb4" checked="checked" />
     <section class="box">
      <label class="box-title" for="cb4">両親学級について</label>
      <label class="box-close" for="acc-close"></label>
      <div class="box-content">当面の間、休止いたします</div>
     </section>
-    <input type="radio" name="accordion" id="acc-close" />
+    <input type="checkbox" name="accordion" id="acc-close" checked="checked" />
    </nav>
 
 <br><br><br>
