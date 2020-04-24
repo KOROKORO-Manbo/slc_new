@@ -603,6 +603,153 @@
   -->
   <div class="button" style="display: flex;width: 100vw; flex-direction: row;align-items: center;justify-content: center; margin: 5px auto;"><div class="closeBTN"><img src="./img/close.png" style="width:50px;height:50px;"></div><input class="neverShow" type="checkbox" name="name" value="" style="padding-top:30px;height: 16px;line-height: 16px; ">次から表示しない</div>
 
+    <!-- 当院の基本方針 -->
+    <style>
+
+      .modal-window .accordion {
+        margin: auto;
+        width: 610px;;
+      }
+      .modal-window .accordion input {
+        display: none;
+        cursor: pointer;
+      }
+      .modal-window .box {
+        position: relative;
+        background: white;
+       height: 44px;
+       transition: all .15s ease-in-out;
+      }
+      .modal-window .box.title {
+       height: 66px;
+       padding: 10px;
+       vertical-align: middle;
+       text-align: center;
+      }
+      .modal-window .box.title .box-title {
+       line-height: 130%;
+       font-size: 1.6rem
+      }
+      .modal-window .box::before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+          box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+      }
+      .modal-window header.box {
+        background: #00BCD4;
+        z-index: 100;
+        cursor: default;
+        color:#ffffff;
+        box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
+      }
+      .modal-window .box-title {
+        width: calc(100% - 40px);
+        height: 64px;
+        line-height: 64px;
+        padding: 0 10px;
+        font-size: 15pt;
+        display: inline-block;
+        cursor: default;
+        -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+      }
+      .modal-window .box-content {
+        width: calc(100% - 20px);
+        padding: 5px 15px;
+        font-size: 12pt;
+        color: rgba(4, 3, 3, 0.64);
+        display: none;
+      }
+      .modal-window .box-close {
+        position: absolute;
+        height: 64px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        cursor: default;
+        display: none;
+      }
+      input:checked + .box {
+        height: auto;
+        margin: 16px 0;
+          box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+      }
+      input:checked + .box .box-title {
+        border-bottom: 1px solid rgba(0,0,0,.18);
+      }
+      input:checked + .box .box-content,
+      input:checked + .box .box-close {
+        display: inline-block;
+      }
+      .modal-window .arrows section .box-title {
+        padding-left: 44px;
+        width: calc(100% - 64px);
+      }
+      .modal-window .arrows section .box-title:before {
+        position: absolute;
+        display: block;
+        content: '\203a';
+        font-size: 18pt;
+        left: 20px;
+        top: -2px;
+        transition: transform .15s ease-in-out;
+        color: rgba(0,0,0,.54);
+      }
+      input:checked + section.box .box-title:before {
+        transform: rotate(90deg);
+      }
+      
+        </style>
+      
+      <nav class="accordion arrows data-role-none"><!-- "data-role-none" jQueryMobile スタイル解除クラス -->
+        <header class="box title">
+         <label for="acc-close" class="box-title">新型コロナウイルス感染防止対策に伴うお願い（2020年4月24日現在）</label>
+        </header>
+        <input type="checkbox" name="accordion" id="cb1" checked="checked">
+        <section class="box">
+         <label class="box-title" for="cb1">外来受診について</label>
+         <label class="box-close" for="acc-close"></label>
+         <div class="box-content">
+                <ul style="margin-left: -30px;;"><span style="font-weight: bold;color: red;"></span>
+                  <li>外来受診の際は、<span style="font-weight: bold;color: red;">原則患者様ご本人のみ</span> で来院いただくようお願いいたします	（車の運転等で同伴者が必要な場合、同伴される方はお車でお待ち下さい。）</li>
+                  <li>院内へ入られる際には<span style="font-weight: bold;color: red;">必ず手指消毒を行い、マスクを着用</span>してください</li>
+                  <li>発熱、その他疑わしい症状のある場合は、<span style="font-weight: bold;color: red;">来院前にご連絡</span>ください</li>
+                  <li>待合室での感染防止のため、受付後にお車でお待ちいただく場合があります<br>（診察の際は携帯へご連絡いたします）</li>
+                </ul>
+              </div>
+        </section>
+        <input type="checkbox" name="accordion" id="cb2" checked="checked">
+        <section class="box">
+         <label class="box-title" for="cb2">面会、立ち会い分娩について</label>
+         <label class="box-close" for="acc-close"></label>
+         <div class="box-content">
+                <span style="font-weight: bold;color: red;">面会、分娩時の立ち会いは全てお断りしております</span>。入院患者様へのお荷物は、基本的に玄関にて当院スタッフが取り次ぎいたします。診療時間外は、時間外入口インターホンにてお知らせください
+              </div>
+        </section>
+        <input type="checkbox" name="accordion" id="cb3" checked="checked" />
+        <section class="box">
+         <label class="box-title" for="cb3">県外・海外からの里帰り分娩について</label>
+         <label class="box-close" for="acc-close"></label>
+         <div class="box-content">
+                （県下統一方針）<br><span style="font-weight: bold;color: red;">県内へ帰省後２週間の自宅待機、症状がなければ受診可能</span>です。２週間以内に診察が必要な方（分娩が近い、同居家族がコロナウイルスに罹患、海外渡航歴がある、その他医師が必要と考える場合）は、<span style="font-weight: bold;color: red;">当院から紹介の上で三重大学の妊婦コロナＰＣＲ外来（火・木のみ）を受診</span>していただきます。<span style="font-weight: bold;color: red;">陰性確認後、当院での妊婦健診が可能</span>となります
+              </div>
+        </section>
+        <!-- <input type="checkbox" name="accordion" id="cb4" checked="checked" />
+        <section class="box">
+         <label class="box-title" for="cb4">両親学級について</label>
+         <label class="box-close" for="acc-close"></label>
+         <div class="box-content">当面の間、休止いたします</div>
+        </section> -->
+        <input type="checkbox" name="accordion" id="acc-close" checked="checked" />
+       </nav>
+      
+      <br>
+
   <!-- バスタオル -->
   <style>.clip-box-a{line-height:150%;text-align:center;position:relative;margin:2em auto;padding:15px 35px 15px 25px;width:580px;background-color:#fff;color:#555;border:1px solid #ccc;box-shadow:1px 1px 1px #acacac}.clip-box-a::before{position:absolute;content:'';top:-15px;right:10px;height:55px;width:15px;border:3px solid #555;background-color:none;border-radius:12px;box-shadow:1px 1px 2px #999;transform:rotate(10deg);z-index:1}.clip-box-a::after{position:absolute;content:'';top:0;width:10px;right:20px;border:solid 5px #fff;z-index:2}</style><div class="clip-box-a"><h3>産科を受診される皆様へ</h3>次回受診時から<span style="font-weight:bolder;color:#1e90ff">バスタオル２枚</span>を<br>ご持参頂けますようお願いいたします<br> ※超音波検査時に使用します<br><br>（2020年4月21日）</div>
 
@@ -633,158 +780,6 @@
     <p>新形コロナ予防のため分娩時の<b>立ち会いはお断り</b>しなければいけなくなりました<br>また、<b>面会も禁止</b>になります<br>皆様のご協力をお願いいたします<br>荷物の受け渡しも基本的には<br>当院職員が行うこととなります<br><br>令和２年４月１８日　院長</p>
   </div>
   </center>
-
-
-  <!-- 当院の基本方針 -->
-  <style>
-
-.modal-window .accordion {
-	margin: auto;
-	width: 610px;;
-}
-.modal-window .accordion input {
-	display: none;
-  cursor: pointer;
-}
-.modal-window .box {
-	position: relative;
-	background: white;
- height: 44px;
- transition: all .15s ease-in-out;
-}
-.modal-window .box.title {
- height: 66px;
- padding: 10px;
- vertical-align: middle;
- text-align: center;
-}
-.modal-window .box.title .box-title {
- line-height: 130%;
- font-size: 1.6rem
-}
-.modal-window .box::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
-}
-.modal-window header.box {
-	background: #00BCD4;
-	z-index: 100;
-  cursor: default;
-  color:#ffffff;
-	box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
-}
-.modal-window .box-title {
-	width: calc(100% - 40px);
-	height: 64px;
-	line-height: 64px;
-  padding: 0 10px;
-  font-size: 15pt;
-	display: inline-block;
-	cursor: default;
-	-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
-}
-.modal-window .box-content {
-	width: calc(100% - 20px);
-	padding: 5px 15px;
-	font-size: 12pt;
-	color: rgba(4, 3, 3, 0.64);
-	display: none;
-}
-.modal-window .box-close {
-	position: absolute;
-	height: 64px;
-	width: 100%;
-	top: 0;
-	left: 0;
-	cursor: default;
-	display: none;
-}
-input:checked + .box {
-	height: auto;
-	margin: 16px 0;
-    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
-}
-input:checked + .box .box-title {
-	border-bottom: 1px solid rgba(0,0,0,.18);
-}
-input:checked + .box .box-content,
-input:checked + .box .box-close {
-	display: inline-block;
-}
-.modal-window .arrows section .box-title {
-	padding-left: 44px;
-	width: calc(100% - 64px);
-}
-.modal-window .arrows section .box-title:before {
-	position: absolute;
-	display: block;
-	content: '\203a';
-	font-size: 18pt;
-	left: 20px;
-	top: -2px;
-	transition: transform .15s ease-in-out;
-	color: rgba(0,0,0,.54);
-}
-input:checked + section.box .box-title:before {
-	transform: rotate(90deg);
-}
-
-  </style>
-  <nav class="accordion arrows">
-    <header class="box title">
-     <label for="acc-close" class="box-title">新型コロナウイルス感染防止対策に伴うお願い（2020年4月16日現在）</label>
-    </header>
-    <input type="checkbox" name="accordion" id="cb1" checked="checked"/>
-    <section class="box">
-     <label class="box-title" for="cb1">外来受診について</label>
-     <label class="box-close" for="acc-close"></label>
-     <div class="box-content">外来受診の際は、原則患者様ご本人のみで来院いただきますようお願いいたします。（ご家族などの同伴が必要な場合、同伴される方はお車でお待ち下さい） 院内へ入られる際には必ず手指消毒を行い、マスクを着用してください。 発熱、その他疑わしい症状のある場合は、来院前にご連絡ください</div>
-    </section>
-    <input type="checkbox" name="accordion" id="cb2" checked="checked" />
-    <!-- <section class="box">
-     <label class="box-title" for="cb2">面会について</label>
-     <label class="box-close" for="acc-close"></label>
-     <div class="box-content">極力面会はお控えください。やむを得ず面会される方は<br>
-      ・ 必ず手指消毒を行い、マスクを着用してください<br>
-      ・ 外来受付、2階ナースステーションで面会用紙への<br>&nbsp;&nbsp;&nbsp;&nbsp;署名、体温測定をお願いいた
-      します<br>
-      ・ ご家族の宿泊はお断りいたします<br><br>
-      なお、次のような方はご面会をお断りいたします<br>
-      ・ 発熱（体温37.5度以上）の方<br>
-      ・ 風邪症状など体調不良の方<br>
-      ・ 2週間以内に県外・海外に行かれた方<br>
-      ・ 2週間以内に県外・海外の方、または<br>&nbsp;&nbsp;&nbsp;&nbsp;県外・海外に行かれた方と接触された方<br>
-      ・ 同居のご家族が県外に通勤通学などをしている方</div>
-    </section>
-    <input type="checkbox" name="accordion" id="cb3" checked="checked" />
-    <section class="box">
-     <label class="box-title" for="cb3">分娩時の立ち会いについて</label>
-     <label class="box-close" for="acc-close"></label>
-     <div class="box-content">配偶者・ご家族のうち1名のみとさせていただきます。
-      なお次のような方は立ち会いをお断りいたします<br>
-      ・ 発熱（体温37.5度以上）の方<br>
-      ・ 風邪症状など体調不良の方<br>
-      ・ 2週間以内に県外・海外に行かれた方<br>
-      ・ 2週間以内に県外・海外の方、または<br>&nbsp;&nbsp;&nbsp;&nbsp;県外・海外に行かれた方と接触された方<br>
-      ・ 同居のご家族が県外に通勤通学などをしている方</div>
-    </section> -->
-    <input type="checkbox" name="accordion" id="cb4" checked="checked" />
-    <section class="box">
-     <label class="box-title" for="cb4">両親学級について</label>
-     <label class="box-close" for="acc-close"></label>
-     <div class="box-content">当面の間、休止いたします</div>
-    </section>
-    <input type="checkbox" name="accordion" id="acc-close" checked="checked" />
-   </nav>
-
-<br><br><br>
 
   <!-- 里帰り希望者告知 -->
   <style>
