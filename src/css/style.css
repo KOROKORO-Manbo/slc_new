@@ -1099,6 +1099,29 @@ background-repeat: no-repeat;
   display: block;
 }     
 
+/* 新型肺炎看板 */
+.singata {
+  position: absolute;
+  top:30px;
+  left:310px;
+  width:100px;
+  height:83px;
+  pointer-events: all;
+  }
+  .singata_a {
+    display: none;
+  }
+
+  .singata_b {
+    display: block;
+  }
+  .singata:hover > .singata_a {
+    display: block;
+  }
+  .singata:hover > .singata_b {
+    display: none;
+  }
+      
 /*--------------------------------------------------------------PAGE2-----------------------------------*/
 
 #page2{
