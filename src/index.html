@@ -594,334 +594,332 @@
 
 
   <section class="modal-window" id="modal-p01" style=" overflow-y: scroll;">
-    
-  <!--     元モーダル
-    <div class="modal-inner">
-      <div class="closeBTN"><img src="./img/close.png"></div><input class="neverShow" type="checkbox" name="name" value="">次から表示しない<br>
-      <img class="crane" src="./img/modalPic.png">
-    </div> 
-  -->
-  <div class="button" style="display: flex;width: 100vw; flex-direction: row;align-items: center;justify-content: center; margin: 5px auto;"><div class="closeBTN"><img src="./img/close.png" style="width:50px;height:50px;"></div><input class="neverShow" type="checkbox" name="name" value="" style="padding-top:30px;height: 16px;line-height: 16px; ">次から表示しない</div>
-
-  <!-- コロナ掲示全般スタイル -->
-  <style>
-
-    .modal-window .accordion {
-      margin: auto;
-      width: 610px;;
-    }
-    .modal-window .accordion input {
-      display: none;
-      cursor: pointer;
-    }
-    .modal-window .box {
-      position: relative;
-      background: white;
-     height: 44px;
-     transition: all .15s ease-in-out;
-    }
-    .modal-window .box.title {
-     height: 66px;
-     padding: 10px;
-     vertical-align: middle;
-     text-align: center;
-    }
-    .modal-window .box.title .box-title {
-     line-height: 130%;
-     font-size: 1.6rem
-    }
-    .modal-window .box::before {
-        content: '';
+    <!--     元モーダル
+      <div class="modal-inner">
+        <div class="closeBTN"><img src="./img/close.png"></div><input class="neverShow" type="checkbox" name="name" value="">次から表示しない<br>
+        <img class="crane" src="./img/modalPic.png">
+      </div> 
+    -->
+    <div class="button" style="display: flex;width: 100vw; flex-direction: row;align-items: center;justify-content: center; margin: 5px auto;"><div class="closeBTN"><img src="./img/close.png" style="width:50px;height:50px;"></div><input class="neverShow" type="checkbox" name="name" value="" style="padding-top:30px;height: 16px;line-height: 16px; ">次から表示しない</div>
+  
+   <!-- コロナ掲示全般スタイル -->
+    <style>
+  
+      .modal-window .accordion {
+        margin: auto;
+        width: 610px;;
+      }
+      .modal-window .accordion input {
+        display: none;
+        cursor: pointer;
+      }
+      .modal-window .box {
+        position: relative;
+        background: white;
+       height: 44px;
+       transition: all .15s ease-in-out;
+      }
+      .modal-window .box.title {
+       height: 66px;
+       padding: 10px;
+       vertical-align: middle;
+       text-align: center;
+      }
+      .modal-window .box.title .box-title {
+       line-height: 130%;
+       font-size: 1.6rem
+      }
+      .modal-window .box::before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+          box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+      }
+      .modal-window header.box {
+        background: #00BCD4;
+        z-index: 100;
+        cursor: default;
+        color:#ffffff;
+        box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
+      }
+      .modal-window .box-title {
+        width: calc(100% - 40px);
+        height: 64px;
+        line-height: 64px;
+        padding: 0 10px;
+        font-size: 15pt;
+        display: inline-block;
+        cursor: default;
+        -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+      }
+      .modal-window .box-content {
+        width: calc(100% - 20px);
+        padding: 5px 15px;
+        font-size: 12pt;
+        color: rgba(4, 3, 3, 0.64);
+        display: none;
+      }
+      .modal-window .box-close {
+        position: absolute;
+        height: 64px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        cursor: default;
+        display: none;
+      }
+      input:checked + .box {
+        height: auto;
+        margin: 16px 0;
+          box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+      }
+      input:checked + .box .box-title {
+        border-bottom: 1px solid rgba(0,0,0,.18);
+      }
+      input:checked + .box .box-content,
+      input:checked + .box .box-close {
+        display: inline-block;
+      }
+      .modal-window .arrows section .box-title {
+        padding-left: 44px;
+        width: calc(100% - 64px);
+      }
+      .modal-window .arrows section .box-title:before {
         position: absolute;
         display: block;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        pointer-events: none;
-        box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
-    }
-    .modal-window header.box {
-      background: #00BCD4;
-      z-index: 100;
-      cursor: default;
-      color:#ffffff;
-      box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
-    }
-    .modal-window .box-title {
-      width: calc(100% - 40px);
-      height: 64px;
-      line-height: 64px;
-      padding: 0 10px;
-      font-size: 15pt;
-      display: inline-block;
-      cursor: default;
-      -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
-    }
-    .modal-window .box-content {
-      width: calc(100% - 20px);
-      padding: 5px 15px;
-      font-size: 12pt;
-      color: rgba(4, 3, 3, 0.64);
-      display: none;
-    }
-    .modal-window .box-close {
-      position: absolute;
-      height: 64px;
-      width: 100%;
-      top: 0;
-      left: 0;
-      cursor: default;
-      display: none;
-    }
-    input:checked + .box {
-      height: auto;
-      margin: 16px 0;
-        box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
-    }
-    input:checked + .box .box-title {
-      border-bottom: 1px solid rgba(0,0,0,.18);
-    }
-    input:checked + .box .box-content,
-    input:checked + .box .box-close {
-      display: inline-block;
-    }
-    .modal-window .arrows section .box-title {
-      padding-left: 44px;
-      width: calc(100% - 64px);
-    }
-    .modal-window .arrows section .box-title:before {
-      position: absolute;
-      display: block;
-      content: '\203a';
-      font-size: 18pt;
-      left: 20px;
-      top: -2px;
-      transition: transform .15s ease-in-out;
-      color: rgba(0,0,0,.54);
-    }
-    input:checked + section.box .box-title:before {
-      transform: rotate(90deg);
-    }
-    
-      </style>
-  <!-- 外来受診について -->
-  <div class="title-box3">
-    <div class="title-box3-title"><b>外来受診について</b></div>
-    <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
-      外来受診の際は、原則患者様ご本人のみ で来院いただくようお願いいたします <br>
-      （車の運転等で同伴者が必要な場合、同伴される方はお車でお待ち下さい。）<br>
-      院内へ入られる際には必ず手指消毒を行い、マスクを着用してください<br>
-      発熱、その他疑わしい症状のある場合は、来院前にご連絡ください<br>
-      待合室での感染防止のため、受付後にお車でお待ちいただく場合があります<br>
-      （診察の際は携帯へご連絡いたします）<br><br>
-      【産科を受診される皆様へ】<br>
-      受診の際に、バスタオル２枚をご持参ください<br>
-      超音波検査時に使用します<br>
-    </div>
-  </div>
-  <!-- 面会について -->
-  <div class="title-box3">
-    <div class="title-box3-title"><b>面会について</b></div>
-    <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
-      ▷&nbsp;入院患者様のご家族様（２～３名）に限り、面会を再開いたしております<br>
-      ▷&nbsp;面会は当面の間、以下の制限となります
-      <ul style="margin-top: -3px;">
-        <li>・入院期間中に1回のみの予約制</li>
-        <li>・面会時間は外来受付時間内</li>
-        <li>・面会場所は新館1階ロビーのみ</li>
-      </ul>
-      <div style="margin-top: -15px;">▷&nbsp;面会をご希望の方は、「面会に来られる人数」「来院予定時間」を<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;スタッフへお申し出ください</div>
-        ▷&nbsp;面会前に受付にて体温測定と面会用紙へのご記入をお願い致します<br>
-        ▷&nbsp;面会される方は、必ずマスクの着用（ご持参ください）<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;手指消毒の徹底をお願いいたします<br>
-        ▷&nbsp;また、以下に該当される方の面会はお断りしております
-        <ul style="margin-top: -3px;">
-          <li>・発熱がある方</li>
-          <li>・風邪症状など体調がすぐれない方</li>
-          <li>・2週間以内に県外・海外へ行かれた方</li>
-          <li>・2週間以内に県外・海外へ行かれた方と接触された方</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- 分娩について -->
-    <div class="title-box3">
-      <div class="title-box3-title">分娩について</div>
-      <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
-        ▷&nbsp;分娩受入状況について<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帰省できなくなった方、県外からの帰省の方、<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新型コロナ感染症のリスクがほとんど無い方は<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三重県産婦人科医会の指導のもと受け入れいたします<br><br>
-        ▷&nbsp;立ち会い分娩について<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ご主人、ご家族の内1名のみ立ち会いいただけます<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立ち会い時は検温、マスク（ご持参ください）、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;防護ガウン（当院でご用意します）を着用いただきます<br><br>
-        ▷&nbsp;里帰り分娩について<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;県外・海外（感染多発地域）からお越しの方は、2週間の自宅待機後、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;症状がなければ受診可能です<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;２週間以内に診察が必要な方<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（分娩が近い、同居家族がコロナウイルスに罹患、海外渡航歴がある、<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;その他医師が必要と考える場合）は、当院から紹介の上で<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ＰＣＲ外来を受診していただきます<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陰性確認後、当院での妊婦健診が可能となります<br>
-      </div>
-    </div>
-    <!-- 両親学級再開 -->
-    <div class="title-box3">
-      <div class="title-box3-title"><b>両親学級再開について</b></div>
-        <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:100px;line-height: 150%;">
-          ７月からの再開しております<br><br>
-          各１０組まで、当院で出産される方が対象です
-        </div>
-      </div>
-
-    <!-- 厚労省リーフレットリンク -->
-    <style>
-      .title-box3{
-        width:610px;
-          margin: 0.5em auto;
-          background-color: #e3f2fd;
-          border: 2px solid #2196f3;
-          letter-spacing: .3px;
-
+        content: '\203a';
+        font-size: 18pt;
+        left: 20px;
+        top: -2px;
+        transition: transform .15s ease-in-out;
+        color: rgba(0,0,0,.54);
       }
-      .title-box3-title{
-          color: #fff;
-          font-weight: bold;
-          background-color: #2196f3;
-          padding: 2px 3px;
-          text-align: center;
+      input:checked + section.box .box-title:before {
+        transform: rotate(90deg);
       }
       
-      .title-box3 p{
-          margin: 0;
-          padding: 0.5em;
-      }
-  </style>
-  <div class="title-box3">
-    <div class="title-box3-title">新型コロナウィルス感染対策（厚労省PDF）</div>
-      <div class="wrapper" style="width:95vw;text-align: left;">
-        <p class="item"><a href="https://www.mhlw.go.jp/content/11925000/000620977.pdf">▶&nbsp;妊婦の方々へ</a></p>
-        <p class="item"><a href="https://www.mhlw.go.jp/content/11602000/000620757.pdf">▶&nbsp;妊娠中の女性労働者などへの配慮について</a></p>
+        </style>
+    <!-- 外来受診について -->
+    <div class="title-box3">
+      <div class="title-box3-title"><b>外来受診について</b></div>
+      <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
+        外来受診の際は、原則患者様ご本人のみ で来院いただくようお願いいたします <br>
+        （車の運転等で同伴者が必要な場合、同伴される方はお車でお待ち下さい。）<br>
+        院内へ入られる際には必ず手指消毒を行い、マスクを着用してください<br>
+        発熱、その他疑わしい症状のある場合は、来院前にご連絡ください<br>
+        待合室での感染防止のため、受付後にお車でお待ちいただく場合があります<br>
+        （診察の際は携帯へご連絡いたします）<br><br>
+        【産科を受診される皆様へ】<br>
+        受診の際に、バスタオル２枚をご持参ください<br>
+        超音波検査時に使用します<br>
       </div>
-    </div><br><br><br><br>
-            
-
-  <!-- 里帰り希望者告知 -->
-  <style>
-    .coronaPage{
-      position: relative;
-      padding: 10px;
-    }
-    .coronaHeader {
-      margin: 2em 0;
-      position: relative;
-      padding: 0em 0em;
-      border-top: solid 2px black;
-      border-bottom: solid 2px black;
-      text-align: center;
-      width: 500px;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .coronaHeader:before,
-    .coronaHeader:after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      width: 2px;
-      height: -webkit-calc(100% + 20px);
-      height: calc(100% + 20px);
-      background-color: black;
-    }
-    .coronaHeader:before {
-      left: 10px;
-    }
-    .coronaHeader:after {
-      right: 10px;
-    }
-    .coronaHeader p {
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-
-  <div class="coronaPage">
-    <h2 class="coronaHeader" style="margin-top: -10px;">＜里帰り出産を希望される方へ＞</h2><br>
-    <div
-      class="coronaExp"
-      style="
-        padding: 0.5em 1em;
-        margin: 0px auto; 
-        font-weight: bold;
-        color: #6091d3; /*文字色*/
-        background: #fff;
-        border: solid 3px #6091d3; /*線*/
-        border-radius: 10px; /*角の丸み*/
-        width:500px;
-      "
-    >
-      <p style="margin: 0; padding: 0;">
-        緊急事態宣言が出されて以降、里帰り分娩を予定される方から、<br>多くのお問い合わせを頂いております。
-        分娩予約については、<br>これまで外来受付にて、ご本人やご親族様と対面で<br>お受けしておりましたが、
-        昨今の状況を鑑み、ＦＡＸもしくは<br>メールでの分娩仮予約を開始いたします
-      </p>
     </div>
-    <div
-      class="reserveDoc"
-      style="
-        padding: 0px 0px;
-        margin: 5px auto;
-        color: #2c2c2f;
-        background: #cde4ff;
-        border-top: solid 5px #5989cf;
-        border-bottom: solid 5px #5989cf;
-        width:300px;
-      "
-    >
-      <p style="margin-left: 30px; padding: 0;">
-        <b>分娩仮予約</b>に必要な書類<br />
-        ・（仮）入院申込兼保証書<br />
-        ・健康保険証の写し<br />
-      </p>
-    </div>
-    <div class="dl" style="line-height: 80%;margin-top: -10px;">
-      <center>
-        <h3>必要書類のダウンロード（PDF）</h3>
-        <a href="https://slc-mie.com/s_test/dl/examp.pdf" target="=blunk"
-          ><h3>[&nbsp;入院申込兼保証書（記入例）&nbsp;]</h3></a
-        >
-        <a href="https://slc-mie.com/s_test/dl/doc.pdf" target="=blunk"
-          ><h3>[&nbsp;入院申込兼保証書&nbsp;]</h3></a
-        >
-      </center>
-    </div>
-    <div
-      class="proceedure"
-      style="
-        font-size: small;
-        padding: 0.5em 1em;
+    <!-- 面会について -->
+    <div class="title-box3">
+      <div class="title-box3-title"><b>面会について</b></div>
+      <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
+        ▷&nbsp;入院患者様のご家族様（２～３名）に限り、面会を再開いたしております<br>
+        ▷&nbsp;面会は当面の間、以下の制限となります
+        <ul style="margin-top: -3px;">
+          <li>・入院期間中に1回のみの予約制</li>
+          <li>・面会時間は外来受付時間内</li>
+          <li>・面会場所は新館1階ロビーのみ</li>
+        </ul>
+        <div style="margin-top: -15px;">▷&nbsp;面会をご希望の方は、「面会に来られる人数」「来院予定時間」を<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;スタッフへお申し出ください</div>
+          ▷&nbsp;面会前に受付にて体温測定と面会用紙へのご記入をお願い致します<br>
+          ▷&nbsp;面会される方は、必ずマスクの着用（ご持参ください）<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;手指消毒の徹底をお願いいたします<br>
+          ▷&nbsp;また、以下に該当される方の面会はお断りしております
+          <ul style="margin-top: -3px;">
+            <li>・発熱がある方</li>
+            <li>・風邪症状など体調がすぐれない方</li>
+            <li>・2週間以内に県外・海外へ行かれた方</li>
+            <li>・2週間以内に県外・海外へ行かれた方と接触された方</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 分娩について -->
+      <div class="title-box3">
+        <div class="title-box3-title">分娩について</div>
+        <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:20px;line-height: 150%;">
+          ▷&nbsp;分娩受入状況について<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帰省できなくなった方、県外からの帰省の方、<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新型コロナ感染症のリスクがほとんど無い方は<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三重県産婦人科医会の指導のもと受け入れいたします<br><br>
+          ▷&nbsp;立ち会い分娩について<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ご主人、ご家族の内1名のみ立ち会いいただけます<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立ち会い時は検温、マスク（ご持参ください）、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;防護ガウン（当院でご用意します）を着用いただきます<br><br>
+          ▷&nbsp;里帰り分娩について<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;県外・海外（感染多発地域）からお越しの方は、2週間の自宅待機後、<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;症状がなければ受診可能です<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;２週間以内に診察が必要な方<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（分娩が近い、同居家族がコロナウイルスに罹患、海外渡航歴がある、<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;その他医師が必要と考える場合）は、当院から紹介の上で<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ＰＣＲ外来を受診していただきます<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陰性確認後、当院での妊婦健診が可能となります<br>
+        </div>
+      </div>
+      <!-- 両親学級再開 -->
+      <div class="title-box3">
+        <div class="title-box3-title"><b>両親学級再開について</b></div>
+          <div class="wrapper" style="width:95vw;text-align: left;margin: 10px;margin-left:100px;line-height: 150%;">
+            ７月からの再開しております<br><br>
+            各１０組まで、当院で出産される方が対象です
+          </div>
+        </div>
+  
+      <!-- 厚労省リーフレットリンク -->
+      <style>
+        .title-box3{
+          width:610px;
+            margin: 0.5em auto;
+            background-color: #e3f2fd;
+            border: 2px solid #2196f3;
+            letter-spacing: .3px;
+  
+        }
+        .title-box3-title{
+            color: #fff;
+            font-weight: bold;
+            background-color: #2196f3;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        
+        .title-box3 p{
+            margin: 0;
+            padding: 0.5em;
+        }
+    </style>
+    <div class="title-box3">
+      <div class="title-box3-title">新型コロナウィルス感染対策（厚労省PDF）</div>
+        <div class="wrapper" style="width:95vw;text-align: left;">
+          <p class="item"><a href="https://www.mhlw.go.jp/content/11925000/000620977.pdf">▶&nbsp;妊婦の方々へ</a></p>
+          <p class="item"><a href="https://www.mhlw.go.jp/content/11602000/000620757.pdf">▶&nbsp;妊娠中の女性労働者などへの配慮について</a></p>
+        </div>
+      </div><br><br><br><br>
+              
+  
+    <!-- 里帰り希望者告知 -->
+    <style>
+      .coronaPage{
+        position: relative;
+        padding: 10px;
+      }
+      .coronaHeader {
+        margin: 2em 0;
+        position: relative;
+        padding: 0em 0em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+        text-align: center;
+        width: 500px;
+        text-align: center;
         margin: 0 auto;
-        background: #f0f7ff;
-        border: dashed 2px #5b8bd0;
-        width:500px;
-      "
-    >
-      <p style="margin: -5px; padding: 0;">
-        （仮）入院申込兼保証書に必要事項を記入し、<br />
-        ＦＡＸ：059-370-6090&nbsp;&nbsp;もしくは<br />
-        メール：info@slc-mie.com  &nbsp;または<br>
-        郵&nbsp;&nbsp;&nbsp;便：〒513-0835&nbsp;三重県鈴鹿市平野町7740-1<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鈴木レディースクリニック&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;へお送りください<br />
-        ※ 書類確認後、当院より仮予約完了のご連絡をさせていただきます<br />
-        ※ 患者、保証人（里帰り先）、分娩予定日、何人目の欄は必須です<br />
-        ※ 確認のご連絡は、原則としてご本人様のお電話番号へご連絡いたします<br />
-        仮予約完了のご連絡に１日前後いただく場合があります<br />
-      </p>
+      }
+      .coronaHeader:before,
+      .coronaHeader:after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+      }
+      .coronaHeader:before {
+        left: 10px;
+      }
+      .coronaHeader:after {
+        right: 10px;
+      }
+      .coronaHeader p {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  
+    <div class="coronaPage">
+      <h2 class="coronaHeader" style="margin-top: -10px;">＜里帰り出産を希望される方へ＞</h2><br>
+      <div
+        class="coronaExp"
+        style="
+          padding: 0.5em 1em;
+          margin: 0px auto; 
+          font-weight: bold;
+          color: #6091d3; /*文字色*/
+          background: #fff;
+          border: solid 3px #6091d3; /*線*/
+          border-radius: 10px; /*角の丸み*/
+          width:500px;
+        "
+      >
+        <p style="margin: 0; padding: 0;">
+          緊急事態宣言が出されて以降、里帰り分娩を予定される方から、<br>多くのお問い合わせを頂いております。
+          分娩予約については、<br>これまで外来受付にて、ご本人やご親族様と対面で<br>お受けしておりましたが、
+          昨今の状況を鑑み、ＦＡＸもしくは<br>メールでの分娩仮予約を開始いたします
+        </p>
+      </div>
+      <div
+        class="reserveDoc"
+        style="
+          padding: 0px 0px;
+          margin: 5px auto;
+          color: #2c2c2f;
+          background: #cde4ff;
+          border-top: solid 5px #5989cf;
+          border-bottom: solid 5px #5989cf;
+          width:300px;
+        "
+      >
+        <p style="margin-left: 30px; padding: 0;">
+          <b>分娩仮予約</b>に必要な書類<br />
+          ・（仮）入院申込兼保証書<br />
+          ・健康保険証の写し<br />
+        </p>
+      </div>
+      <div class="dl" style="line-height: 80%;margin-top: -10px;">
+        <center>
+          <h3>必要書類のダウンロード（PDF）</h3>
+          <a href="https://slc-mie.com/s_test/dl/examp.pdf" target="=blunk"
+            ><h3>[&nbsp;入院申込兼保証書（記入例）&nbsp;]</h3></a
+          >
+          <a href="https://slc-mie.com/s_test/dl/doc.pdf" target="=blunk"
+            ><h3>[&nbsp;入院申込兼保証書&nbsp;]</h3></a
+          >
+        </center>
+      </div>
+      <div
+        class="proceedure"
+        style="
+          font-size: small;
+          padding: 0.5em 1em;
+          margin: 0 auto;
+          background: #f0f7ff;
+          border: dashed 2px #5b8bd0;
+          width:500px;
+        "
+      >
+        <p style="margin: -5px; padding: 0;">
+          （仮）入院申込兼保証書に必要事項を記入し、<br />
+          ＦＡＸ：059-370-6090&nbsp;&nbsp;もしくは<br />
+          メール：info@slc-mie.com  &nbsp;または<br>
+          郵&nbsp;&nbsp;&nbsp;便：〒513-0835&nbsp;三重県鈴鹿市平野町7740-1<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鈴木レディースクリニック&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;へお送りください<br />
+          ※ 書類確認後、当院より仮予約完了のご連絡をさせていただきます<br />
+          ※ 患者、保証人（里帰り先）、分娩予定日、何人目の欄は必須です<br />
+          ※ 確認のご連絡は、原則としてご本人様のお電話番号へご連絡いたします<br />
+          仮予約完了のご連絡に１日前後いただく場合があります<br />
+        </p>
+      </div>
     </div>
-  </div>
-  <div data-role="footer" style="width:300px;margin: 0 auto;">
-    <small>Copyright &copy; 2019 SLC SuzukiLadiesClinic</small>
-  </div>
-
+    <div data-role="footer" style="width:300px;margin: 0 auto;">
+      <small>Copyright &copy; 2019 SLC SuzukiLadiesClinic</small>
+    </div>
   </section>
 
 
