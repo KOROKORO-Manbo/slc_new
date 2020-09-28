@@ -2035,3 +2035,38 @@ li img{ margin-top: 8px; margin-left: 10px;}
     from    { transform: translate(0%); } 
     100%,to { transform: translate(-100%); }
 }
+
+/* 入院案内板 */
+.syussann_wrapper {
+  position: absolute;
+  left:110px;
+  top:520px;
+  width: 274px;
+  height: 216px;
+  cursor: pointer;
+}
+.syussann_wrapper .syussannUra {
+  position: absolute;
+  width: 276px;
+  height: 216px;
+  top: 114px;
+  left: 250px;
+  background-image: url(../img/page1/syussann2.png);
+  background-repeat: no-repeat;
+  animation: fadeOut .2s ease 0s 1 normal;
+  opacity: 0;
+}
+.syussann_wrapper .syussannOmote {
+  position: absolute;
+  width: 276px;
+  height: 216px;
+  top: 114px;
+  left: 250px;
+  background-image: url(../img/page1/syussann1.png);
+  background-repeat: no-repeat;
+}
+
+.syussann_wrapper:hover .syussannUra{
+  opacity: 1;
+  animation: fadeInn .2s ease 0s 1 normal;
+}
