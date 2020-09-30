@@ -1,3 +1,14 @@
+
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋「立ち会い再開」看板＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+./src/index.htmlのsection.modal-windowに以下を追加
+    <!-- 立ち会い再開 -->
+    <div class="saikai_wrapper" style="width:100vw;text-align: center;">
+      <img src="./images/tachiaisaikai.png" style="width:615px; margin: auto;" alt="">
+    </div>
+
+./build/index.htmlに以下を追加（「次から表示しない」のあと、<style>.modal-window .accordion {... の前）
+    <div class="saikai_wrapper" style="width:100vw;text-align: center;"><img src="./images/tachiaisaikai.png" style="width:615px; margin: auto;" alt=""></div>
+
 ＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋「当院で出産される方へ」看板＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
 
 	１．以下の要素の直上にボタン要素を加える
