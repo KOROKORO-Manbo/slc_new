@@ -518,10 +518,28 @@ $(document).ready(function(){
     		else{
     			$(this).stop().removeClass('mv03');
     		}
-    	});
+      });
+  		$('.closeBTN').click(function(e){
+        letitsnow2();
+        $('.modal-window').hide();
+  			$("#modal-p01").remove();
+      });
     });
-
-                                                                // xmas　効果
+    
+  	function letitsnow2() {
+  		// https://github.com/daveWid/canvas-snow
+  		var canvas2 = document.getElementById("snowfall2");
+  		canvas2.width = window.innerWidth;
+  		canvas2.height = window.innerHeight;
+  		// Now the emitter
+  		var emitter2 = Object.create(rectangleEmitter);							// canvas に対して降雪クラス生成
+  		emitter2.setCanvas(canvas2);
+  		emitter2.setBlastZone(0, -10, canvas2.width, 1);
+  		emitter2.particle = snow_slow;
+  		emitter2.runAhead(0);
+  		emitter2.start(60);																					// 落下スピード
+  	}
+/*                                                                 // xmas　効果
     var merrywrap = document.getElementById( 'merrywrap' ),
   		box = merrywrap.querySelector( '.giftbox' ),
   		step = 1,
@@ -534,7 +552,7 @@ $(document).ready(function(){
       });
 
   	function init() {
-  		box.addEventListener( 'click', runAnimation );
+      box.addEventListener( 'click', runAnimation );
   	}
 
   	function runAnimation() {
@@ -629,7 +647,7 @@ $(document).ready(function(){
   		return array;
   	}
 
-  	init();
+  	init(); */
 
 
 
