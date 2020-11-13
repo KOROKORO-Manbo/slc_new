@@ -1,4 +1,4 @@
-
+ 
 xmasブランチからcheckoutしてきた。
 今回はコロナの説明が中心なので最初のモーダルはクリスマス効果を消す作業
 
@@ -22,3 +22,53 @@ style.css
 
 style.css
  ・看板位置がスノーボールと重なるので少しtopを増やした　#4121 #4132
+ 
+ 
+ 
+ 
+ 
+ 降雪効果まとめーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ 
+    基本的にはライブラリを読みこんでトリガー用の関数の実行で降雪効果を出している
+    参照元：　https://github.com/daveWid/canvas-snow
+    
+    ライブラリ　./src/js/index.js（関係しているもののみ抜き出した）
+        import './xmas_effect/rectangleEmitter.js'
+        import './xmas_effect/snow.js'
+        
+    実行部分        ./src/js/main.js
+    
+        「// xmas　効果」の多くは最初のモーダルで見せるプレゼント箱クリックの後の効果で
+        ライブラリ読み込めば、降雪に関しては以下の２つの関数のみ（降雪効果ブランチ参照）
+        
+        // モーダルウィンドウ内の降雪用
+          	function letitsnow() {
+          		// https://github.com/daveWid/canvas-snow
+          		var canvas = document.getElementById("snowfall");
+          		canvas.width = window.innerWidth;
+          		canvas.height = window.innerHeight;
+          		// Now the emitter
+          		var emitter = Object.create(rectangleEmitter);							// canvas に対して降雪クラス生成
+          		emitter.setCanvas(canvas);
+          		emitter.setBlastZone(0, -10, canvas.width, 1);
+          		emitter.particle = snow;
+          		emitter.runAhead(0);
+          		emitter.start(60);																					// 落下スピード
+          	}
+        
+        // トップページの降雪用
+          	function letitsnow2() {
+          		// https://github.com/daveWid/canvas-snow
+          		var canvas2 = document.getElementById("snowfall2");
+          		canvas2.width = window.innerWidth;
+          		canvas2.height = window.innerHeight;
+          		// Now the emitter
+          		var emitter2 = Object.create(rectangleEmitter);							// canvas に対して降雪クラス生成
+          		emitter2.setCanvas(canvas2);
+          		emitter2.setBlastZone(0, -10, canvas2.width, 1);
+          		emitter2.particle = snow_slow;
+          		emitter2.runAhead(0);
+          		emitter2.start(60);																					// 落下スピード
+          	}
+          	
+        ✏️ スクリプト読み込みで効果を出す場合は「降雪効果」ブランチ参照
