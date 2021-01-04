@@ -1,0 +1,23 @@
+
+通常は正月の場合、最初のモーダルで「あけまして・・・」メッセージが出るがコロナの告知をするために以下の変更をした
+
+build/index.html
+ section.modal-windowの中身をコメントアウトして告知用のセクションの内容にした
+ また通常の正月にはなかった閉じるボタンのイベントハンドラを復活させた（bundle．js内）
+ #17551
+  // ganntanには閉じるボタン、次回表示しないボタンはない
+  $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
+    if ($(this).prop('checked')) {                        // 非表示＝false
+      window.localStorage.setItem("todo-first20170319", false);
+    } else {
+      window.localStorage.setItem("todo-first20170319", true);
+    }
+  });
+  $('.closeBTN').click(function(e){
+    $('.modal-window').hide();
+  });
+
+  ↓↓↓
+
+  なので通常に戻す場合はindex．html内のコメントアウトしたsectionを復活させるだけ
+  （JSで何か触らないといけないということはない）

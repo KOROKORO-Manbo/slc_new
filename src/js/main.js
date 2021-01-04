@@ -379,16 +379,16 @@ $(document).ready(function(){
 
 
                                                             // ganntanには閉じるボタン、次回表示しないボタンはない
-    // $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
-    //   if ($(this).prop('checked')) {                        // 非表示＝false
-    //     window.localStorage.setItem("todo-first20170319", false);
-    //   } else {
-    //     window.localStorage.setItem("todo-first20170319", true);
-    //   }
-    // });
-    // $('.closeBTN').click(function(e){
-    //   $('.modal-window').hide();
-    // });
+    $('.neverShow').click(function(e){                      // ルーレットメニュー説明モーダル画面
+      if ($(this).prop('checked')) {                        // 非表示＝false
+        window.localStorage.setItem("todo-first20170319", false);
+      } else {
+        window.localStorage.setItem("todo-first20170319", true);
+      }
+    });
+    $('.closeBTN').click(function(e){
+      $('.modal-window').hide();
+    });
 
     $('.topObi_container1').hover(                                 // topObi内リンクボタンアニメ用
       function(){$(".topObi_container1 .flip-back").removeClass("perspectiveDownReturn");$(".topObi_container1 .flip-back").addClass("perspectiveDown");},
