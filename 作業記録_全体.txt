@@ -1,4 +1,5 @@
 
+
 いろいろフォルダはあるが、実際、完成順は、project JQMobile版⇒　project_slidePro&非WebPack_all.jsバンドル版⇒　project_webpack⇒　project_webpackReMake　となっている
 全体を通してのページ構成の変更や追加はここについかしていく。
 
